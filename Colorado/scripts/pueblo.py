@@ -6,18 +6,16 @@ import time
 
 f = open("../data/pueblo.txt", "w")
 url = "https://county.pueblo.org/board-county-commissioners/covid-19-variance-information"
-
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--headless')
+driver = webdriver.Chrome(ChromeDriverManager().install(), options = chrome_options)
 
 def scraping(url):
     print("Scraping from " + url)
     f.write("Scraping from " + url + "\n\n\n")
-    chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument('--headless')
-    driver = webdriver.Chrome(ChromeDriverManager().install(), options = chrome_options)
     driver.get(url)
     time.sleep(1)
     result = driver.execute_script("return document.documentElement.outerHTML")
-    driver.quit()
     return BeautifulSoup(result, 'html.parser')
     
 
@@ -47,4 +45,5 @@ for i in range(len(data)):
     f.write("\n\n\n")
     
 f.close()
+driver.quit()
 print("finished")
