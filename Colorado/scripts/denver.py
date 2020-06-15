@@ -1,9 +1,13 @@
 from bs4 import BeautifulSoup
 import requests
+import os 
 
 #Scrape Denver County testing information from 'https://www.denvergov.org/content/denvergov/en/covid-19/recovery-guidance/testing.html'
 COUNTY = "denver"
-f = open("../data/denver.txt", "w")
+fileDir = os.path.dirname(__file__)
+filePath = os.path.join(fileDir, "../data/denver.txt")
+filePath = os.path.abspath(os.path.realpath(filePath))
+f = open(filePath, 'w')
 url = 'https://www.denvergov.org/content/denvergov/en/covid-19/recovery-guidance/testing.html'
 def scraping(url):
     f.write("Scraping from " + url + "\n\n\n")
@@ -19,12 +23,10 @@ def scrapeTextSections(div):
 webpage = requests.get('https://www.denvergov.org/content/denvergov/en/covid-19/recovery-guidance/testing.html')
 soup = BeautifulSoup(webpage.content, 'html.parser')
 scraping(url) 
-main_title = soup.select("h1 strong").get_text()
-sub_title = soup.select("h2 strong").get_text()
-f.write(main_title + "\n" + sub_title + "\n")
-divs = soup.find_all("div", class_="text section")
-for div in divs[1:]: 
-    scrapeTextSections(div)
+sections = soup.find_all("div", class_="text section")
+for div in sections: 
+    f.write(div.get_text().encode('utf-8'))
+    f.write("\n\n\n")
 
 f.close()
 

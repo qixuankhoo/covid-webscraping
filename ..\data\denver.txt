@@ -1,4 +1,6 @@
-15 June 2020
+Scraping from https://www.denvergov.org/content/denvergov/en/covid-19/recovery-guidance/testing.html
+
+
 Scraping from https://www.denvergov.org/content/denvergov/en/covid-19/recovery-guidance/testing.html
 
 
@@ -9,12 +11,18 @@ Testing Information
 
 
 
+Scraping from https://www.denvergov.org/content/denvergov/en/covid-19/recovery-guidance/testing.html
+
+
 
 
 Can I Be Tested?
 Across the City, there are multiple hospitals, state and local labs, and private labs capable of conducting the testing of swabs for COVID-19. To find a location near you, call 311 or view the information at the bottom of this page.
 
 
+
+
+Scraping from https://www.denvergov.org/content/denvergov/en/covid-19/recovery-guidance/testing.html
 
 
 
@@ -40,6 +48,9 @@ The testing site will be open seven days a week except for holidays between 8 a.
 
 
 
+Scraping from https://www.denvergov.org/content/denvergov/en/covid-19/recovery-guidance/testing.html
+
+
 
 
 Mobile Testing 
@@ -49,6 +60,9 @@ To find out if you qualify for this service, contact 311. 311 operators are avai
 The Winnie is planned to operate for five to six days per week, during normal business hours.
 
 
+
+
+Scraping from https://www.denvergov.org/content/denvergov/en/covid-19/recovery-guidance/testing.html
 
 
 
@@ -67,11 +81,17 @@ People who are undocumented are encouraged to get tested if they are symptomatic
 
 
 
+Scraping from https://www.denvergov.org/content/denvergov/en/covid-19/recovery-guidance/testing.html
+
+
 
 
 If you need a sign language interpreter or CART Services, contact SignLanguageServices@denvergov.org with at least a three (3) business day notice. For other public accommodation requests/concerns related to a disability, please contact DisabilityAccess@denvergov.org.
 
 
+
+
+Scraping from https://www.denvergov.org/content/denvergov/en/covid-19/recovery-guidance/testing.html
 
 
 
@@ -90,6 +110,9 @@ Colorado Quest Card (EBT card) 
 
 
 
+
+
+Scraping from https://www.denvergov.org/content/denvergov/en/covid-19/recovery-guidance/testing.html
 
 
 
@@ -111,11 +134,17 @@ Since COVID-19 does not stop at jurisdictional boundaries, Denver will work with
 
 
 
+Scraping from https://www.denvergov.org/content/denvergov/en/covid-19/recovery-guidance/testing.html
+
+
 
 
 COVID-19 Testing: City and County of Denver
 
 
+
+
+Scraping from https://www.denvergov.org/content/denvergov/en/covid-19/recovery-guidance/testing.html
 
 
 
@@ -125,11 +154,17 @@ COVID-19 Testing: City and County of Denver
 
 
 
+Scraping from https://www.denvergov.org/content/denvergov/en/covid-19/recovery-guidance/testing.html
+
+
 
 
  
 
 
+
+
+Scraping from https://www.denvergov.org/content/denvergov/en/covid-19/recovery-guidance/testing.html
 
 
 
@@ -145,6 +180,9 @@ COVID-19 Denver Recovery Presentation: English (PDF) & Spanish (PDF)
 
 
 
+Scraping from https://www.denvergov.org/content/denvergov/en/covid-19/recovery-guidance/testing.html
+
+
 
 
 To report an issue or for additional questions and assistance, please contact us at:
@@ -152,6 +190,9 @@ Within Denver, dial 3-1-1
 Outside of Denver, dial 720-913-1311
 
 
+
+
+Scraping from https://www.denvergov.org/content/denvergov/en/covid-19/recovery-guidance/testing.html
 
 
 
@@ -163,6 +204,9 @@ Colorado’s call line for general questions about COVID-19 provides answers in 
 COHELP@RMPDC.org (answers in English only)
 
 
+
+
+Scraping from https://www.denvergov.org/content/denvergov/en/covid-19/recovery-guidance/testing.html
 
 
 
