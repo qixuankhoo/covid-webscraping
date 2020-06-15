@@ -1,7 +1,5 @@
-15 June 2020
 Scraping from https://www.denvergov.org/content/denvergov/en/covid-19/recovery-guidance/testing.html
-
-
+Scraped on 2020-6-14
 
 
 Testing Information
