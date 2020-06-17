@@ -11,7 +11,7 @@ for file in glob.iglob("*.py"):
 # Create a directory under data
 today = "2020-6-12"
 path = "../data/" + today
-os.mkdir(path);
+os.mkdir(path)
 
 # move all the files under the directory
 time.sleep(20)
