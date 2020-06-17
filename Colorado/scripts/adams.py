@@ -47,7 +47,7 @@ def gdownload(url, destination):
 def getPDFs(file_url, county):
     title = file_url.split('/').pop()
     r = requests.get(file_url, stream = True)
-    with open("../data/" + COUNTY + "-PDF" + "/" + title + ".pdf","wb") as pdf:
+    with open("../data/" + county + "-PDF" + "/" + title + ".pdf","wb") as pdf:
         for chunk in r.iter_content(chunk_size=1024*1024):
             pdf.write(chunk)
     return "data/" + title
@@ -85,12 +85,12 @@ for result in results:
 
 
 # create a folder for PDFs
-path = "../data/" + COUNTY + "-PDF"
-os.mkdir(path)
 
+triPath = "../data/tri-county-PDF"
+os.mkdir(triPath)
 
         
-# tricounty - adams, douglas, araphoe
+# tricounty - adams, douglas, arapahoe
 # scrape from "https://www.tchd.org/825/Public-Health-Orders"
 url = 'https://www.tchd.org/825/Public-Health-Orders'
 soup = scraping(url)
@@ -103,13 +103,10 @@ for result in results:
     url = result.get('href')
     
     if 'drive.google' in url:
-        gdownload(url, "../data/" + COUNTY + "-PDF/drive" + str(count) + ".pdf")
+        gdownload(url, triPath + "/drive" + str(count) + ".pdf")
         count += 1
         f.write("A PDF HERE\n\n\n")
     elif 'DocumentCenter' in url:
-        getPDFs('https://www.tchd.org/' + url, COUNTY)
+        getPDFs('https://www.tchd.org/' + url, "tri-county")
         f.write("A PDF HERE\n\n\n")
 
-f.close()
-driver.quit()
-print("finished")
