@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[45]:
+# In[2]:
 
 
 import requests 
@@ -12,6 +12,7 @@ import time
 
 
 f = open("../data/el_paso.txt", "w")
+#f = open("el_paso.txt", "w")
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
 driver = webdriver.Chrome(ChromeDriverManager().install(), options = chrome_options)
@@ -41,10 +42,61 @@ for url in urls:
         f.write(data[i].text)
 
 
+soup = scraping("https://www.elpasocountyhealth.org/")
+data = soup.find_all("a")
+lister = []
+for i in range(len(data)):
+    g = data[i].get("href")
+    lister.append(g)
 
+lister = [x for x in lister if x != None]
+
+newlister = []
+for i in range(len(lister)):
+    if "http" in lister[i]:
+        newlister.append(lister[i])
+    if lister[i][0] == '/' and len(lister[i]) >= 3:
+        newlister.append("https://www.elpasocountyhealth.org" + lister[i])
+        
+pdfs = []
+
+for i in range(len(newlister)):
+    soup = scraping(newlister[i])
+    data = soup.find_all("p")
+    if ".pdf" in newlister[i]:
+        pdfs.append(newlister[i])
+    else:
+        for i in range(len(data)):
+            f.write(data[i].text)        
+
+            
+import PyPDF2
+import io
+
+import requests
+from PyPDF2 import PdfFileReader
+
+
+for url in pdfs:
+    print("Scraping from" + url)
+    r = requests.get(url)
+    fi = io.BytesIO(r.content)
+    reader = PdfFileReader(fi)
+    number_of_pages = reader.getNumPages()
+    for page_number in range(number_of_pages):
+        page = reader.getPage(page_number)
+        page_content = page.extractText()
+        f.write(page_content)
+        
 f.close()
 driver.quit()
 print("finished")
+
+
+# In[ ]:
+
+
+
 
 
 # In[ ]:
