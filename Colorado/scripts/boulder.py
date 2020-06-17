@@ -122,7 +122,6 @@ data = soup.select("#content > div:nth-child(2) > div > div.vc_col-sm-8.wpb_colu
 for i in range(len(data)):
     print(data[i].text)
     f.write(data[i].text)
-    print(data[i].text)
     
 
 links = []
