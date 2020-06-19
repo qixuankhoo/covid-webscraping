@@ -9,6 +9,7 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 import time
+import re
 
 
 f = open("../data/larimer.txt", "w")
@@ -25,14 +26,6 @@ def scraping(url):
     result = driver.execute_script("return document.documentElement.outerHTML")
     return BeautifulSoup(result, 'html.parser')
 
-def getPDFs(file_url, county):
-    title = file_url.split('/').pop()
-    r = requests.get(file_url, stream = True)
-    with open("idk","wb") as pdf:
-        for chunk in r.iter_content(chunk_size=1024):
-         if chunk:
-             pdf.write(chunk)
-    return "data/" + title
     
 # scrap from https://www.elpasocountyhealth.org/outbreaks-in-el-paso-county
 urls = ["https://www.larimer.org/health/communicable-disease/coronavirus-covid-19/larimer-county-positive-covid-19-numbers",
@@ -117,19 +110,61 @@ for link in links:
     data = soup.find_all("p")
     for i in range(len(data)):
         f.write(data[i].text)
-        
+
+
+
+
+# from larimer county
+# In[3]:
+
+
+url="https://www.larimer.org/health/communicable-disease/coronavirus-covid-19/think-or-know-you-have-covid-19/covid-19-testing"
+page = urllib.request.urlopen(url)
+soup = BeautifulSoup(page, 'html.parser')
+print(soup)
+
+
+# In[23]:
+
+
+linksinfo=[]
+
+links= soup.find_all('a')
+content= soup.find_all('p')
+for i in content:
+    print((i.get_text()))
+ 
+    
+links= soup.find_all('a')p
+for i in links:
+    linksinfo.append(i.get_text() + ": " + str(i.get('href')))
+    print(i.get_text())
+    print(i.get('href'))
+    
+linksinfo
+
+with open('larimer.txt','w') as outfile:
+    outfile.write("CONTENT" + "\n" + "\n")
+    for i in content:
+        print(i.get_text(), file=outfile)
+    outfile.write("\n" + "\n"+ "LINKS" + "\n" + "\n")
+   
+    for item in linksinfo:
+        print(item, file=outfile)
+
+
+# In[ ]:
+
+
+
+
+
 f.close()
 driver.quit()
 print("finished")
 
 
-# In[ ]:
 
-
-
-
-
-# In[ ]:
 
 
 
