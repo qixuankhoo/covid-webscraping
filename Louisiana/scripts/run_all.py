@@ -15,7 +15,7 @@ os.mkdir(path)
 
 # move all the files under the directory
 time.sleep(20)
-county_list = ["adams", "arapahoe", "boulder", "denver", "douglas", "el_paso" , "jefferson", "larimer", "pueblo", "weld"]
+county_list = ["lafayette", "caddo", "calcasieu", "east_baton_rouge", "jefferson", "livingston" , "orleans", "ouachita", "rapides", "st_tammany"]
 for county in county_list:
     try:
         shutil.move("../data/" + county + ".txt", "../data/" + today + "/" + county + ".txt")
@@ -23,7 +23,7 @@ for county in county_list:
         print(county + " is not available")
         pass
 # move all the pdfs
-pdf_list = ["boulder-PDF", "tri-county-PDF", "weld-PDF"]
+pdf_list = []
 for folder in pdf_list:
     try:
         shutil.move("../data/" + folder, "../data/" + today + "/" + folder)
