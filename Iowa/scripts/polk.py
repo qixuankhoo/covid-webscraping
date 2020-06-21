@@ -11,8 +11,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 import time
 
 
-#f = open("../data/polk.txt", "w")
-f = open("polk.txt", "w")
+f = open("../data/polk.txt", "w")
+#f = open("polk.txt", "w")
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
 driver = webdriver.Chrome(ChromeDriverManager().install(), options = chrome_options)
