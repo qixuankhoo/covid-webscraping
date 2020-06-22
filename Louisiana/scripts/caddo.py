@@ -43,6 +43,8 @@ def gdownload(url, destination):
                                     dest_path=destination)
 
 def getPDFs(file_url, county):
+    print("A PDF HERE\n")
+    f.write("A PDF HERE\n")
     title = file_url.split('/').pop()
     r = requests.get(file_url, stream = True)
     with open("../data/" + county + "-PDF" + "/" + title + ".pdf","wb") as pdf:
@@ -61,32 +63,41 @@ def saveText(url):
 
 
 
-COUNTY = "black_hawk"
+COUNTY = "caddo"
 f = open("../data/" + COUNTY + ".txt", "w")
+
+pdfPath = "../data/" + COUNTY + "-PDF"
+os.mkdir(pdfPath)
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
 driver = webdriver.Chrome(ChromeDriverManager().install(), options = chrome_options)
 
 
-# scrape from "https://www.blackhawkcovid19.com/faqs"
-url = 'https://www.blackhawkcovid19.com/faqs'
+# scrape from "http://www.caddo.org/476/COVID-19"
+url = 'http://www.caddo.org/476/COVID-19'
 soup = scraping(url)
-div = soup.find('div', class_="w-col w-col-8")
+div = soup.find('div', class_='fr-view')
+a_tags = div.find_all('a')
+for a in a_tags:
+    url = a.get('href')
+    if "DocumentCenter" in url:
+        getPDFs("http://www.caddo.org/" + url, "caddo")
+
+
+# scrape from "https://www.caddosheriff.org/content.php?c=128"
+url = "https://www.caddosheriff.org/content.php?c=128"
+soup = scraping(url)
+div = soup.find('div', class_='col-lg-9 content-pad col-sm-12')
 print(div.get_text(separator = '\n'))
 f.write(div.get_text(separator = '\n'))
 
-# scrape from "https://www.blackhawkcovid19.com/posts" and news links
-url = "https://www.blackhawkcovid19.com/posts"
+# scrape from "https://www.caddosheriff.org/content.php?c=127"
+url = "https://www.caddosheriff.org/content.php?c=127"
 soup = scraping(url)
-headers = soup.select('.post-list-teaser+ a')
-for header in headers:
-    current_url = 'https://www.blackhawkcovid19.com' + header.get('href')
-    saveText(current_url)
+links = soup.select('.col-sm-12 a')
+for link in links:
+    current_url = link.get('href')
+    getPDFs(current_url, "caddo")
 
-'''
-for result in results:
-    url = result.get('href')
-    print(url)
-'''
 driver.quit()

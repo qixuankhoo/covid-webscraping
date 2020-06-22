@@ -43,6 +43,8 @@ def gdownload(url, destination):
                                     dest_path=destination)
 
 def getPDFs(file_url, county):
+    print("A PDF HERE\n")
+    f.write("A PDF HERE\n")
     title = file_url.split('/').pop()
     r = requests.get(file_url, stream = True)
     with open("../data/" + county + "-PDF" + "/" + title + ".pdf","wb") as pdf:
@@ -52,41 +54,29 @@ def getPDFs(file_url, county):
 
 def saveText(url):
     soup = scraping(url)
-    title = soup.find('div', class_="bg-smoke")
-    body = soup.find('div', class_="w-richtext")
-    print(title.get_text(separator = '\n'))
-    f.write(title.get_text(separator = '\n'))
-    print(body.get_text(separator = '\n'))
-    f.write(body.get_text(separator = '\n'))
+    div = soup.find('div', class_='need_hide_detail_widget news_widget content_area clearfix')
+    print(div.get_text(separator = '\n'))
+    f.write(div.get_text(separator = '\n'))
 
 
 
-COUNTY = "black_hawk"
+COUNTY = "calcasieu"
 f = open("../data/" + COUNTY + ".txt", "w")
+
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
 driver = webdriver.Chrome(ChromeDriverManager().install(), options = chrome_options)
 
 
-# scrape from "https://www.blackhawkcovid19.com/faqs"
-url = 'https://www.blackhawkcovid19.com/faqs'
+# scrape from "https://www.calcasieuparish.gov/residents/news-and-updates"
+url = 'https://www.calcasieuparish.gov/residents/news-and-updates'
 soup = scraping(url)
-div = soup.find('div', class_="w-col w-col-8")
-print(div.get_text(separator = '\n'))
-f.write(div.get_text(separator = '\n'))
+div = soup.find('div', class_="news_widget content_area clearfix")
+li_tags = div.find_all('li')
+for li in li_tags:
+    a = li.find('a')
+    url = 'https://www.calcasieuparish.gov' + a.get('href')
+    saveText(url)
 
-# scrape from "https://www.blackhawkcovid19.com/posts" and news links
-url = "https://www.blackhawkcovid19.com/posts"
-soup = scraping(url)
-headers = soup.select('.post-list-teaser+ a')
-for header in headers:
-    current_url = 'https://www.blackhawkcovid19.com' + header.get('href')
-    saveText(current_url)
-
-'''
-for result in results:
-    url = result.get('href')
-    print(url)
-'''
 driver.quit()

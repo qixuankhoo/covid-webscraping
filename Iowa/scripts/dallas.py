@@ -77,19 +77,4 @@ for div in divs:
     print(div.get_text(separator = '\n'))
     f.write(div.get_text(separator = '\n'))
 
-'''
-
-# scrape from "https://www.blackhawkcovid19.com/posts" and news links
-url = "https://www.blackhawkcovid19.com/posts"
-soup = scraping(url)
-headers = soup.select('.post-list-teaser+ a')
-for header in headers:
-    url = 'https://www.blackhawkcovid19.com' + header.get('href')
-    saveText(url)
-'''
-'''
-for result in results:
-    url = result.get('href')
-    print(url)
-'''
 driver.quit()
