@@ -43,7 +43,7 @@ for link in links:
     currSoup = scraping(link)
     currdata = currSoup.find_all("div", class_= "content")
     for i in range(len(currdata)):
-        f.write(currdata[i].text)
+        f.write(currdata[i].get_text(separator = '\n'))
 
 
 
@@ -53,7 +53,7 @@ url = "https://www.arapahoegov.com/covid19"
 soup = scraping(url)
 data = soup.find_all("div", class_= "widget editor pageStyles wide")
 for i in range(len(data)):
-    f.write(data[i].text)
+    f.write(data[i].get_text(separator = '\n'))
     f.write("\n\n\n")
 
 
