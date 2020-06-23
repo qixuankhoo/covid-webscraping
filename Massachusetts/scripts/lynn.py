@@ -5,7 +5,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 import time
 import os
 
-f = open("../data/woodbury.txt", "w")
+f = open("../data/lynn.txt", "w")
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
 driver = webdriver.Chrome(ChromeDriverManager().install(), options = chrome_options)
@@ -17,32 +17,45 @@ def scraping(url):
     time.sleep(1)
     result = driver.execute_script("return document.documentElement.outerHTML")
     return BeautifulSoup(result, 'html.parser')
-    
+
 def findHref(data):
     for i in range(len(data)):
         for link in data[i].find_all('a'):
             current = link.get('href')
-            if (current.startswith('http')):
-                link.append(current)
+            if (current.startswith("http")):
+                links.append(current)
             else:
-                links.append("http://siouxlanddistricthealth.org" + current)
+                links.append("http://www.lynnma.gov/covid19/" + current)
 
-
-
-url = "http://siouxlanddistricthealth.org/component/content/article/4-a-z-search/231-covid-19.html?directory=85"
-soup = scraping(url)
-links = []
-
-data = soup.find_all("table", class_= "contentpaneopen")
-findHref(data)
-print(links)
+# Scraping from http://www.lynnma.gov/covid19/resources.shtml
+# scrap all the texts in the link
+link = "http://www.lynnma.gov/covid19/resources.shtml"
+soup = scraping(link)
+data = soup.find_all("div", class_= "p7GPcontent")
 for i in range(len(data)):
     f.write(data[i].text)
     f.write("\n\n\n")
 
+# Scraping from http://www.lynnma.gov/covid19/press.shtml
+# scrap all the texts in the link
+link = "http://www.lynnma.gov/covid19/press.shtml"
+soup = scraping(link)
+data = soup.find_all("div", class_= "p7GPcontent")
+for i in range(len(data)):
+    print(data[i].text)
+    f.write(data[i].text)
+    f.write("\n\n\n")
+
+# Scraping from http://www.lynnma.gov/covid19/resources.shtml#p7GPc1_9
+link = "http://www.lynnma.gov/covid19/resources.shtml#p7GPc1_9"
+soup = scraping(link)
+data = soup.find_all("div", id= "p7GPc1_9")
+links = []
+findHref(data)
+
 
 # make directory for pdfs
-path = "../data/" + "woodbury-PDF"
+path = "../data/" + "lynn-PDF"
 os.mkdir(path)
 
 
@@ -54,20 +67,16 @@ def getPDFs(file_url):
         return
     f.write("A PDF HERE")
     title = file_url.split('/').pop()
-    with open("../data/" + "woodbury-PDF" + "/" + title,"wb") as pdf:
+    with open("../data/" + "lynn-PDF" + "/" + title,"wb") as pdf:
         for chunk in r.iter_content(chunk_size=1024):
          if chunk:
              pdf.write(chunk)
-
-# only scrape links which are a pdf.
+    
 for link in links:
-    f.write("Scraping from " + link + "\n\n\n")
+    f.write("Scraping from " + link + "\n")
     getPDFs(link)
     f.write("\n\n\n")
 
-
-
-
-f.close()
 driver.quit()
+f.close()
 print("finished")

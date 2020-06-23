@@ -5,7 +5,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 import time
 import os
 
-f = open("../data/woodbury.txt", "w")
+f = open("../data/lowell.txt", "w")
+url = "http://lowellma.gov/coronavirus"
+
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
 driver = webdriver.Chrome(ChromeDriverManager().install(), options = chrome_options)
@@ -18,31 +20,31 @@ def scraping(url):
     result = driver.execute_script("return document.documentElement.outerHTML")
     return BeautifulSoup(result, 'html.parser')
     
-def findHref(data):
-    for i in range(len(data)):
-        for link in data[i].find_all('a'):
-            current = link.get('href')
-            if (current.startswith('http')):
-                link.append(current)
-            else:
-                links.append("http://siouxlanddistricthealth.org" + current)
 
-
-
-url = "http://siouxlanddistricthealth.org/component/content/article/4-a-z-search/231-covid-19.html?directory=85"
+# Scraping from http://lowellma.gov/coronavirus
 soup = scraping(url)
 links = []
+data = soup.find_all("div", id= "structuralContainer6")
 
-data = soup.find_all("table", class_= "contentpaneopen")
-findHref(data)
-print(links)
+
+    
 for i in range(len(data)):
     f.write(data[i].text)
     f.write("\n\n\n")
+    for link in data[i].find_all('a'):
+        current = link.get('href')
+        if (current.startswith("http")):
+            links.append(current)
+        else:
+            links.append("http://lowellma.gov" +current)
+        
+#print(links)
+link.append("http://lowellma.gov/1449/Wear-A-Mask-In-Public")
+
 
 
 # make directory for pdfs
-path = "../data/" + "woodbury-PDF"
+path = "../data/" + "lowell-PDF"
 os.mkdir(path)
 
 
@@ -54,7 +56,7 @@ def getPDFs(file_url):
         return
     f.write("A PDF HERE")
     title = file_url.split('/').pop()
-    with open("../data/" + "woodbury-PDF" + "/" + title,"wb") as pdf:
+    with open("../data/" + "lowell-PDF" + "/" + title + ".pdf","wb") as pdf:
         for chunk in r.iter_content(chunk_size=1024):
          if chunk:
              pdf.write(chunk)
@@ -62,6 +64,8 @@ def getPDFs(file_url):
 # only scrape links which are a pdf.
 for link in links:
     f.write("Scraping from " + link + "\n\n\n")
+    r = requests.get(link, stream = True)
+#    print(r.headers)
     getPDFs(link)
     f.write("\n\n\n")
 
