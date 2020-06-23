@@ -16,7 +16,7 @@ os.mkdir(path)
 
 # move all the files under the directory
 time.sleep(20)
-county_list = ["lafayette", "caddo", "calcasieu", "east_baton_rouge", "jefferson", "livingston" , "orleans", "ouachita", "rapides", "st_tammany"]
+county_list = ["boston", "brockton", "cambridge", "fall_river", "lowell", "lynn", "new_bedford", "quincy", "springfield", "worcester"]
 for county in county_list:
     try:
         shutil.move("../data/" + county + ".txt", "../data/" + today + "/" + county + ".txt")

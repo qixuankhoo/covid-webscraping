@@ -2,14 +2,15 @@ import os
 import glob
 import shutil
 import time
+from datetime import date
 
 # run all the scripts
 for file in glob.iglob("*.py"):
     if file != "run_all.py":
         os.system("python3 " + file)
-    
+
 # Create a directory under data
-today = "2020-6-22"
+today = str(date.today())
 path = "../data/" + today
 os.mkdir(path)
 
