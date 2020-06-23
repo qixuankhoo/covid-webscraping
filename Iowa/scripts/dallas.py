@@ -10,8 +10,6 @@ import os
 from google_drive_downloader import GoogleDriveDownloader as gdd
 
 
-
-
 def scraping(url):
     print("Scraping from " + url)
     f.write("\n\n\n")
@@ -54,13 +52,16 @@ def getPDFs(file_url, county):
 
 def saveText(url):
     soup = scraping(url)
-    divs = soup.select('.even li , .even p , .content .article-date')
-    for div in divs:   
-        print(div.get_text(separator = '\n'))
-        f.write(div.get_text(separator = '\n'))
+    title = soup.find('div', class_="bg-smoke")
+    body = soup.find('div', class_="w-richtext")
+    print(title.get_text(separator = '\n'))
+    f.write(title.get_text(separator = '\n'))
+    print(body.get_text(separator = '\n'))
+    f.write(body.get_text(separator = '\n'))
 
 
-COUNTY = "adams"
+
+COUNTY = "dallas"
 f = open("../data/" + COUNTY + ".txt", "w")
 
 chrome_options = webdriver.ChromeOptions()
@@ -68,45 +69,12 @@ chrome_options.add_argument('--headless')
 driver = webdriver.Chrome(ChromeDriverManager().install(), options = chrome_options)
 
 
-# scrape from "http://www.adcogov.org/news"
-url = 'http://www.adcogov.org/news'
-soup = advanced_scraping(url)
-div = soup.find('div', class_="col-md-9")
-print(div.prettify())
-
-results = div.find_all('a')
-
-for result in results:
-    url = result.get('href')
-    print(url)
-    if 'news' in url:
-        saveText('http://www.adcogov.org' + url)
-
-
-
-# create a folder for PDFs
-
-triPath = "../data/tri-county-PDF"
-os.mkdir(triPath)
-
-        
-# tricounty - adams, douglas, arapahoe
-# scrape from "https://www.tchd.org/825/Public-Health-Orders"
-url = 'https://www.tchd.org/825/Public-Health-Orders'
+# scrape from "https://dallascohealth.wordpress.com/"
+url = 'https://dallascohealth.wordpress.com/'
 soup = scraping(url)
-links = []
-results = soup.find_all('a')
+divs = soup.find_all('div', class_='entry-content')
+for div in divs:
+    print(div.get_text(separator = '\n'))
+    f.write(div.get_text(separator = '\n'))
 
-count = 0
-
-for result in results:
-    url = result.get('href')
-    
-    if 'drive.google' in url:
-        gdownload(url, triPath + "/drive" + str(count) + ".pdf")
-        count += 1
-        f.write("A PDF HERE\n\n\n")
-    elif 'DocumentCenter' in url:
-        getPDFs('https://www.tchd.org/' + url, "tri-county")
-        f.write("A PDF HERE\n\n\n")
-
+driver.quit()

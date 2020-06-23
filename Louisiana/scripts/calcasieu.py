@@ -10,8 +10,6 @@ import os
 from google_drive_downloader import GoogleDriveDownloader as gdd
 
 
-
-
 def scraping(url):
     print("Scraping from " + url)
     f.write("\n\n\n")
@@ -45,6 +43,8 @@ def gdownload(url, destination):
                                     dest_path=destination)
 
 def getPDFs(file_url, county):
+    print("A PDF HERE\n")
+    f.write("A PDF HERE\n")
     title = file_url.split('/').pop()
     r = requests.get(file_url, stream = True)
     with open("../data/" + county + "-PDF" + "/" + title + ".pdf","wb") as pdf:
@@ -54,59 +54,29 @@ def getPDFs(file_url, county):
 
 def saveText(url):
     soup = scraping(url)
-    divs = soup.select('.even li , .even p , .content .article-date')
-    for div in divs:   
-        print(div.get_text(separator = '\n'))
-        f.write(div.get_text(separator = '\n'))
+    div = soup.find('div', class_='need_hide_detail_widget news_widget content_area clearfix')
+    print(div.get_text(separator = '\n'))
+    f.write(div.get_text(separator = '\n'))
 
 
-COUNTY = "adams"
+
+COUNTY = "calcasieu"
 f = open("../data/" + COUNTY + ".txt", "w")
+
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
 driver = webdriver.Chrome(ChromeDriverManager().install(), options = chrome_options)
 
 
-# scrape from "http://www.adcogov.org/news"
-url = 'http://www.adcogov.org/news'
-soup = advanced_scraping(url)
-div = soup.find('div', class_="col-md-9")
-print(div.prettify())
-
-results = div.find_all('a')
-
-for result in results:
-    url = result.get('href')
-    print(url)
-    if 'news' in url:
-        saveText('http://www.adcogov.org' + url)
-
-
-
-# create a folder for PDFs
-
-triPath = "../data/tri-county-PDF"
-os.mkdir(triPath)
-
-        
-# tricounty - adams, douglas, arapahoe
-# scrape from "https://www.tchd.org/825/Public-Health-Orders"
-url = 'https://www.tchd.org/825/Public-Health-Orders'
+# scrape from "https://www.calcasieuparish.gov/residents/news-and-updates"
+url = 'https://www.calcasieuparish.gov/residents/news-and-updates'
 soup = scraping(url)
-links = []
-results = soup.find_all('a')
+div = soup.find('div', class_="news_widget content_area clearfix")
+li_tags = div.find_all('li')
+for li in li_tags:
+    a = li.find('a')
+    url = 'https://www.calcasieuparish.gov' + a.get('href')
+    saveText(url)
 
-count = 0
-
-for result in results:
-    url = result.get('href')
-    
-    if 'drive.google' in url:
-        gdownload(url, triPath + "/drive" + str(count) + ".pdf")
-        count += 1
-        f.write("A PDF HERE\n\n\n")
-    elif 'DocumentCenter' in url:
-        getPDFs('https://www.tchd.org/' + url, "tri-county")
-        f.write("A PDF HERE\n\n\n")
-
+driver.quit()
