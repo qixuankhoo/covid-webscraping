@@ -56,8 +56,8 @@ def saveText(url):
     soup = scraping(url)
     divs = soup.select('.even li , .even p , .content .article-date')
     for div in divs:   
-        print(div.text)
-        f.write(div.text)
+        print(div.get_text(separator = '\n'))
+        f.write(div.get_text(separator = '\n'))
 
 
 COUNTY = "adams"

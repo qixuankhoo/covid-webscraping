@@ -2,14 +2,15 @@ import os
 import glob
 import shutil
 import time
+from datetime import date
 
 # run all the scripts
 for file in glob.iglob("*.py"):
     if file != "run_all.py":
         os.system("python3 " + file)
-    
+
 # Create a directory under data
-today = "2020-6-18"
+today = str(date.today())
 path = "../data/" + today
 os.mkdir(path)
 
@@ -23,7 +24,7 @@ for county in county_list:
         print(county + " is not available")
         pass
 # move all the pdfs
-pdf_list = ["johnson-PDF"]
+pdf_list = ["johnson-PDF", "woodbury-PDF"]
 for folder in pdf_list:
     try:
         shutil.move("../data/" + folder, "../data/" + today + "/" + folder)

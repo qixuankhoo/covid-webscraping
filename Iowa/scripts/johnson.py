@@ -41,13 +41,12 @@ print(links)
 
 
 # make directory for pdfs
+path = "../data/" + "johnson-PDF"
+os.mkdir(path)
 
 
 
 # start scraping for pdfs
-path = "../data/" + "johnson-PDF"
-os.mkdir(path)
-
 def pdfs(link):
     print("Scraping from " + link)
     f.write("Scraping from " + link + "\n\n\n")

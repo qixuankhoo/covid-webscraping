@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup 
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
-import time
+import time/Users/annichen/Desktop/2020summer/covid-webscraping/Colorado/scripts/run_all.py
 import os
 
 chrome_options = webdriver.ChromeOptions()
