@@ -10,9 +10,14 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 import re
+import os
 
-
-f = open("../data/larimer.txt", "w")
+COUNTY = "larimer"
+fileDir = os.path.dirname(__file__)
+filePath = os.path.join(fileDir, "../data/larimer.txt")
+filePath = os.path.abspath(os.path.realpath(filePath))
+f = open(filePath, 'w')
+# f = open(os.path.abspath("../data/larimer.txt"), "w")
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
 driver = webdriver.Chrome(ChromeDriverManager().install(), options = chrome_options)
@@ -36,7 +41,7 @@ for url in urls:
     soup = scraping(url)
     data = soup.find_all("p")
     for i in range(len(data)):
-        f.write(data[i].text)
+        f.write(data[i].get_text(separator = '\n'))
 
 urls = ["https://www.larimer.org/health/communicable-disease/coronavirus-covid-19/safer-at-home",
        "https://www.larimer.org/health/communicable-disease/coronavirus-covid-19/think-or-know-you-have-covid-19/covid-19-testing",
@@ -51,10 +56,10 @@ for url in urls:
     soup = scraping(url)
     data = soup.find_all("p")
     for i in range(len(data)):
-        f.write(data[i].text)
+        f.write(data[i].get_text(separator = '\n'))
     data = soup.find_all("li")
     for i in range(len(data)):
-        f.write(data[i].text)
+        f.write(data[i].get_text(separator = '\n'))
     
 soup = scraping("https://www.larimer.org/health/communicable-disease/coronavirus-covid-19/covid-19-public-health-orders-and-press-releases")
 data = soup.find_all(class_="externalLink")
@@ -74,6 +79,29 @@ soup = scraping("https://www.larimer.org/health/communicable-disease/coronavirus
 data = soup.find_all(class_="externalLink", href = True)
 pdfs = findHref(data)
 
+
+path = "../data/" + COUNTY + "-PDF"
+fileDir = os.path.dirname(__file__)
+filePath = os.path.join(fileDir, path)
+filePath = os.path.abspath(os.path.realpath(filePath))
+os.makedirs(filePath, exist_ok=True)
+
+def getPDFs(file_url, county):
+    title = file_url.split('/').pop()
+    r = requests.get(file_url, stream = True)
+    path = "../data/" + COUNTY + "-PDF" + "/" + title
+    fileDir = os.path.dirname(__file__)
+    filePath = os.path.join(fileDir, path)
+    filePath = os.path.abspath(os.path.realpath(filePath))
+    h = open(filePath, "wb")
+    with h as pdf:
+        for chunk in r.iter_content(chunk_size=1024):
+         if chunk:
+             pdf.write(chunk)
+    return "data/" + title
+
+
+
 import PyPDF2
 import io
 
@@ -82,6 +110,7 @@ from PyPDF2 import PdfFileReader
 
 
 for url in pdfs:
+    getPDFs(url, COUNTY)
     print("Scraping from" + url)
     r = requests.get(url)
     fi = io.BytesIO(r.content)
@@ -109,52 +138,7 @@ for link in links:
     soup = scraping(link)
     data = soup.find_all("p")
     for i in range(len(data)):
-        f.write(data[i].text)
-
-
-
-
-# from larimer county
-# In[3]:
-
-
-url="https://www.larimer.org/health/communicable-disease/coronavirus-covid-19/think-or-know-you-have-covid-19/covid-19-testing"
-page = urllib.request.urlopen(url)
-soup = BeautifulSoup(page, 'html.parser')
-print(soup)
-
-
-# In[23]:
-
-
-linksinfo=[]
-
-links= soup.find_all('a')
-content= soup.find_all('p')
-for i in content:
-    print((i.get_text()))
- 
-    
-links= soup.find_all('a')p
-for i in links:
-    linksinfo.append(i.get_text() + ": " + str(i.get('href')))
-    print(i.get_text())
-    print(i.get('href'))
-    
-linksinfo
-
-with open('larimer.txt','w') as outfile:
-    outfile.write("CONTENT" + "\n" + "\n")
-    for i in content:
-        print(i.get_text(), file=outfile)
-    outfile.write("\n" + "\n"+ "LINKS" + "\n" + "\n")
-   
-    for item in linksinfo:
-        print(item, file=outfile)
-
-
-# In[ ]:
-
+        f.write(data[i].get_text(separator = '\n'))
 
 
 
