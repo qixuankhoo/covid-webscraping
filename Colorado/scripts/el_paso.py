@@ -9,10 +9,14 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 import time
+import os
 
 
-f = open("../data/el_paso.txt", "w")
-#f = open("el_paso.txt", "w")
+COUNTY = "el_paso"
+fileDir = os.path.dirname(__file__)
+filePath = os.path.join(fileDir, "../data/el_paso.txt")
+filePath = os.path.abspath(os.path.realpath(filePath))
+f = open(filePath, 'w')
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
 driver = webdriver.Chrome(ChromeDriverManager().install(), options = chrome_options)
@@ -39,7 +43,8 @@ for url in urls:
     soup = scraping(url)
     data = soup.find_all("p")
     for i in range(len(data)):
-        f.write(data[i].text)
+        if "elpaso" in data[i] and "espanol" not in data[i]:
+            f.write(data[i].get_text(separator = '\n'))
 
 
 soup = scraping("https://www.elpasocountyhealth.org/")
@@ -61,13 +66,13 @@ for i in range(len(lister)):
 pdfs = []
 
 for i in range(len(newlister)):
-    soup = scraping(newlister[i])
-    data = soup.find_all("p")
     if ".pdf" in newlister[i]:
         pdfs.append(newlister[i])
-    else:
+    elif "elpaso" in newlister[i] and "espanol" not in newlister[i]:
+        soup = scraping(newlister[i])
+        data = soup.find_all("p")
         for i in range(len(data)):
-            f.write(data[i].text)        
+            f.write(data[i].get_text(separator = '\n'))        
 
             
 import PyPDF2
@@ -76,8 +81,28 @@ import io
 import requests
 from PyPDF2 import PdfFileReader
 
+path = "../data/" + COUNTY + "-PDF"
+fileDir = os.path.dirname(__file__)
+filePath = os.path.join(fileDir, path)
+filePath = os.path.abspath(os.path.realpath(filePath))
+os.makedirs(filePath, exist_ok=True)
+
+def getPDFs(file_url, county):
+    title = file_url.split('/').pop()
+    r = requests.get(file_url, stream = True)
+    path = "../data/" + COUNTY + "-PDF" + "/" + title
+    fileDir = os.path.dirname(__file__)
+    filePath = os.path.join(fileDir, path)
+    filePath = os.path.abspath(os.path.realpath(filePath))
+    h = open(filePath, "wb")
+    with h as pdf:
+        for chunk in r.iter_content(chunk_size=1024):
+         if chunk:
+             pdf.write(chunk)
+    return "data/" + title
 
 for url in pdfs:
+    getPDFs(url, COUNTY)
     print("Scraping from" + url)
     r = requests.get(url)
     fi = io.BytesIO(r.content)
