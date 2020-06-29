@@ -6,18 +6,16 @@ import time
 import os
 
 f = open("../data/woodbury.txt", "w")
-
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--headless')
+driver = webdriver.Chrome(ChromeDriverManager().install(), options = chrome_options)
 
 def scraping(url):
     print("Scraping from " + url)
     f.write("Scraping from " + url + "\n\n\n")
-    chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument('--headless')
-    driver = webdriver.Chrome(ChromeDriverManager().install(), options = chrome_options)
     driver.get(url)
     time.sleep(1)
     result = driver.execute_script("return document.documentElement.outerHTML")
-    driver.quit()
     return BeautifulSoup(result, 'html.parser')
     
 def findHref(data):
@@ -71,4 +69,5 @@ for link in links:
 
 
 f.close()
+driver.quit()
 print("finished")
