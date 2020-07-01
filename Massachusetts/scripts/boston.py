@@ -80,25 +80,10 @@ chrome_options.add_argument("--enable-javascript")
 chrome_options.add_argument("--start-maximized")
 directory = os.getcwd()[:-7] + "data/" + COUNTY + "-PDF"
 prefs = {"download.default_directory": 
-                        directory}
+                        directory} 
 chrome_options.add_experimental_option("prefs", prefs)
 driver = webdriver.Chrome(ChromeDriverManager().install(), options = chrome_options)
 
 
-
-# scrape from 'https://www.waynecounty.com/departments/hhvs/wellness/novel-coronavirus-information.aspx'
-soup = scraping('https://www.waynecounty.com/departments/hhvs/wellness/novel-coronavirus-information.aspx')
-div = soup.find('div', class_='ui basic vertical segment')
-for a_tag in div.find_all('a'):
-    print(a_tag)
-    link = a_tag.get('href')
-    if '.pdf' in link:
-        print(link)
-        if link[0] == '/': # valid
-            getPDFs('https://www.waynecounty.com' + link, 'wayne')
-
-situation_report = soup.select_one('strong .button')
-url = situation_report.get('href')
-saveScribdText(url)
 
 driver.quit() 

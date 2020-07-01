@@ -61,7 +61,7 @@ def downloadDocumentCloud(url):
 
     directory = os.getcwd()[:-7] + "data/" + COUNTY + "-PDF"
     prefs = {"download.default_directory": 
-                            directory} # IMPORTANT - ENDING SLASH V IMPORTANT}
+                            directory} 
     chrome_options.add_experimental_option("prefs", prefs)
     chrome_options.add_argument('--headless')
     chrome_options.add_argument("--enable-javascript")
