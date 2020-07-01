@@ -1,0 +1,687 @@
+
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7" manifest="default.appcache?v=1"><![endif]-->
+<!--[if lt IE 7 ]><html class="no-js ie6" lang="en"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7" lang="en"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8" lang="en"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head><title>
+	Cambridge Small Business COVID-19 Relief Grant - CDD - City of Cambridge, Massachusetts
+</title><meta charset="UTF-8" /><meta name="description" content="Learn more about the new Small Business COVID-19 Relief Grant" /><meta name="keywords" content="Small business, Cambridge, Massachusetts" /><meta name="author" content="City of Cambridge" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	
+	<script src="https://use.typekit.net/ile0gqp.js" type="text/javascript"></script>
+	<script>try { Typekit.load({ async: false }); } catch (e) { }</script>
+	
+	<link rel="stylesheet" media="all" href="/Layouts/CDD/_resources/css/global.css" /><link rel="stylesheet" media="all" href="/Layouts/CDD/_resources/css/jcarousel.css" /><link rel="stylesheet" media="all" href="/Layouts/DHSP/_sharedresources/css/jqueryui.css" /><link rel="stylesheet" media="all" href="/Layouts/CDD/_resources/css/qtip.css" /><link rel="Stylesheet" media="all" href="/Layouts/CDD/_resources/css/tablesorter.css" /><link rel="stylesheet" media="print" href="/Layouts/CDD/_resources/css/print.css" /><link rel="stylesheet" media="all" href="/Layouts/SharedPresentation/_resources/css/universal.css" />
+
+	<script src="/Layouts/CDD/_resources/js/modernizr.js"></script>
+	
+	<!-- For iPhone 4 --> 
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/Layouts/CDD/_resources/img/apple-touch-icon-114x114.png" />
+	<!-- For iPad 1--> 
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/Layouts/CDD/_resources/img/apple-touch-icon-72x72.png" />
+	<!-- For iPhone 3G, iPod Touch and Android --> 
+	<link rel="apple-touch-icon-precomposed" href="/Layouts/CDD/_resources/img/apple-touch-icon-precomposed.png" />
+	<!-- For Nokia --> 
+	<link rel="shortcut icon" href="/Layouts/CDD/_resources/img/favicon.png" /> 
+	<!-- For everything else --> 
+	<link rel="shortcut icon" href="/Layouts/CDD/_resources/img/favicon.ico" />
+	
+	<!--[if (gte IE 6)&(lte IE 8)]>
+		<link rel="stylesheet" media="all" href="/Layouts/CDD/_resources/css/ie-typekit-bug.css" />
+	<![endif]-->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
+    <script src="/Layouts/CDD/_resources/js/global.js"></script>
+    <script src="/Layouts/CDD/_resources/js/jquery.jcarousel.min.js"></script> 
+    <script src="/Layouts/CDD/_resources/js/jquery.qtip.min.js"></script>
+    <script src="/Layouts/CDD/_resources/js/jquery.tablesorter.min.js"></script> 
+    <script src="/Layouts/CDD/_resources/js/jquery.cookie.js"></script>
+    <script src="/Layouts/CDD/_resources/js/image-gallery.js"></script>
+    <script src="/Layouts/CDD/_resources/js/translate.js"></script>
+    <script src="/Layouts/SharedPresentation/_resources/js/universal.js"></script>
+<meta name="PageID" content="{4E349A1F-D122-402E-BAB1-51413FA41FCF}" /></head>
+<body id="body" class="col-3 ">
+<form method="post" action="/CDD/News/2020/3/smallbusinesscovid19reliefgrant" id="dotNET">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="Pc8V7GKOR/cwPirLcT7hCYeC7iAkWiFctaRQx6FJi8C713DAUBgcyJAxCb+KQ+jmaOh/6gkUUXNGeUUmShQkTRbqn/ihufiNxrUViOLsRexXMBFwayHS2ZXlonGhRachAkDz0I5WRnJC88aekkD3VoWfk0cd8AgU4+IW1e7j5cmcDbsUgnuO4lIO1D5OgX8nBvTtWjZaDq3LwB0feMBZib1gXcUbgBnzGRNuU3AZhGkz6wzoMft83gWtU8fjLh8kYCBjFPy4yyqN2WefoQnKCRXKT0GTolAnTU9IpyvbeyAxdPnTogNtvB5HS5PhZw4sWSDIdoqyRVzMlsxDag9WBEqKgofvBaZuLlseoupJMnuE/tjniTAnA3iAq3MBM5XuIFwgpjGDcUAQc26xlM3Ah9jIX0ym2gGm9gSzH1KdTDfSvYnLzHT5F4OHxNVAsAdAdb6wR2KPuPlKu+CGL2xAXDXghV0S6Ut4KE5n+nTSfeK1xEQK" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="4718798F" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="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" />
+</div>
+
+    
+
+
+
+<div id="alertBox" class="globalAlert" style="background-color: #d72524;font-size: 1.5rem;padding:5px 0;" data-alertName="COVID-19">
+    <div style="text-align: center;">
+        <a href="https://www.cambridgema.gov/covid19" style="color: White;"><span style="text-transform: uppercase;font-weight:  bold;">Informational Alert</span> | Coronavirus Updates</a>
+    </div>
+
+    <div id="ctl20_divDeptOpeningText" class="deptOpeningText" style="background-color:white;text-align:center;padding:10px;font-size:1.0rem;"><strong>NOTICE:</strong> CDD is open to the public, by appointment only, on <strong>Mondays and Wednesdays from 9:00 a.m. to 4:30 p.m.</strong> Appointments are available for affordable housing, zoning, business and entrepreneurship, Cambridge Energy Alliance, or general planning matters. If you need to meet with a specific person, please contact them directly to schedule an appointment. Housing appointments can be made by phone at <strong>617-349-4622</strong> or by email at <strong><a href="mailto:housing@cambridgema.gov">housing@cambridgema.gov</a></strong>. Appointments for all other CDD matters can be made by phone at <strong>617-349-4600</strong> or by email at <strong><a href="mailto:CDDat344@cambridgema.gov">CDDat344@cambridgema.gov</a></strong>.</div>
+</div>
+
+
+    <div id="pageContainer">
+
+
+
+<div class="outer-wrapper">
+
+
+
+
+<section class="wrapper">
+	<header role="banner"> 
+		
+		<a class="brand" href="/CDD">Cambridge CDD @ 344</a>
+		
+		<ul class="accessibility">
+			<li><a href="#content" tabindex="1" accesskey="2">Skip to main content</a></li>
+			<li><a href="#nav" accesskey="3">Skip to navigation</a></li>
+			<li><a href="#" accesskey="1">Return to homepage</a></li>
+		</ul>
+	</header>	
+	<section class="content"> 
+		<section class="primary" role="main" id="content">
+
+	<article class="pretext">
+		<ul id="breadcrumbs">
+	<li><a href="/CDD" title="CDD">CDD</a>&gt;
+	</li>
+	<li><a href="/CDD/News" title="News">News</a>&gt;
+	</li>
+	<li>Small Business COVID-19 Relief Grant</li>
+
+</ul>
+		<h1>
+	Cambridge Small Business COVID-19 Relief Grant
+</h1><h2>
+
+</h2><p><br /><strong>4/1/2020</strong></p>
+		
+		<h2>		</h2>
+<p>The Small Business COVID-19 Relief Grant Program is a special program helping Cambridge&rsquo;s U.S. Department of Housing and Urban Development (or HUD) eligible retail, food, personal services, and creative for-profit businesses with a grant up to $6,000 per <span style="text-decoration: underline;">brick and mortar business</span>. The program provides short-term working capital assistance to enable the viability of the business and the retention of jobs during the severe interruption of business related to the impact of COVID-19 pandemic and resulting social distancing. </p>
+<p><span>Grant applications are only available starting March 26, 2020 until May 1, 2020 at 12:00 p.m. EDT. </span><span>We will prioritize businesses that were more severely affected by the state and local closures. We have received many applications. There is no guarantee that you will a grant.</span></p>
+<p><span style="font-weight: bold;">As of April 15, 2020, we are fully subscribed, but will hold new applications in case there is an additional funding round.</span></p>
+<p><span style="font-weight: bold;">May 1, 2020, 12:00 p.m. - The grant program has closed.</span></p>
+<p><strong><a href="/CDD/econdev/smallbusinessassistance/smallbusinessprograms/eligibilityguidelines">Click here to check your business's eligibility for the program.</a></strong></p>
+<h3>Grant Overview</h3>
+<p>
+The COVID-19 Relief Grant Program must help contribute to a small business's ability to remain open and with employee retention. Each completed grant application will be reviewed on a case by case basis.&nbsp;<br />
+<br />
+Grant applicants may apply for one or more eligible working capital assistance:</p>
+<ol>
+    <li>Paying for commercial mortgage, rent and other bills (utilities, accounts payable)</li>
+    <li>Employee wages</li>
+    <li>Resources to get business established online (for example, a business needed to revamp website to make delivery available to customers)</li>
+    <li>Perishable inventory that was lost due to an interruption of business&nbsp;</li>
+</ol>
+<p>
+Other items may be allowed upon review by city staff and HUD. This grant <strong><span style="text-decoration: underline;">cannot</span></strong> be used for any construction-related work for your business (e.g. painting, electrical, plumbing, or carpentry). <a href="/CDD/econdev/smallbusinessassistance/smallbusinessprograms/smallbusinessenhancementprogram">If you are interested in a grant for new equipment or interior improvements, click here.&nbsp;</a></p>
+<p>Businesses that are already participating in other city grant programs can still apply to the COVID-19 Relief Grant Program.&nbsp;&nbsp;</p>
+<h3>
+Grant Guidelines &amp; Requirements&nbsp;</h3>
+<ol>
+    <li><strong>Applicants must meet the HUD Eligibility Requirements in order to apply and participate in the Small Business COVID-19 Relief Grant Program.</strong> <a href="/CDD/econdev/smallbusinessassistance/smallbusinessprograms/eligibilityguidelines">Click here to check your eligibility</a>. If you are not sure if you are eligible, please contact Pardis Saffari at&nbsp;<a href="mailto:psaffari@cambridgema.gov">psaffari@cambridgema.gov</a>&nbsp;to confirm.&nbsp;</li>
+    <li>Your brick and mortar business must have been adversely affected by the COVID-19 Social Distancing Measures (e.g. you closed your business, had to lay people off). Priority will be given to businesses that were required to completely close down their business by order of the Governor.</li>
+    <li>A DUNS number (<a rel="noopener noreferrer" rel="noopener noreferrer" href="https://www.dnb.com/duns-number.html" target="_blank">click here to register for one</a>)</li>
+    <li>Provide a copy of your lease or mortgage/tax bill</li>
+    <li>Provide four (4) weeks of pay roll (if grant funds will be going towards payroll)</li>
+    <li>Provide copies of accounts payable bills (if grant funds will be going towards loss inventory)</li>
+    <li>Complete the full grant application and agree to complete a post-grant survey that will be given to you six (6) months after you receive the grant.&nbsp;</li>
+</ol>
+<p>
+Note: The use and possession of cannabis is illegal under federal law for any purpose.  Although cannabis businesses are permitted in the City of Cambridge, the Small Business COVID-19 Relief Grant is a federally funded program by the U.S. Department of Housing and Urban Development, therefore cannabis businesses are not eligible for the program.</p>
+<h3>Grant Criteria</h3>
+<p> These criteria fall in line with HUD-requirements and the City&rsquo;s Community Development Block Grant (CDBG) Comprehensive Plan. <em>Please note, that even a business that meets these criteria is not guaranteed to receive a grant due to funding constraints of this program. </em></p>
+<p><a rel="noopener noreferrer" rel="noopener noreferrer" href="https://www.cambridgema.gov/CDD/econdev/smallbusinessassistance/smallbusinessprograms/eligibilityguidelines " target="_blank"><strong>Your brick and mortar business must be HUD eligible (required)</strong></a>. Once your business is confirmed HUD eligible, the following criteria will be reviewed: </p>
+<ul>
+    <li><strong>Ownership</strong><br />
+    -Women owned (1 point) <br />
+    -Minority owned (1 point) <br />
+    -Women and minority owned (2 points) </li>
+</ul>
+<ul>
+    <li><strong>Type of business </strong><br />
+    - Brick and mortar, local, for-profit retail, restaurant, and personal services (e.g. hair salon or massage) business open to the public (4 points) <br />
+    - Brick and mortar, local, for-profit business that is open for appointment or special services (e.g., medical services, insurance, real estate, construction, day care) - (2 points) <br />
+    - Business to Business (B2B) Establishment (1 point)</li>
+</ul>
+<ul>
+    <li><strong>COVID-19 Impact</strong></li>
+</ul>
+<p><span style="white-space: pre;">	</span>&nbsp;- Sales &ndash; greater than 25% decrease in sales from a similar time frame to the previous year (2 points)&nbsp;</p>
+<p><span style="white-space: pre;">	</span>- Loss of employees (1 point)</p>
+<p>
+<strong>Click here for the Small Business COVID-19 Relief Grant Application</strong></p>
+<h2>
+For More Information</h2>
+<p>
+If you have questions about the Small Business COVID-19 Small Business Relief Grant, please contact Pardis Saffari at <a href="mailto:psaffari@cambridgema.gov?subject=Small%20Business%20COVID-19%20Relief%20Grant">psaffari@cambridgema.gov.</a> </p>
+		
+	</article>
+
+		</section>
+		<!-- /.primary -->
+
+		<section class="secondary" role="complementary">
+		
+
+
+			<h2>
+	<a href="/CDD/News" title="News">News
+	</a>
+</h2><ul class="nav">
+
+</ul>
+            
+            <div class="container">
+				
+            </div>
+			<div class="container">
+			
+				
+				
+				
+				
+				
+			</div>
+
+
+		</section>
+		<!-- /.secondary -->
+
+
+
+		<section class="tertiary">
+            
+
+			<aside class="info form">
+				<h2>Quick Links</h2>
+				<fieldset>
+					<fieldset class="info">
+					<ol>
+						<li>
+							<label for="Tertiary_ctl00_ctl00_ddl">I'd like to learn more about…</label><select name="ctl00$Tertiary$ctl00$ctl00$ddl" id="Tertiary_ctl00_ctl00_ddl" class="jumpmenu">
+	<option value="">Select a Topic</option>
+	<option value="/CDD/climateandenergy/municipalsustainability/citybuildings/344broadway">344 Broadway Green Building</option>
+	<option value="/CDD/housing/forapplicants">Apply for Housing</option>
+	<option value="/CDD/Transportation/gettingaroundcambridge/bikesincambridge">Biking</option>
+	<option value="/CDD/federalgrants">Block Grant (CDBG)</option>
+	<option value="/CDD/econdev/smallbusinessassistance/Workshops">Business Development Workshops</option>
+	<option value="/CDD/externallinks/CEA">Cambridge Energy Alliance</option>
+	<option value="/CDD/Transportation/programs/currentprograms/electricvehicles">Electric Vehicle Charging</option>
+	<option value="/CDD/parks/farmersmarkets">Farmers Markets</option>
+	<option value="/CDD/econdev/smallbusinessassistance/Sitefinder">Find Commercial Space</option>
+	<option value="/CDD/zoninganddevelopment/sustainablebldgs">Green Buildings - LEED</option>
+	<option value="/CDD/planud/masterplan/growthpolicy">Growth Policy</option>
+	<option value="/CDD/parks/osplanning/healthy">Healthy Playgrounds</option>
+	<option value="/CDD/housing/forhomeowners">Home Owner Assistance</option>
+	<option value="/CDD/housing/forhomebuyers">Homebuyer Assistance</option>
+	<option value="/CDD/housing/forhomebuyers/education">Homebuyer Classes</option>
+	<option value="/~/media/Files/CDD/FactsandMaps/profiles/demo_profile_housing_2016.pdf">Housing Statistics</option>
+	<option value="/CDD/climateandenergy/municipalsustainability/streetlighting">LED Street Lights</option>
+	<option value="/CDD/factsandmaps/mapgalleries">Maps</option>
+	<option value="/CDD/planud/neighborhoodorganizations">Neighborhood Organizations</option>
+	<option value="/CDD/econdev/smallbusinessassistance/permittingresources">Obtaining Business Permits</option>
+	<option value="/CDD/zoninganddevelopment/planningboard">Planning Board</option>
+	<option value="/CDD/factsandmaps/populationdata">Population Statistics</option>
+	<option value="/CDD/Transportation/fordevelopers/ptdm">PTDM Ordinance</option>
+	<option value="/CDD/zoninganddevelopment/Signs">Sign Certifications</option>
+	<option value="/CDD/zoninganddevelopment/specialpermits">Special Permits</option>
+	<option value="/CDD/otherpages/startuptypes/typeofbusiness">Start Up Assistance</option>
+	<option value="/CDD/factsandmaps/economicdata/top25employers">Top 25 Employers</option>
+	<option value="/CDD/planud/institutionalplanning">Town Gown Reports</option>
+	<option value="/CDD/Transportation/programs/trafficcalmingprogram">Traffic Calming Program</option>
+	<option value="/home/CDD/Transportation/gettingaroundcambridge/byfoot.aspx">Walking</option>
+	<option value="/CDD/zoninganddevelopment/Zoning">Zoning</option>
+
+</select>
+						</li>
+						<li>
+							<label for="Tertiary_ctl00_ctl01_ddl">Neighborhood or Square</label><select name="ctl00$Tertiary$ctl00$ctl01$ddl" id="Tertiary_ctl00_ctl01_ddl" class="jumpmenu">
+	<option value="">Select One</option>
+	<option value="/CDD/planud/neighplan/neighs/1">1 - East Cambridge</option>
+	<option value="/CDD/planud/neighplan/neighs/2">2 - Area 2/MIT</option>
+	<option value="/CDD/planud/neighplan/neighs/3">3 - Wellington Harrington</option>
+	<option value="/CDD/planud/neighplan/neighs/4">4 - The Port/Area Four</option>
+	<option value="/CDD/planud/neighplan/neighs/5">5 - Cambridgeport</option>
+	<option value="/CDD/planud/neighplan/neighs/6">6 - Mid-Cambridge</option>
+	<option value="/CDD/planud/neighplan/neighs/7">7 - Riverside</option>
+	<option value="/CDD/planud/neighplan/neighs/8">8 - Agassiz</option>
+	<option value="/CDD/planud/neighplan/neighs/9">9 - Neighborhood Nine</option>
+	<option value="/CDD/planud/neighplan/neighs/10">10 - West Cambridge</option>
+	<option value="/CDD/planud/neighplan/neighs/11">10 - North Cambridge</option>
+	<option value="/CDD/planud/neighplan/neighs/12">12 - Cambridge Highlands</option>
+	<option value="/CDD/planud/neighplan/neighs/13">13 - Strawberry Hill</option>
+	<option value="/CDD">-----------------------</option>
+	<option value="/CDD/econdev/aboutcambridge/centralsq">Central Square</option>
+	<option value="/CDD/econdev/aboutcambridge/eastcamb">East Cambridge Commercial District</option>
+	<option value="/CDD/econdev/aboutcambridge/freshpond">Fresh Pond &amp; Alewife</option>
+	<option value="/CDD/econdev/aboutcambridge/harvardsq">Harvard Square</option>
+	<option value="/CDD/econdev/aboutcambridge/inmansq">Inman Square</option>
+	<option value="/CDD/econdev/aboutcambridge/kendallsq">Kendall Square</option>
+	<option value="/CDD/econdev/aboutcambridge/portersq">Porter Square &amp; Upper Mass Ave</option>
+
+</select>
+						</li>
+						<li>
+							<label for="Tertiary_ctl00_ctl02_ddl">Current Projects…</label><select name="ctl00$Tertiary$ctl00$ctl02$ddl" id="Tertiary_ctl00_ctl02_ddl" class="jumpmenu">
+	<option value="">Select One</option>
+	<option value="http://envision.cambridgema.gov/">Envision Cambridge</option>
+	<option value="/CDD">-------------------------------------</option>
+	<option value="/CDD">Climate Projects</option>
+	<option value="/CDD/Projects/Climate/climatechangeresilianceandadaptation">Vulnerability Assessment</option>
+	<option value="/CDD">-------------------------------------</option>
+	<option value="/CDD">Economic Development</option>
+	<option value="/CDD/econdev/retailstrategyproject">Retail Strategy Project</option>
+	<option value="/CDD">-------------------------------------</option>
+	<option value="/CDD">Housing Projects</option>
+	<option value="/CDD/Projects/Housing/concordhighlands">Finch Cambridge</option>
+	<option value="/CDD/Projects/Housing/inclusionaryhousingstudy">Inclusionary Housing Zoning Petition</option>
+	<option value="/CDD/Projects/Housing/jeffersonparkstate">Jefferson Park - State</option>
+	<option value="/CDD/Projects/Housing/harvardst131portlanding">Port Landing</option>
+	<option value="/CDD/Projects/Housing/putnamsquare2mtauburn">Putnam Square - 2 Mt Auburn Street</option>
+	<option value="/CDD">-------------------------------------</option>
+	<option value="/CDD">Parks Projects</option>
+	<option value="/CDD/Projects/Parks/cambridgeportschoolplayground">Cambridgeport School</option>
+	<option value="/CDD/Projects/Parks/ecambkendallparks">Eastern Cambridge - Kendall Sq Parks</option>
+	<option value="/CDD/Projects/Parks/haggertyschoolplayground">Haggerty School Playground</option>
+	<option value="/CDD/Projects/Parks/hsquarepublicspace">Harvard Square Kiosk and Plaza</option>
+	<option value="/CDD/Projects/Parks/hurleystreetpark">Hurley Street Park</option>
+	<option value="/CDD/Projects/Parks/pembertonstreetdogrun">Giacobbe Dog Run</option>
+	<option value="/CDD/Projects/Parks/sacramentofield">Sacramento Field</option>
+	<option value="/CDD">-------------------------------------</option>
+	<option value="/CDD">Planning Projects</option>
+	<option value="/CDD/Projects/Planning/cambridgeneedsassessment">Cambridge Needs Assessment</option>
+	<option value="/CDD/Projects/Planning/cherrystreetlot">35 Cherry Street Lot</option>
+	<option value="/CDD/Projects/Planning/coolidgepllanddisposition">Coolidge Place Land Disposition</option>
+	<option value="/CDD/Projects/EconDev/foundrybuilding">Foundry Building</option>
+	<option value="/CDD/Projects/Planning/K2C2">Kendall Square Central Square Planning Study (K2C2)</option>
+	<option value="/CDD/Projects/EconDev/lightingordinancetaskforce">Outdoor Lighting Ordinance Task Force</option>
+	<option value="/CDD/Projects/Planning/lowermassave">Lower Massachusetts Avenue</option>
+	<option value="/CDD/Projects/Planning/urbanagriculturetaskforce">Urban Agriculture Task Force</option>
+	<option value="/CDD/Projects/Planning/brooklinewatsonlot">Watson Street Lot</option>
+	<option value="/CDD">-------------------------------------</option>
+	<option value="/CDD">Street Sidewalk and Pathway Projects</option>
+	<option value="/CDD/Projects/Transportation/cambridgecommon">Cambridge Common/Flaggstaff Park Project</option>
+	<option value="/CDD/Projects/Transportation/grandjunctionpathway">Grand Junction Multi-use Path</option>
+	<option value="/CDD/Projects/Transportation/mtauburnstreetbusprioritydemonstration">Mt Auburn Street Bus Priority Pilot Information</option>
+	<option value="/CDD/Projects/Transportation/huronavenuereconstruction">Huron Avenue Reconstruction</option>
+	<option value="/CDD/Projects/Transportation/kendallsquaremobilitytaskforce">Kendall Square Mobility Task Force</option>
+	<option value="/CDD/Projects/Transportation/watertowncambridgegreenway">Watertown-Cambridge Greenway</option>
+	<option value="/CDD/Projects/Transportation/waverlystextension">Waverly St Extension and Path</option>
+	<option value="/CDD/Projects/Transportation/westernavenue">Western Avenue</option>
+	<option value="/CDD">-------------------------------------</option>
+	<option value="/CDD/Transportation/programs/trafficcalmingprogram">Traffic Calming Program</option>
+	<option value="/CDD/Projects/trafficcalming/irvingandscottstreets">Irving and Scott Streets</option>
+	<option value="/CDD/Projects/trafficcalming/longfellowroadtcalm">Longfellow Road</option>
+	<option value="/CDD/Projects/trafficcalming/secondstreet">Second Street Traffic Calming</option>
+	<option value="/CDD/Projects/trafficcalming/waterhousestreet">Waterhouse Street</option>
+
+</select>
+						</li>
+					</ol>
+					</fieldset>
+				</fieldset>			
+			</aside>
+			
+            
+            
+		            <aside>
+			            <h2></h2>
+			            <p style="text-align: center;"><a href="/CDD/cddlocatormap#map"><img alt="City map with location of CDD offices" src="/-/media/Images/CDD/maps/rightrailmap/CDDThumbnailFont12.jpg?h=146&amp;w=195" style="height: 146px; width: 195px;" /></a></p>
+<strong><a href="/CDD/cddlocatormap#map">
+<h4 style="text-align: center;">Click the Map to <br />
+Explore Cambridge</h4>
+</a></strong>
+		            </aside>	
+                
+
+            
+            
+		            <aside>
+			            <h2 style="text-align: center; margin: 0px 0px 1em; padding: 0px 0px 2px; border-width: 0px 0px 1px; border-top-style: initial; border-right-style: initial; border-bottom-style: solid; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-bottom-color: #839502; border-left-color: initial; border-image: initial; color: #003366; font-family: myriad-pro, Arial, Helvetica, sans-serif; background-color: #ffffff;">A 5-STAR Community&nbsp;<br />
+and National Leader in Sustainability</h2>
+<br />
+<br />
+
+<p style="text-align: center;"><a href="/CDD/starcommunities"><img alt="STAR Communities 5 star logo" src="/-/media/Images/CDD/starcommunities/star_seal_5star_for_web.jpg?h=185&amp;w=185" style="height: 185px; width: 185px;" /></a></p>
+<br />
+<br />
+<p style="text-align: center;"><a href="/CDD/translate"><img width="194" height="76" style="border: 1px solid #000000; height: 76px; width: 194px;" alt="Google Translate Promo" src="/-/media/Images/City/homepagepromos/googletranslation.png?h=76&amp;w=194" /></a></p>
+		            </aside>	
+                
+				
+			
+
+			<aside class="contact">
+				<h2>Community Development</h2>
+				<div class="fn vcard">
+				
+					<p class="contact">
+						<span class="given-name"><strong>Iram</strong></span> <span class="family-name"><strong>Farooq</strong></span><br />
+						<span class="title">Assistant City Manager for Community Development</span>
+						<span class="email"><a class="email" href="mailto:"></a></span>
+					</p>
+					
+					<p class="adr">
+						<span class="street-address">344 Broadway</span><br />
+						<span class="locality">Cambridge, MA</span> <span class="zipcode">02139</span>
+						<a class="city-map" href="/CDD/Directions.aspx" title="map">Directions &amp; Map</a>
+					</p>
+				
+					<p class="phone">
+						<abbr title="Telephone">Phone</abbr>: <a class="tel" href="callto:1-617-349-4600">617/349-4600</a><br />
+                        <abbr title="FAX">FAX</abbr>: <a class="tel" href="callto:617/349-4669">617/349-4669</a><br />
+						<abbr title="Text Telephone">TTY</abbr>: <a class="tel" href="callto:1-617-349-4621">617/349-4621</a>
+					</p>
+					
+					<p class="hours">
+						<h3>Hours of Service</h3>
+						Mon:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8:30 A. M. to 8:00 P. M.
+<br>
+T/W/Th: 8:30 A. M. to 5:00 P. M.
+<br>
+Fri:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8:30 A. M. to Noon
+					</p>
+										
+				</div>
+				<h3>Email Us</h3> <p><a href="mailto:cddat344@cambridgema.gov">cddat344@cambridgema.gov</a></p>
+
+				
+				<ul class="social">				
+				<li>
+				<li><a href="http://www.facebook.com/CDDat344" class="facebook">Facebook</a></li>
+				</li><li>
+				<li><a href="https://twitter.com/CDDat344" class="twitter">twitter</a></li>
+				</li><li>
+				<li><a href="http://cddat344.tumblr.com/" class="tumblr">Cambridge Community Development Department on Tumblr</a></li>
+				</li><li>
+				<li><a href="http://instagram.com/cddat344" class="instagram">Cambridge Community Development Department on Instagram</a></li>
+				</li>
+				</ul>
+				
+					
+			</aside>	
+	
+
+		</section>
+
+
+		
+		<footer role="contentinfo">
+		<ul class="meta">
+		
+			<li>
+				<h2>About CDD</h2>		
+				<ul>
+		
+					<li><a href="/CDD/aboutthedepartment">About the Department</a></li>	
+		
+					<li><a href="/CDD/Administration">Administration</a></li>	
+		
+					<li><a href="/CDD/Awards">Awards</a></li>	
+		
+					<li><a href="/CDD/contactus">Contact Us</a></li>	
+		
+					<li><a href="/CDD/federalgrants">Federal Grants</a></li>	
+		
+					<li><a href="/CDD/Forms">Forms</a></li>	
+		
+					<li><a href="/CDD/Projects/Glocal/glocal201620171">Glocal Challenge</a></li>	
+		
+					<li><a href="/CDD/Internships">Internships</a></li>	
+		
+					<li><a href="/CDD/Projects/Transportation/parkingday">PARKing Day</a></li>	
+		
+					<li><a href="/CDD/publications">Publications</a></li>	
+		
+					<li><a href="/CDD/sitemap">Site Map</a></li>	
+		
+				</ul>
+			</li>
+		
+			<li>
+				<h2>Frequently Visited</h2>		
+				<ul>
+		
+					<li><a href="/CDD/externallinks/applyforhousing">Apply for Housing</a></li>	
+		
+					<li><a href="/CDD/zoninganddevelopment/planningboard">Planning Board</a></li>	
+		
+					<li><a href="/CDD/zoninganddevelopment/Zoning">Zoning</a></li>	
+		
+					<li><a href="/CDD/econdev/smallbusinessassistance/smallbusinessprograms">Small Business Programs</a></li>	
+		
+					<li><a href="/CDD/externallinks/CEA">Cambridge Energy Alliance</a></li>	
+		
+					<li><a href="/CDD/externallinks/pedestrianprograms">Pedestrian Programs</a></li>	
+		
+				</ul>
+			</li>
+		
+			<li>
+				<h2>Divisions</h2>		
+				<ul>
+		
+					<li><a href="/CDD/externallinks/divisionpages/communityplanning">Community Planning</a></li>	
+		
+					<li><a href="/CDD/econdev">Economic Development</a></li>	
+		
+					<li><a href="/CDD/externallinks/divisionpages/environmentalandtransportationplanning">Environmental and Transportation Planning</a></li>	
+		
+					<li><a href="/CDD/housing">Housing</a></li>	
+		
+					<li><a href="/CDD/zoninganddevelopment">Zoning and Development</a></li>	
+		
+				</ul>
+			</li>
+		
+			<li>
+				<h2>Boards and Cmtes.</h2>		
+				<ul>
+		
+					<li><a href="/CDD/zoninganddevelopment/planningboard">Planning Board</a></li>	
+		
+					<li><a href="/CDD/housing/housingtrust">Affordable Housing Trust</a></li>	
+		
+					<li><a href="/CDD/Transportation/forthepublic/bicyclecomm">Bicycle Committee</a></li>	
+		
+					<li><a href="/CDD/zoninganddevelopment/CRA">Cambridge Redevelopment Authority</a></li>	
+		
+					<li><a href="/CDD/zoninganddevelopment/advcomms/centraladvcomm">Central Square Advisory Committee</a></li>	
+		
+					<li><a href="/CDD/climateandenergy/climatechangeplanning/climateprotectionactioncommittee">Climate Protection Action Committee</a></li>	
+		
+					<li><a href="/CDD/zoninganddevelopment/advcomms/harvardadvcomm">Harvard Square Advisory Committee</a></li>	
+		
+					<li><a href="/CDD/zoninganddevelopment/advcomms/lechmerecanalpark">Lechmere Canal Park Committee</a></li>	
+		
+					<li><a href="/CDD/Transportation/forthepublic/pedestriancomm">Pedestrian Committee</a></li>	
+		
+					<li><a href="/CDD/Transportation/forthepublic/transitadvisorycommittee">Transit Advisory Committee</a></li>	
+		
+				</ul>
+			</li>
+		
+			<li>
+				<h2>Maps</h2>		
+				<ul>
+		
+					<li><a href="/CDD/factsandmaps/mapgalleries/censusbounds">Census Boundary Map Gallery</a></li>	
+		
+					<li><a href="/CDD/factsandmaps/mapgalleries/commdistricts">Commercial Districts Map Gallery</a></li>	
+		
+					<li><a href="/CDD/factsandmaps/mapgalleries/neighborhood">Neighborhood Map Gallery</a></li>	
+		
+					<li><a href="/CDD/factsandmaps/mapgalleries/openspace">Open Space Map Gallery</a></li>	
+		
+					<li><a href="/CDD/factsandmaps/mapgalleries/transportation">Transportation Map Gallery</a></li>	
+		
+					<li><a href="/CDD/factsandmaps/mapgalleries/zoning">Zoning Map Gallery</a></li>	
+		
+					<li><a href="/CDD/factsandmaps/mapgalleries/othermaps">Other Maps</a></li>	
+		
+				</ul>
+			</li>
+		
+			<li>
+				<h2>Facts</h2>		
+				<ul>
+		
+					<li><a href="/CDD/factsandmaps/demographicfaq">Demographic FAQ</a></li>	
+		
+					<li><a href="/CDD/externallinks/Profiles/demographicprofile">Demographic and Statistical Profile</a></li>	
+		
+					<li><a href="/CDD/developmentlog">Development Log</a></li>	
+		
+					<li><a href="/CDD/externallinks/Profiles/housingprofile">Housing Profile</a></li>	
+		
+					<li><a href="/CDD/externallinks/Profiles/neighborhoodprofile">Neighborhood Profile</a></li>	
+		
+					<li><a href="/CDD/factsandmaps/populationdata">Population Data</a></li>	
+		
+					<li><a href="/CDD/externallinks/sustainabilitydashboard">Sustainability Dashboard</a></li>	
+		
+					<li><a href="/CDD/factsandmaps/economicdata/top25employers">Top 25 Employers</a></li>	
+		
+					<li><a href="/CDD/planud/institutionalplanning/recenttowngown">Town Gown Reports</a></li>	
+		
+				</ul>
+			</li>
+		
+		</ul>
+		</footer>		
+		
+		
+	</section>
+	<!-- /#content -->
+
+	
+	<nav role="navigation">
+			<ul id="nav">
+		
+		
+			<li id="nav-climate" >
+				<a href="/CDD/climateandenergy">Climate and Energy</a>
+		<ul><li><a href="/CDD/climateandenergy/greenhousegasemissions">Greenhouse Gas Emissions</a></li><li><a href="/CDD/climateandenergy/energyefficiencyandrenewableenergy">Energy Efficiency and Renewable Energy</a></li><li><a href="/CDD/climateandenergy/climatechangeplanning">Climate Change Planning</a></li><li><a href="/CDD/climateandenergy/greenbuildings">Green Buildings in Cambridge</a></li><li><a href="/CDD/climateandenergy/electricvehicles">Electric Vehicles</a></li><li><a href="/CDD/climateandenergy/municipalsustainability">Municipal Sustainability</a></li><li><a href="/CDD/climateandenergy/gettinginvolved">Getting Involved</a></li><li><a href="/CDD/climateandenergy/resources">Resources</a></li><li><a href="/CDD/climateandenergy/contactus">Contact Us</a></li></ul>
+			</li>
+		
+		
+			<li id="nav-economic" >
+				<a href="/CDD/econdev">Economic Development</a>
+		<ul><li><a href="/CDD/econdev/why_cambridge">Why Do Business in Cambridge</a></li><li><a href="/CDD/econdev/lifesciencesandtechnologybusinesses">Life Sciences and Technology</a></li><li><a href="/CDD/econdev/smallbusinessassistance">Small Business Assistance</a></li><li><a href="/CDD/econdev/cannabisbusinesspermit">Cannabis Business Permit</a></li><li><a href="/CDD/econdev/foodtruckvendingincambridge">Food Truck Vending in Cambridge</a></li><li><a href="/CDD/econdev/vacantstorefrontresources">Vacant Storefront Initiative</a></li><li><a href="/CDD/econdev/retailstrategyproject">Retail Strategy Project</a></li><li><a href="/CDD/econdev/aboutcambridge">About Cambridge Commercial Districts</a></li><li><a href="/CDD/econdev/contactus">Contact Us</a></li></ul>
+			</li>
+		
+		
+			<li id="nav-facts" >
+				<a href="/CDD/factsandmaps">Facts and Maps</a>
+		<ul><li><a href="/CDD/factsandmaps/mapgalleries">Map Collections</a></li><li><a href="/CDD/factsandmaps/demographicfaq">Demographics and Statistics FAQ</a></li><li><a href="/CDD/factsandmaps/reportsandpublications">Reports & Presentations</a></li><li><a href="/CDD/factsandmaps/economicdata">Business and Labor Force Data</a></li><li><a href="/CDD/factsandmaps/educationdata">Education Data</a></li><li><a href="/CDD/factsandmaps/populationdata">Population and Census Data</a></li><li><a href="/CDD/factsandmaps/transportationdata">Transportation Data</a></li><li><a href="/CDD/factsandmaps/othercitydatasources">Other Data Sources</a></li><li><a href="/CDD/factsandmaps/otherstats">Statistics Elsewhere on the Web</a></li><li><a href="/CDD/factsandmaps/mappingtools">Mapping Tools</a></li><li><a href="/CDD/factsandmaps/sustainabilitydashboard">Sustainability Dashboard</a></li><li><a href="/CDD/factsandmaps/contactus">Contact Us</a></li></ul>
+			</li>
+		
+		
+			<li id="nav-housing" >
+				<a href="/CDD/housing">Housing</a>
+		<ul><li><a href="/CDD/housing/housingdevelopment">Housing Development and Preservation</a></li><li><a href="/CDD/housing/forapplicants">For Applicants</a></li><li><a href="/CDD/housing/forhomebuyers">For Homebuyers</a></li><li><a href="/CDD/housing/forhomeowners">For Homeowners</a></li><li><a href="/CDD/housing/forrenters">For Renters</a></li><li><a href="/CDD/housing/inclusionaryhousing">Inclusionary Housing</a></li><li><a href="/CDD/housing/fordevelopersandpropmanagers">For Developers and Property Managers</a></li><li><a href="/CDD/housing/multifamilyowners">For Owners of Multi-Family Properties</a></li><li><a href="/CDD/housing/housingtrust">Affordable Housing Trust</a></li><li><a href="/CDD/housing/resourcesandadditionalinformation">Resources and Additional Information</a></li><li><a href="/CDD/housing/contactus">Housing Staff</a></li></ul>
+			</li>
+		
+		
+			<li id="nav-parks" >
+				<a href="/CDD/parks">Parks and Playgrounds</a>
+		<ul><li><a href="/CDD/parks/parksplaygroundsfaq">Parks and Playgrounds FAQ</a></li><li><a href="/CDD/parks/openspacemapgallery">Open Space Map Gallery</a></li><li><a href="/CDD/parks/parksmap">Parks and Playgrounds Interactive Map</a></li><li><a href="/CDD/parks/waterplaymap">Waterplay Map</a></li><li><a href="/CDD/parks/parksinfo">Park Information</a></li><li><a href="/CDD/parks/permits">Permits and Maintenance</a></li><li><a href="/CDD/parks/parksprojects">Park Projects</a></li><li><a href="/CDD/parks/osplanning">Open Space Planning</a></li><li><a href="/CDD/parks/privatelyownedpublicspaces">Privately Owned Public Spaces</a></li><li><a href="/CDD/parks/parksandplaygroundsguide">Parks and Playgrounds Guide</a></li><li><a href="/CDD/parks/farmersmarkets">Farmers Markets</a></li><li><a href="/CDD/parks/contactus">Contact Us</a></li></ul>
+			</li>
+		
+		
+			<li id="nav-planning" >
+				<a href="/CDD/planud">Planning & Urban Design</a>
+		<ul><li><a href="/CDD/planud/masterplan">Comprehensive Planning</a></li><li><a href="/CDD/planud/urbandesignprimer">Urban Design</a></li><li><a href="/CDD/planud/planningstudies">Planning Studies</a></li><li><a href="/CDD/planud/neighplan">Neighborhood Planning and Information</a></li><li><a href="/CDD/planud/neighborhoodorganizations">Neighborhood Organizations</a></li><li><a href="/CDD/planud/communitymeetingspace">Community Meeting Space</a></li><li><a href="/CDD/planud/institutionalplanning">Institutional Planning</a></li><li><a href="/CDD/planud/contactus">Contact Us</a></li></ul>
+			</li>
+		
+		
+			<li id="nav-transportation" >
+				<a href="/CDD/Transportation">Transportation</a>
+		<ul><li><a href="/CDD/Transportation/gettingaroundcambridge">Getting Around Cambridge</a></li><li><a href="/CDD/Transportation/rulesoftheroad">Rules of the Road</a></li><li><a href="/CDD/Transportation/CitySmart">CitySmart</a></li><li><a href="/CDD/Transportation/programs">Planning and Programs</a></li><li><a href="/CDD/Transportation/projects">Street, Sidewalk and Path Projects</a></li><li><a href="/CDD/Transportation/regionalplanning">Regional Transportation Planning</a></li><li><a href="/CDD/Transportation/forthepublic">Advisory Committees</a></li><li><a href="/CDD/Transportation/fordevelopers">For Developers</a></li><li><a href="/CDD/Transportation/bicyclereport">Active Transportation Report</a></li><li><a href="/CDD/Transportation/contactus">Contact Us</a></li></ul>
+			</li>
+		
+		
+			<li id="nav-zoning" >
+				<a href="/CDD/zoninganddevelopment">Zoning and Development</a>
+		<ul><li><a href="/CDD/zoninganddevelopment/planningboard">Planning Board</a></li><li><a href="/CDD/zoninganddevelopment/specialpermits">Special Permits</a></li><li><a href="/CDD/zoninganddevelopment/largeprojectreview">Large Project Review</a></li><li><a href="/CDD/zoninganddevelopment/Zoning">Zoning</a></li><li><a href="/CDD/zoninganddevelopment/sustainablebldgs">Sustainable Development</a></li><li><a href="/CDD/zoninganddevelopment/Signs">Sign Certification</a></li><li><a href="/CDD/zoninganddevelopment/CRA">Cambridge Redevelopment Authority</a></li><li><a href="/CDD/zoninganddevelopment/advcomms">Advisory Committees</a></li><li><a href="/CDD/zoninganddevelopment/Resources">Resources</a></li><li><a href="/CDD/zoninganddevelopment/contactus">Contact Us</a></li></ul>
+			</li>
+		
+		</ul>			
+	</nav>
+		
+	
+	<section class="site-utility">
+
+		<ul class="global-nav">
+	<li>
+			<a href="/CDD/Calendar">Community Development Calendar</a>
+	</li><li>
+			<a href="/CDD/Projects">Projects</a>
+	</li><li>
+			<a href="/CDD/publications">Publications</a>
+	</li><li>
+			<a href="/CDD/Forms">Forms</a>
+	</li><li>
+			<a href="/CDD/contactus">Contact Us</a>
+	</li><li>
+			<a href="/">cambridgema.gov</a>
+	</li>
+		</ul>
+	
+		
+		
+	
+		
+		<fieldset id="search-form">
+			<fieldset id="search">
+		        <label for="searchTerms"> Enter keyword(s)</label>
+				<input type="text" id="searchTerms" value="" class="search-text input-setter settered" />
+			    <button type="button" id="searchSubmit">Search</button>
+			</fieldset>
+
+		</fieldset>
+	
+		<ul class="text-size">
+			<li>Text Size:</li>
+			<li><a href="#" class="text-sm">A</a></li>
+			<li class="on"><a href="#" class="text-md">A</a></li>
+			<li><a href="#" class="text-lg">A</a></li>
+		</ul>
+	</section><!-- /.site-utility -->
+	
+	<p class="copyright">
+		&#169; 2011 Community Development Department, City of Cambridge, Massachusetts | <a href="http://www.cambridgema.gov/disclaimer.aspx" target="_blank">Disclaimer</a> | <a href="http://www.cambridgema.gov/privacystatement.aspx" target="_blank">Privacy</a>
+	</p>
+
+</section>
+
+<script type="text/javascript" src="http://use.typekit.com/nnk7xwe.js"></script>
+<script type="text/javascript">	try { Typekit.load(); } catch (e) { }</script>
+
+
+    <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-21761819-1', 'auto');
+ga('send', 'pageview');
+</script>
+	</div>
+        </div>
+</form>
+</body>
+</html>

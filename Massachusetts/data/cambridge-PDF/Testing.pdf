@@ -1,0 +1,1453 @@
+
+
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">                  
+    <head><title>
+	Testing - City of Cambridge, MA
+</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="pageID" content="{F98B0683-24C3-4D7F-A52B-CCFFCF08726E}"><link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" /><link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" /><link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" /><link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png" /><link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png" /><link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png" /><link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png" /><link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png" /><link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png" /><link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png" /><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" /><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" /><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" /><link rel="manifest" href="/manifest.json" /><meta name="msapplication-TileColor" content="#ffffff" /><meta name="msapplication-TileImage" content="/ms-icon-144x144.png" /><meta name="theme-color" content="#ffffff" /><meta property="og:url" content="https://www.cambridgema.gov:443/en/covid19/Testing"><meta property="og:title" content="Testing"><meta property="og:description" content="The City of Cambridge is working with the Cambridge Public Health Department and local partners to expand COVID-19 testing throughout the city and improve access to testing for residents."><meta property="og:image" content="https://www.cambridgema.gov:443/-/media/Images/sharedphotos/citymanaer2.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@cambma"><meta name="twitter:title" content="Testing"><meta name="twitter:description" content="The City of Cambridge is working with the Cambridge Public Health Department and local partners to expand COVID-19 testing throughout the city and improve access to testing for residents."><meta name="twitter:image" content="https://www.cambridgema.gov:443/-/media/Images/sharedphotos/citymanaer2.jpg">
+
+        
+        <link href="/Layouts/Cambridge2016/_resources/css/normalize.2020260001.css" rel="stylesheet" />
+        
+            <link href="/Layouts/Cambridge2016/_resources/css/main.min.20202600016.css" rel="stylesheet" />
+        
+        
+        
+        <script src="https://use.typekit.net/ile0gqp.js" type="text/javascript"></script>
+	    <script>try { Typekit.load({ async: false }); } catch (e) { }</script>
+
+        
+        <script src="https://use.fontawesome.com/e5cd58fb7e.js"></script>
+
+        
+        <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+	    <script>
+		    function googleTranslateElementInit() {
+			    new google.translate.TranslateElement({
+				    pageLanguage: 'en',
+				    includedLanguages: 'ar,az,be,bg,cs,da,de,el,en,es,et,fa,fi,fr,hi,hr,hu,hy,it,iw,ja,ko,lt,lv,mk,mn,nl,no,pl,pt,ro,ru,sk,sl,sr,sv,th,tl,tr,uk,vi,zh-CN,zh-TW',
+				    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+				    autoDisplay: false
+			    }, 'google_translate_element');
+		    }
+	    </script>
+
+        
+        
+
+        
+        <meta name="robots" content="index, follow" />
+<meta name="VIcurrentDateTime" content="637292086201661620" />
+<script type="text/javascript" src="/layouts/system/VisitorIdentification.js"></script>
+
+
+        <script type="text/javascript" src="/Layouts/Cambridge2016/_resources/js/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="/Layouts/Cambridge2016/_resources/js/jquery-ui.min.js"></script>
+        
+            <script type="text/javascript" src="/Layouts/Cambridge2016/_resources/js/universal.min.2020260001.js"></script>
+            <script type="text/javascript" src="/Layouts/Cambridge2016/_resources/js/custom.min.2020260001.js"></script>
+            <script type="text/javascript" src="/Layouts/Cambridge2016/_resources/js/jquery-mods.min.2020260001.js"></script>
+        <meta name="description" content="The City of Cambridge is working with the Cambridge Public Health Department and local partners to expand COVID-19 testing throughout the city and improve access to testing for residents." /><meta name="keywords" content="covid19, testing" /></head>
+
+    <body id="bodyTag" data-mobile-menu-title="Menu" data-mobile-menu-close="Close" data-mobile-menu-back="Back">
+        <form method="post" action="/covid19/Testing" id="CityMainForm">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="30E5C06D" />
+</div>
+			<div id="wrapper" class="generalContent  covid19LandingPage">
+                
+                
+
+
+<div id="alertBox" class="globalAlert" style="background-color: #d72524;font-size: 1.5rem;padding:5px 0;" data-alertName="COVID-19">
+    <div style="text-align: center;">
+        <a href="https://www.cambridgema.gov/covid19" style="color: White;"><span style="text-transform: uppercase;font-weight:  bold;">Informational Alert</span> | Coronavirus Updates</a>
+    </div>
+
+    
+</div>
+
+
+
+				
+                <header id="ctl25_topNav" class="topNav breadcrumbMargin">
+	
+	<div class="brand">
+		<div class="seal">
+			<a href="/"><img src="/~/media/Images/sharedimages/cityseal/cityseal?mw=1920" alt="City Seal of Cambridge"/></a>
+		</div>
+		<div class="name">
+			<div class="top"><a href="/">City of</a></div>
+			<div class="bottom"><a href="/">Cambridge</a></div>
+		</div>
+
+		
+		
+
+<div class="search">
+	<input type="text" placeholder="Search" class="txtQuickSearch" />
+	<input type="button" class="btnNavQuickSearch"  value="Go" />
+</div>
+
+	</div>
+	<div class="menu">
+		
+		<div class="top">
+			<div class="toolsMenu">
+				<ul>
+					
+					<li class="slant"></li>
+
+					
+					<li class="quickLinks">
+						<a href="javascript:void(0);" class="title">Quick Links</a>
+						<div id="ctl25_ctl03_quickLinksMenu" class="subMenu quickLinksMenu">
+	<ul>
+        
+        
+                <li id="ctl25_ctl03_QuickLinksRepeater_quickLinksRow_0">
+			        <a id="ctl25_ctl03_QuickLinksRepeater_QuickLinkUrl_0" class="navigation" title="Boards &amp; Commissions" href="/Departments/citymanagersoffice/boardsandcommissions"><span id="ctl25_ctl03_QuickLinksRepeater_QuickLinkText_0">Boards & Commissions</span></a>
+		        </li>
+            
+                <li id="ctl25_ctl03_QuickLinksRepeater_quickLinksRow_1">
+			        <a id="ctl25_ctl03_QuickLinksRepeater_QuickLinkUrl_1" class="calendar" title="Calendar" href="/citycalendar"><span id="ctl25_ctl03_QuickLinksRepeater_QuickLinkText_1">Calendar</span></a>
+		        </li>
+            
+                <li id="ctl25_ctl03_QuickLinksRepeater_quickLinksRow_2">
+			        <a id="ctl25_ctl03_QuickLinksRepeater_QuickLinkUrl_2" class="person" title="Contact City Council" href="/Departments/citycouncil/citycouncilmembers"><span id="ctl25_ctl03_QuickLinksRepeater_QuickLinkText_2">Contact City Council</span></a>
+		        </li>
+            
+                <li id="ctl25_ctl03_QuickLinksRepeater_quickLinksRow_3">
+			        <a id="ctl25_ctl03_QuickLinksRepeater_QuickLinkUrl_3" class="person" title="Contact City Manager" href="/Departments/citymanagersoffice/contactus/contactus"><span id="ctl25_ctl03_QuickLinksRepeater_QuickLinkText_3">Contact City Manager</span></a>
+		        </li>
+            
+                <li id="ctl25_ctl03_QuickLinksRepeater_quickLinksRow_4">
+			        <a id="ctl25_ctl03_QuickLinksRepeater_QuickLinkUrl_4" class="navigation" title="Department List" href="/Departments"><span id="ctl25_ctl03_QuickLinksRepeater_QuickLinkText_4">Department List</span></a>
+		        </li>
+            
+                <li id="ctl25_ctl03_QuickLinksRepeater_quickLinksRow_5">
+			        <a id="ctl25_ctl03_QuickLinksRepeater_QuickLinkUrl_5" class="document" title="Forms &amp; Documents" href="/publications"><span id="ctl25_ctl03_QuickLinksRepeater_QuickLinkText_5">Forms & Documents</span></a>
+		        </li>
+            
+                <li id="ctl25_ctl03_QuickLinksRepeater_quickLinksRow_6">
+			        <a id="ctl25_ctl03_QuickLinksRepeater_QuickLinkUrl_6" class="document" title="Municipal Code" href="https://www.municode.com/library/ma/cambridge/codes/code_of_ordinances"><span id="ctl25_ctl03_QuickLinksRepeater_QuickLinkText_6">Municipal Code</span></a>
+		        </li>
+            
+                <li id="ctl25_ctl03_QuickLinksRepeater_quickLinksRow_7">
+			        <a id="ctl25_ctl03_QuickLinksRepeater_QuickLinkUrl_7" class="computer screen" title="Pay Bills Online" href="/iwantto/payabillonline"><span id="ctl25_ctl03_QuickLinksRepeater_QuickLinkText_7">Pay Bills Online</span></a>
+		        </li>
+            
+                <li id="ctl25_ctl03_QuickLinksRepeater_quickLinksRow_8">
+			        <a id="ctl25_ctl03_QuickLinksRepeater_QuickLinkUrl_8" class="building" title="Property Database" href="/propertydatabase"><span id="ctl25_ctl03_QuickLinksRepeater_QuickLinkText_8">Property Database</span></a>
+		        </li>
+            
+                <li id="ctl25_ctl03_QuickLinksRepeater_quickLinksRow_9">
+			        <a id="ctl25_ctl03_QuickLinksRepeater_QuickLinkUrl_9" class="person" title="City Directory" href="/citydirectory"><span id="ctl25_ctl03_QuickLinksRepeater_QuickLinkText_9">City Directory</span></a>
+		        </li>
+            
+                <li id="ctl25_ctl03_QuickLinksRepeater_quickLinksRow_10">
+			        <a id="ctl25_ctl03_QuickLinksRepeater_QuickLinkUrl_10" class="news" title="View News" href="/news"><span id="ctl25_ctl03_QuickLinksRepeater_QuickLinkText_10">View News</span></a>
+		        </li>
+            
+                <li id="ctl25_ctl03_QuickLinksRepeater_quickLinksRow_11">
+			        <a id="ctl25_ctl03_QuickLinksRepeater_QuickLinkUrl_11" class="video" title="Watch City Council" href="/externallinks/openmeetingportal"><span id="ctl25_ctl03_QuickLinksRepeater_QuickLinkText_11">Watch City Council</span></a>
+		        </li>
+            	
+    </ul>
+</div>
+					</li>
+
+					
+					<li class="subscribe">
+						<a href="/Subscribe" class="title">Subscribe</a>
+					</li>
+
+					
+					<li class="translate">
+						<a href="javascript:void(0);" class="title">Translate</a>
+						
+
+<div class="subMenu translateMenu">
+    <div id="google_translate_element">
+    </div>
+</div>
+					</li>					
+				</ul>
+			</div>
+		</div>
+		
+		<div class="bottom">
+			
+			
+
+<nav>
+	<ul>
+        
+        
+                <li class="services">
+
+					<a id="ctl25_ctl07_NavRepeater_MainNavLink_0" class="title" href="javascript:void(0);">Services</a>
+
+                    <div class="subMenu">
+                        
+                        
+                                <section>
+                                    <h2>A</h2>
+                                    <ul>
+                                        
+                                        
+                                                <li>
+							                        <a href="/Services/applyforaffordablehousing">
+                                                        Affordable Housing
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Services/cambridgealertnetwork">
+                                                        Alert Network
+                                                    </a>
+						                        </li>
+                                            
+                                    </ul>
+                                </section>
+                            
+                                <section>
+                                    <h2>B</h2>
+                                    <ul>
+                                        
+                                        
+                                                <li>
+							                        <a href="/iwantto/orderacertifiedcopyofabirthcertificate">
+                                                        Birth Certificate
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Services/boardsandcommissions">
+                                                        Boards and Commissions
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Services/buildingpermits">
+                                                        Building Permit
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Services/applyforabusinesscertificate">
+                                                        Business Certificate
+                                                    </a>
+						                        </li>
+                                            
+                                    </ul>
+                                </section>
+                            
+                                <section>
+                                    <h2>C - D</h2>
+                                    <ul>
+                                        
+                                        
+                                                <li>
+							                        <a href="/Services/communitygardens">
+                                                        Community Garden Program
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/publicworks/cityprojects">
+                                                        Construction Project Information
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Services/curbsidecomposting">
+                                                        Curbside Composting
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/iwantto/orderacertifiedcopyofadeathcertificate">
+                                                        Death Certificate
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/iwantto/dobusinesswiththecity">
+                                                        Doing Business with the City
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Services/annualdoglicense">
+                                                        Dog License
+                                                    </a>
+						                        </li>
+                                            
+                                    </ul>
+                                </section>
+                            
+                                <section>
+                                    <h2>E - L</h2>
+                                    <ul>
+                                        
+                                        
+                                                <li>
+							                        <a href="/Services/immigrationconcernsresourcepage">
+                                                        Immigrant &amp; Immigration Resources
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Services/electricalpermits">
+                                                        Electrical Permit
+                                                    </a>
+						                        </li>
+                                            
+                                    </ul>
+                                </section>
+                            
+                                <section>
+                                    <h2>M - P</h2>
+                                    <ul>
+                                        
+                                        
+                                                <li>
+							                        <a href="/Services/applyforamarriagelicense">
+                                                        Marriage License
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Services/onedaylicenses">
+                                                        One Day Licenses
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Services/plumbingpermit">
+                                                        Plumbing Permit
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/Purchasing/currentbidlist">
+                                                        Purchasing Bid List
+                                                    </a>
+						                        </li>
+                                            
+                                    </ul>
+                                </section>
+                            
+                                <section>
+                                    <h2>Q - Z</h2>
+                                    <ul>
+                                        
+                                        
+                                                <li>
+							                        <a href="/Services/commonwealthconnect">
+                                                        Report Issue Online
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="http://www.cambridgeretirementma.gov/" rel="noopener noreferrer" target="_blank">
+                                                        Retirement System
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Services/planninganeventinthecity">
+                                                        Special Event
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Services/towedvehiclelookup">
+                                                        Towed Vehicle Lookup
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/publicworks">
+                                                        Trash/Recycling
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Services/winterwarmingcenter">
+                                                        Winter Warming Center
+                                                    </a>
+						                        </li>
+                                            
+                                    </ul>
+                                </section>
+                            
+                                <section>
+                                    <h2>Commonly Requested</h2>
+                                    <ul>
+                                        
+                                        
+                                                <li>
+							                        <a href="/inspection/Zoning/boardofzoningappeal">
+                                                        Board of Zoning Appeal
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/citycouncil">
+                                                        City Council
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/historicalcommission">
+                                                        Historical Commission
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/licensecommission">
+                                                        License Commission
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/CDD/zoninganddevelopment/planningboard">
+                                                        Planning Board
+                                                    </a>
+						                        </li>
+                                            
+                                    </ul>
+                                </section>
+                            
+
+                        
+                        
+                                <ul class="callToActions">
+                            
+                                <li>
+							        <a href="http://www2.cambridgema.gov/jobopenings.cfm" rel="noopener noreferrer" target="_blank">
+                                        Job Listings
+                                    </a>
+						        </li>
+                            
+                                <li>
+							        <a href="/Services/payorviewbillonline">
+                                        Pay or View Bill
+                                    </a>
+						        </li>
+                            
+                                <li>
+							        <a href="/Departments/Assessing/propertydatabase">
+                                        Property Database
+                                    </a>
+						        </li>
+                            
+                                <li>
+							        <a href="/Services/streetcleaning">
+                                        Street Cleaning
+                                    </a>
+						        </li>
+                            
+                                <li>
+							        <a href="/Services">
+                                        View All Services
+                                    </a>
+						        </li>
+                            
+                                </ul>
+                            
+                    </div>
+                </li>
+            
+                <li class="iwantto">
+
+					<a id="ctl25_ctl07_NavRepeater_MainNavLink_1" class="title" href="javascript:void(0);">I Want To</a>
+
+                    <div class="subMenu">
+                        
+                        
+                                <section>
+                                    <h2>Apply For</h2>
+                                    <ul>
+                                        
+                                        
+                                                <li>
+							                        <a href="/CDD/housing/forapplicants" aria-label="I Want To Apply for Affordable Housing">
+                                                        Affordable Housing
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/iwantto/applyforaboardorcommission" aria-label="I Want To Apply for a Board or Commission">
+                                                        Board or Commission
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/iwantto/applyforabuildingpermit" aria-label="I Want To Apply for a Building Permit">
+                                                        Building Permit
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/iwantto/applyforrenewfordoglicense" aria-label="I Want To Apply for Dog License">
+                                                        Dog License
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/iwantto/applyforanelectricalpermit" aria-label="I Want To Apply for Electrical Permit">
+                                                        Electrical Permit
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/iwantto/applyforajobwiththecity" aria-label="I Want To Apply for Job with the City">
+                                                        Job with the City
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/iwantto/applyforamovingvanpermit" aria-label="I Want To Apply for Moving Van Permit">
+                                                        Moving Van Permit
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/iwantto/applyforaplumbingpermit" aria-label="I Want To Apply for Plumbing Permit">
+                                                        Plumbing Permit
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/iwantto/applyforaparkingpermit" aria-label="I Want To Apply for a Resident Parking Permint">
+                                                        Resident/Visitor Parking Permit
+                                                    </a>
+						                        </li>
+                                            
+                                    </ul>
+                                </section>
+                            
+                                <section>
+                                    <h2>View</h2>
+                                    <ul>
+                                        
+                                        
+                                                <li>
+							                        <a href="/citycalendar" aria-label="I Want To View Calendar Listings">
+                                                        Calendar Listings
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/citycouncil/openmeetingportal" aria-label="I Want To View City Council Agendas and Meetings">
+                                                        City Council Meeting Details
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/news" aria-label="I Want To View City News">
+                                                        City News
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/cpl/hoursandlocations" aria-label="I Want To View Library Hours">
+                                                        Library Hours &amp; Locations
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="https://data.cambridgema.gov" aria-label="I Want To View Open Data" rel="noopener noreferrer" target="_blank">
+                                                        Open Data
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/externallinks/municipalcode" aria-label="I Want To View City Ordinances">
+                                                        Ordinances
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/traffic/Parking/cityparkingfacilities/cityparkinggarages" aria-label="I Want To View City Parking Garages">
+                                                        Parking Garage Information
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/traffic/Parking/parkingmeters" aria-label="I Want To View Parking Meter Information">
+                                                        Parking Meter Information
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Services/streetcleaning" aria-label="I Want To View Street Cleaning Scheduale">
+                                                        Street Cleaning Information
+                                                    </a>
+						                        </li>
+                                            
+                                    </ul>
+                                </section>
+                            
+                                <section>
+                                    <h2>Sign Up For</h2>
+                                    <ul>
+                                        
+                                        
+                                                <li>
+							                        <a href="/iwantto/signupforcodered" aria-label="I Want To Sign up for Emergency Alerts">
+                                                        Emergency Alerts
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/iwantto/signupfortrashandrecyclingalerts" aria-label="I Want To Sign up for Recycling and Trash Notifications">
+                                                        Recycling and Trash Notifications
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/iwantto/signupforstreetcleaningalerts" aria-label="I Want To Sign up for Street Cleaning Alerts">
+                                                        Street Cleaning Alerts
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/iwantto/signupweeklyemailnewsletter" aria-label="I Want To Sign Up for Weekly Email from City">
+                                                        Weekly Email from City
+                                                    </a>
+						                        </li>
+                                            
+                                    </ul>
+                                </section>
+                            
+                                <section>
+                                    <h2>Order</h2>
+                                    <ul>
+                                        
+                                        
+                                                <li>
+							                        <a href="/iwantto/orderacertifiedcopyofabirthcertificate" aria-label="I Want To Order a Birth Certificate">
+                                                        Birth Certificate
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/iwantto/orderacertifiedcopyofadeathcertificate" aria-label="I Want To Order Death Certificate">
+                                                        Death Certificate
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/iwantto/orderacertifiedcopyofamarriagecertificate" aria-label="I Want To Order a Marriage Certificate">
+                                                        Marriage Certificate
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/externallinks/paybillsonline/InvoiceCloud" aria-label="I Want To Order Municipal Lien Certificate">
+                                                        Municipal Lien Certificate
+                                                    </a>
+						                        </li>
+                                            
+                                    </ul>
+                                </section>
+                            
+                                <section>
+                                    <h2>Look Up</h2>
+                                    <ul>
+                                        
+                                        
+                                                <li>
+							                        <a href="/citydirectory" aria-label="I Want To Look Up City Directory">
+                                                        City Directory
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/CDD/parks/farmersmarkets" aria-label="I Want To Look Up Farmers Market">
+                                                        Farmers Market
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/iwantto/viewthepropertydatabase" aria-label="I Want To Look Up Property Information">
+                                                        Property Information
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Services/immigrationconcernsresourcepage" aria-label="I Want To Resources for Immigrants">
+                                                        Resources for Immigrants
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/publicworks/permitsanddocuments/Documents/streetcleaningschedule2019" aria-label="I Want To Look Up Street Cleaning Schedule">
+                                                        Street Cleaning Schedule
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/iwantto/lookuptowedvehicle" aria-label="I Want To Look up Towed Vehicle">
+                                                        Towed Vehicle
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/publicworks/permitsanddocuments/Documents/C/2019collectionroutemapandholidays" aria-label="I Want To Look Up Trash and Recycle Schedule">
+                                                        Recycling and Trash Schedule
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/DHSP/registrationpage" aria-label="I Want To Look Up War Memorial Schedules">
+                                                        War Memorial Schedule
+                                                    </a>
+						                        </li>
+                                            
+                                    </ul>
+                                </section>
+                            
+                                <section>
+                                    <h2>Contact</h2>
+                                    <ul>
+                                        
+                                        
+                                                <li>
+							                        <a href="/Departments/citycouncil" aria-label="I Want To Contact City Council">
+                                                        City Council
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/citymanagersoffice" aria-label="I Want To Contact City Manager">
+                                                        City Manager
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/mayorsoffice" aria-label="I Want To Contact Mayors Office">
+                                                        Mayor
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/citymanagersoffice/publicinformationoffice" aria-label="I Want To Contact Public Information Office">
+                                                        Public Information Office
+                                                    </a>
+						                        </li>
+                                            
+                                    </ul>
+                                </section>
+                            
+                                <section>
+                                    <h2>Submit</h2>
+                                    <ul>
+                                        
+                                        
+                                                <li>
+							                        <a href="/iwantto/submitanonymouscrimetip" aria-label="I Want To Submit an Anonymous Crime Tip">
+                                                        Anonymous Crime Tip
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/iwantto/submitcertifiedpayrollreports" aria-label="I Want To Submit Certified Payroll Report">
+                                                        Certified Payroll Report
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/iwantto/submitaservicerequest" aria-label="I Want To Submit Service Request">
+                                                        Service Request
+                                                    </a>
+						                        </li>
+                                            
+                                    </ul>
+                                </section>
+                            
+                                <section>
+                                    <h2>Request</h2>
+                                    <ul>
+                                        
+                                        
+                                                <li>
+							                        <a href="/cpl/Services/museumpasses" aria-label="I Want To Request a Museum Pass">
+                                                        Museum Pass
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/iwantto/submitapublicrecordsrequest" aria-label="I Want To Public Records">
+                                                        Public Records
+                                                    </a>
+						                        </li>
+                                            
+                                    </ul>
+                                </section>
+                            
+
+                        
+                        
+                                <ul class="callToActions">
+                            
+                                <li>
+							        <a href="/iwantto/dobusinesswiththecity" aria-label="I Want To Do Business with the City">
+                                        Do Business with the City
+                                    </a>
+						        </li>
+                            
+                                <li>
+							        <a href="/iwantto/payabillonline" aria-label="I Want To Pay Bills Online">
+                                        Pay Bills Online
+                                    </a>
+						        </li>
+                            
+                                <li>
+							        <a href="/iwantto" aria-label="I Want To View All">
+                                        View All I Want To&#39;s
+                                    </a>
+						        </li>
+                            
+                                </ul>
+                            
+                    </div>
+                </li>
+            
+                <li class="departments">
+
+					<a id="ctl25_ctl07_NavRepeater_MainNavLink_2" class="title" href="javascript:void(0);">Departments</a>
+
+                    <div class="subMenu">
+                        
+                        
+                                <section>
+                                    <h2>A - C</h2>
+                                    <ul>
+                                        
+                                        
+                                                <li>
+							                        <a href="/Departments/animalcommission">
+                                                        Animal Commission
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/Assessing">
+                                                        Assessing
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/Auditing">
+                                                        Auditing
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/Budget">
+                                                        Budget
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/cambridgearts">
+                                                        Cambridge Arts
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/cityclerksoffice">
+                                                        City Clerk&#39;s Office
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/citycouncil">
+                                                        City Council
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/citymanagersoffice">
+                                                        City Manager&#39;s Office
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/commissionforpersonswithdisabilities">
+                                                        Commission for Persons with Disabilities
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/communitydevelopment">
+                                                        Community Development
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/consumerscouncil">
+                                                        Consumers&#39; Council
+                                                    </a>
+						                        </li>
+                                            
+                                    </ul>
+                                </section>
+                            
+                                <section>
+                                    <h2>D - F</h2>
+                                    <ul>
+                                        
+                                        
+                                                <li>
+							                        <a href="/Departments/electioncommission">
+                                                        Election Commission
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/Electrical">
+                                                        Electrical
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/emergencycommunications">
+                                                        Emergency Communications
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/equityandinclusion">
+                                                        Equity &amp; Inclusion
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/DHSP/programsforfamilies/kidscouncil">
+                                                        Family Policy Council
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/Finance">
+                                                        Finance
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/cambridgefire">
+                                                        Fire Department
+                                                    </a>
+						                        </li>
+                                            
+                                    </ul>
+                                </section>
+                            
+                                <section>
+                                    <h2>G - L</h2>
+                                    <ul>
+                                        
+                                        
+                                                <li>
+							                        <a href="/Departments/historicalcommission">
+                                                        Historical Commission
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/humanrightscommission">
+                                                        Human Rights Commission
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/humanserviceprograms">
+                                                        Human Service Programs
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/commissiononimmigrantrightsandcitizenship">
+                                                        Immigrant Rights &amp; Citizenship (CIRC)
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/informationtechnology">
+                                                        Information Technology
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/inspectionalservices">
+                                                        Inspectional Services
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/Law">
+                                                        Law
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/lgbtqpluscommission">
+                                                        LGBTQ+ Commission
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/cambridgepubliclibrary">
+                                                        Library
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/licensecommission">
+                                                        License Commission
+                                                    </a>
+						                        </li>
+                                            
+                                    </ul>
+                                </section>
+                            
+                                <section>
+                                    <h2>M - P</h2>
+                                    <ul>
+                                        
+                                        
+                                                <li>
+							                        <a href="/Departments/mayorsoffice">
+                                                        Mayor&#39;s Office
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/peacecommission">
+                                                        Peace Commission
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/Personnel" target="Active Browser">
+                                                        Personnel
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/cambridgepolice">
+                                                        Police Department
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/policereviewandadvisoryboard">
+                                                        Police Review and Advisory Board
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/publichealthdepartment" target="_blank">
+                                                        Public Health
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/publicworks">
+                                                        Public Works (DPW)
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/Purchasing">
+                                                        Purchasing
+                                                    </a>
+						                        </li>
+                                            
+                                    </ul>
+                                </section>
+                            
+                                <section>
+                                    <h2>Q - Z</h2>
+                                    <ul>
+                                        
+                                        
+                                                <li>
+							                        <a href="http://www.cambridgeretirementma.gov/" rel="noopener noreferrer" target="_blank">
+                                                        Retirement Board
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="http://www.cpsd.us/" rel="noopener noreferrer" target="_blank">
+                                                        School Department
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="http://www.cambridgeusa.org/" rel="noopener noreferrer" target="_blank">
+                                                        Tourism Office
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/trafficparkingandtransportation">
+                                                        Traffic, Parking, and Transportation
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/veteransservices">
+                                                        Veterans&#39; Services
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/waterdepartment">
+                                                        Water Department
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/weightsandmeasures">
+                                                        Weights &amp; Measures
+                                                    </a>
+						                        </li>
+                                            
+                                                <li>
+							                        <a href="/Departments/womenscommission" target="_blank">
+                                                        Women&#39;s Commission
+                                                    </a>
+						                        </li>
+                                            
+                                    </ul>
+                                </section>
+                            
+                                <section>
+                                    <h2>#</h2>
+                                    <ul>
+                                        
+                                        
+                                                <li>
+							                        <a href="/Departments/22cityview">
+                                                        22-CityView
+                                                    </a>
+						                        </li>
+                                            
+                                    </ul>
+                                </section>
+                            
+
+                        
+                        
+                                <ul class="callToActions">
+                            
+                                <li>
+							        <a href="/Departments">
+                                        Department Directory
+                                    </a>
+						        </li>
+                            
+                                </ul>
+                            
+                    </div>
+                </li>
+            
+	</ul>
+</nav>
+
+			
+			
+
+<div class="search">
+	<input type="text" placeholder="Search" class="txtQuickSearch" />
+	<input type="button" class="btnNavQuickSearch"  value="Go" />
+</div>
+				 
+		</div>
+	</div>
+</header>
+
+<script>
+	var deptSearchUrl = "";
+</script>
+
+                <main>        
+                    
+                    	
+
+					
+                    
+
+					
+					<div id="breadcrumbs_0_Breadcrumb" class="breadcrumbs">
+	<div id="breadcrumbs_0_BreadCrumbContainer" class="container"><a href="/">Home</a> > <a href="/covid19">COVID-19 Information</a> > Testing</div>
+</div>
+
+                    
+                    
+
+<section id="content" class="clear">
+	<header class="mainPageHeader">
+        
+		<h1>Testing</h1>
+	</header>
+
+	<article class="mainContent htmlContent">
+
+		
+        
+
+        
+        
+
+		
+        <p dir="ltr" style="background-color: #ffffff; margin-top: 0pt; margin-bottom: 0pt;"><span style="color: #000000; background-color: transparent;">There are several ways that Cambridge residents can get tested for COVID-19. The sites listed below are offering viral tests, which tell you if you have a current infection. Viral testing is covered by insurance and, in some instances, is being offered for free, depending on the site.</span></p>
+<div>&nbsp;</div>
+
+        
+        <div id="bodycontent_0_postcontent_0_ArbitraryContentSection">
+	
+	<h2 class="main"><span>Mobile Testing</span></h2>
+<p dir="ltr" style="background-color: #ffffff; margin-top: 10pt; margin-bottom: 0pt;"><span style="background-color: transparent; color: #000000;" id="docs-internal-guid-df4ab902-7fff-6518-192b-785883238107">During the month of July, the Cambridge Public Health Department will&nbsp; offer free mobile testing in <strong>North Cambridge</strong>, <strong>The Port,</strong>&nbsp;<strong>East Cambridge and Harvard Square</strong> one day each week during designated hours. </span></p>
+<p dir="ltr" style="background-color: #ffffff; margin-top: 10pt; margin-bottom: 0pt;"><span style="background-color: transparent; color: #000000;" id="docs-internal-guid-df4ab902-7fff-6518-192b-785883238107">All Cambridge residents are welcome.&nbsp;<strong style="color: #000000; background-color: #ffffff;">To&nbsp;schedule an appointment, call 617-665-3795 or sign-up online:<br />
+<a href="https://covid-test.appointlet.com/s/cambridge">https://covid-test.appointlet.com/s/cambridge</a></strong></span></p>
+<ul>
+    <li dir="ltr" style="background-color: #ffffff; margin-top: 10pt; margin-bottom: 0pt;"><strong>North Cambridge -&nbsp;</strong>Wednesdays, 11 a.m. - 3 p.m.&nbsp;Jefferson Park clinic at 266-B Rindge Avenue</li>
+    <li dir="ltr" style="background-color: #ffffff; margin-top: 10pt; margin-bottom: 0pt;"><strong>Harvard Square -&nbsp;</strong><strong></strong><span style="background-color: #ffffff;">Wednesdays, 4 p.m. - 6 p.m First Church Cambridge at 11 Garden Street</span></li>
+    <li dir="ltr" style="background-color: #ffffff; margin-top: 10pt; margin-bottom: 0pt;"><strong>East Cambridge -&nbsp;</strong>Thursdays, 12 p.m. - 4 p.m. Millers Rivers Apartment at 661 Cambridge Street</li>
+    <li dir="ltr" style="background-color: #ffffff; margin-top: 10pt; margin-bottom: 0pt;"><strong>The Port -&nbsp;</strong>Thursdays, 5 p.m. - 8 p.m. Pisani Center at 131 Washington Street</li>
+</ul>
+<p dir="ltr" style="background-color: #ffffff; margin-top: 10pt; margin-bottom: 0pt;"><span style="background-color: transparent; color: #000000;" id="docs-internal-guid-df4ab902-7fff-6518-192b-785883238107">Additional neighborhoods may be added to the mobile testing program as this situation continues to evolve.</span></p>
+<p dir="ltr" style="background-color: #ffffff; margin-top: 10pt; margin-bottom: 0pt;"><a href="/-/media/Files/citymanagersoffice/COVID19/covid19testingjuly.pdf" style="background-color: transparent;">Download Mobile Testing Flyer</a></p>
+<p dir="ltr" style="background-color: #ffffff; margin-top: 10pt; margin-bottom: 0pt;">&nbsp;</p>
+</div>
+<div id="bodycontent_0_postcontent_1_ArbitraryContentSection">
+	
+	<h2 class="main"><span>Test Results</span></h2>
+<p dir="ltr" style="background-color: #ffffff; margin-top: 10pt; margin-bottom: 0pt;"><span style="background-color: transparent; color: #000000; color: #000000;" id="docs-internal-guid-df4ab902-7fff-6518-192b-785883238107">The Cambridge Public Health Department shares results with residents who receive testing at a mobile site or CHA stand-alone testing center. Residents are typically called within five days of the health department receiving the results. To find out the status of your test results, <strong>leave a message at 617-665-3848</strong> and you will receive a call back.</span></p>
+</div>
+<div id="bodycontent_0_postcontent_2_ArbitraryContentSection">
+	
+	<h2 class="main" style="margin-top:1em;"><span>Other Ways to Get Tested</span></h2>
+<p>If you are not a Cambridge resident or cannot access the Cambridge testing sites, there are several ways you can gain access to testing:</p>
+<h3 style="margin-bottom:0;">Contact Your Health Care Provider</h3>
+<p>If you think you may have COVID-19, call your health care provider and tell them about your symptoms. COVID-19 symptoms may include fever, sore throat, loss of sense of smell, cough, difficulty breathing, body aches, or chills.</p>
+<p>Your health care provider will help you decide whether testing is appropriate. If your provider thinks you should be tested and cannot do the test on-site, they will make the referral to a testing site near you.</p>
+<p>Here is a current list of COVID-19 testing sites in Massachusetts: <a rel="noopener noreferrer" href="https://www.mass.gov/doc/ma-covid-19-testing-sites/download" target="_blank">https://www.mass.gov/doc/ma-covid-19-testing-sites/download</a></p>
+<h3 style="margin-bottom:0;">Use the State’s Free Online Telehealth Service</h3>
+<p>The state is partnering with Doctor on Demand to offer free telehealth visits to Massachusetts residents who want to get a quick assessment of symptoms and/or do not have health insurance. Through this service, you’ll be evaluated online and connected to testing if needed. To access this free service, go to: <a rel="noopener noreferrer" href="https://www.mass.gov/how-to/check-your-symptoms-for-covid-19-online" target="_blank">https://www.mass.gov/how-to/check-your-symptoms-for-covid-19-online</a></p>
+<h3 style="margin-bottom:0;">Call the State’s 24-Hour Hotline</h3>
+<p>If you do not have internet access or do not feel comfortable using websites, you can call 2-1-1, a 24-hour state-supported telephone hotline. Hotline staff can provide guidance on testing.&nbsp;</p>
+</div>
+<div id="bodycontent_0_postcontent_3_ArbitraryContentSection">
+	
+	<h2 class="main" style="margin-top:1em;"><span>Resources</span></h2>
+<ul>
+    <li><a href="https://www.mass.gov/info-details/covid-19-testing">Massachusetts COVID-19 testing page</a> (Mass.gov)</li>
+    <li><a href="https://memamaps.maps.arcgis.com/apps/webappviewer/index.html?id=eba3f0395451430b9f631cb095febf13">COVID-19 Test Site Locator tool</a></li>
+</ul>
+</div>
+
+	</article>
+
+    
+</section>
+                </main>
+                
+                
+                <footer id="ctl29_DeptFooter">
+    <section id="ctl29_ctl00_footerContact" class="contact" itemscope="" itemtype="http://schema.org/Organization">
+
+	<div id="ctl29_ctl00_SocialLinks" class="socialLinks">
+        <a href="//twitter.com/cambma" class="Twitter" target="_blank"><img src="/Layouts/Cambridge2016/_resources/images/social/twitter.png" /></a><a href="//facebook.com/CambridgeMA.Gov" class="Facebook" target="_blank"><img src="/Layouts/Cambridge2016/_resources/images/social/facebook.png" /></a><a href="//youtube.com/user/cambridgemagov" class="Youtube" target="_blank"><img src="/Layouts/Cambridge2016/_resources/images/social/youtube.png" /></a>
+	</div>
+
+	<div>
+		<h2 id="title">Contact City Hall</h2>
+        
+		<div itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+            <a id="ctl29_ctl00_directionsLink" href="https://www.google.com/maps/place/795+Massachusetts+Ave,+Cambridge,+MA+02139" target="_blank">
+                <div><span class="address" itemprop="streetAddress" id="streetAddress">795 Massachusetts Ave.</span></div>
+				<div>
+					<span class="address">
+						<span itemprop="addressLocality">Cambridge</span>,
+						<span itemprop="addressRegion">MA</span>
+						<span itemprop="postalCode" id="postalCode">02139</span>
+					</span>
+				</div>
+            </a>
+		</div>
+
+		<div itemprop="contactPoint" itemscope="" itemtype="http://schema.org/ContactPoint">
+			<div>
+				Ph: <span itemprop="telephone" id="telephone">617-349-4000</span>
+			</div>
+			<div>
+				TTY: <span itemprop="faxNumber" id="tty">617-349-4242</span>
+			</div>
+		</div>
+	</div>
+</section>
+    <section id="ctl29_ctl01_ServiceHours" class="serviceHours" itemscope="" itemtype="http://schema.org/Store">
+	<h2 id="ctl29_ctl01_Title">Hours of Service</h2>
+	<div id="ctl29_ctl01_Hours" class="container"><span class="hoursOfService"><data itemprop="openingHours"><span class="day">Mon:</span> <span class="hours">8:30 a.m. - 8:00 p.m.</span></data></span><span class="hoursOfService"><data itemprop="openingHours"><span class="day">Tue - Thu:</span> <span class="hours">8:30 a.m. - 5:00 p.m.</span></data></span><span class="hoursOfService"><data itemprop="openingHours"><span class="day">Fri:</span> <span class="hours">8:30 a.m. - 12:00 p.m.</span></data></span></div>
+</section>
+
+
+    <ul id="ctl29_ctl02_bottomLinks" class="footerQuickLinks">
+    
+            <li id="ctl29_ctl02_FooterQuickLinksRepeater_FooterQuickLinksRow_0">
+			    <a id="ctl29_ctl02_FooterQuickLinksRepeater_FooterQuickLinkUrl_0" class="computer screen" title="Pay Bills Online" href="/iwantto/payabillonline"><span id="ctl29_ctl02_FooterQuickLinksRepeater_FooterQuickLinkText_0">Pay Bills Online</span></a>
+		    </li>
+        
+            <li id="ctl29_ctl02_FooterQuickLinksRepeater_FooterQuickLinksRow_1">
+			    <a id="ctl29_ctl02_FooterQuickLinksRepeater_FooterQuickLinkUrl_1" class="building" title="Property Database" href="/propertydatabase"><span id="ctl29_ctl02_FooterQuickLinksRepeater_FooterQuickLinkText_1">Property Database</span></a>
+		    </li>
+        
+            <li id="ctl29_ctl02_FooterQuickLinksRepeater_FooterQuickLinksRow_2">
+			    <a id="ctl29_ctl02_FooterQuickLinksRepeater_FooterQuickLinkUrl_2" class="video" title="Watch City Council" href="/externallinks/openmeetingportal"><span id="ctl29_ctl02_FooterQuickLinksRepeater_FooterQuickLinkText_2">Watch City Council</span></a>
+		    </li>
+        
+            <li id="ctl29_ctl02_FooterQuickLinksRepeater_FooterQuickLinksRow_3">
+			    <a id="ctl29_ctl02_FooterQuickLinksRepeater_FooterQuickLinkUrl_3" class="calendar" title="Calendar" href="/citycalendar"><span id="ctl29_ctl02_FooterQuickLinksRepeater_FooterQuickLinkText_3">Calendar</span></a>
+		    </li>
+        
+            <li id="ctl29_ctl02_FooterQuickLinksRepeater_FooterQuickLinksRow_4">
+			    <a id="ctl29_ctl02_FooterQuickLinksRepeater_FooterQuickLinkUrl_4" class="person" title="View City Directory" href="/citydirectory"><span id="ctl29_ctl02_FooterQuickLinksRepeater_FooterQuickLinkText_4">View City Directory</span></a>
+		    </li>
+        
+            <li id="ctl29_ctl02_FooterQuickLinksRepeater_FooterQuickLinksRow_5">
+			    <a id="ctl29_ctl02_FooterQuickLinksRepeater_FooterQuickLinkUrl_5" class="document" title="Find Forms &amp; Documents" href="/publications"><span id="ctl29_ctl02_FooterQuickLinksRepeater_FooterQuickLinkText_5">Find Forms & Documents</span></a>
+		    </li>
+        	
+</ul>
+    
+        <div id="footer">
+	        <ul>
+    
+        <li>
+            <a id="ctl29_ctl04_FooterLinksRepeater_FooterLink_0" title="Louis A. DePasquale, City Manager" href="/Departments/citymanagersoffice">Louis A. DePasquale, City Manager</a>
+		</li>
+    
+        <li>
+            <a id="ctl29_ctl04_FooterLinksRepeater_FooterLink_1" title="Public Records Request" href="/iwantto/submitapublicrecordsrequest">Public Records Request</a>
+		</li>
+    
+        <li>
+            <a id="ctl29_ctl04_FooterLinksRepeater_FooterLink_2" title="Disclaimer" href="/disclaimer">Disclaimer</a>
+		</li>
+    
+        <li>
+            <a id="ctl29_ctl04_FooterLinksRepeater_FooterLink_3" title="Jobs" href="/iwantto/applyforajobwiththecity">Jobs</a>
+		</li>
+    
+        <li>
+            <a id="ctl29_ctl04_FooterLinksRepeater_FooterLink_4" title="Privacy Statement" href="/privacystatement">Privacy Statement</a>
+		</li>
+    
+        <li>
+            <a id="ctl29_ctl04_FooterLinksRepeater_FooterLink_5" title="Social Media" href="/socialmedia">Social Media</a>
+		</li>
+    
+        <li>
+            <a id="ctl29_ctl04_FooterLinksRepeater_FooterLink_6" title="Contact Us" href="/citydirectory">Contact Us</a>
+		</li>
+    
+            </ul>
+	        <p>&copy; 2020 City of Cambridge</p>
+        </div>
+    	
+</footer>
+            </div>
+        </form>
+
+         
+         <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-21761819-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+		
+		<a href="#" onclick="showFeedbackDialog();" id="btnFeedback" class="btnFeedback">Contact Us</a>
+        
+		
+		<div id="atlwdg-blanket" class="atlwdg-blanket" style="display: none;"></div>
+		<div id="atlwdg-container" class="atlwdg-popup">
+			<div id="atlScriptlet">
+				<div class="aui-dialog collector-dialog">
+
+					<h2 class="dialog-title">How can we help?</h2>
+
+					
+					<div class="content-body">
+						<div class="msg-container"></div>
+
+						<div id="feedbackForm">
+							<div class="aui-message info custom-msg"><span class="aui-icon icon-info"></span>
+								<p style="margin:0;">Please provide as much detail below as possible so City staff can respond to your inquiry:</p>
+							</div>
+							<div class="desc-group field-group">
+								<label>Reason<span class="required">*</span></label>
+								<div class="buttonList" style="display:inline-block;">
+									<div>
+										<input type="radio" id="feedbackType1" name="feedbackType" value="General Question/Comment" checked required />
+										<label for="feedbackType1">General Question/Comment</label>
+									</div>
+									<div>
+										<input type="radio" id="feedbackType2" name="feedbackType" value="COVID-19 Question" />
+										<label for="feedbackType2">COVID-19 Question</label>
+									</div>
+									<div>
+										<input type="radio" id="feedbackType3" name="feedbackType" value="Website Issue/Feedback" />
+										<label for="feedbackType3">Website Issue/Feedback</label>
+									</div>
+								</div>
+							</div>
+							<div class="desc-group field-group">
+								<label for="feedback">Description:<span class="required">*</span></label>
+								<textarea class="textarea long-field" cols="30" rows="5" id="feedback" name="feedback"></textarea>
+							</div>
+							<div class="desc-group field-group">
+								<label for="feedback_name">Name:</label>
+								<input id="feedback_name" type="text" />
+							</div>
+							<div class="desc-group field-group">
+								<label for="feedback_email">Email:</label>
+								<input id="feedback_email" type="email" />
+							</div>
+							<p style="margin:1em 0;">As a governmental entity, the Massachusetts Public Records Law applies to records made or received by the City. Any information received through use of this site is subject to the same provisions as information provided on paper.</p>
+							<p style="margin:0;"><a href="https://www.cambridgema.gov/privacystatement" target="_blank">Read our complete privacy statement</a></p>
+							<hr style="margin:1em 0;" />
+							<h2 style="margin:0;">Service Requests</h2>
+							<p style="margin:0;"><a href="/commonwealthconnect" target="_blank">Enter a service request</a> via Commonwealth Connect for things like missed trash pickups, potholes, etc., click here</p>
+						</div>							
+					</div>
+					<div class="dialog-button-panel">
+						<input id="feedback-submit" type="button" onclick="submitFeedback()" class="aui-button aui-button-primary submit-button" value="Submit" />
+						<a href="#" onclick="hideFeedbackDialog()" class="cancel">Close</a>
+					</div>
+				</div>
+			</div>
+		</div>
+    </body>
+
+    <script type="text/javascript" src="//www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" src="/Layouts/Cambridge2016/_resources/js/google-analytics.js?t=2020260001"></script>
+</html>
