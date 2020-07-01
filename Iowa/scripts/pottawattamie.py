@@ -9,10 +9,15 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 import time
+import os
 
 
-#f = open("../data/pottawattamie.txt", "w")
-f = open("pottawattamie.txt", "w")
+
+COUNTY = "pottawattamie"
+fileDir = os.path.dirname(__file__)
+filePath = os.path.join(fileDir, "../data/pottawattamie.txt")
+filePath = os.path.abspath(os.path.realpath(filePath))
+f = open(filePath, 'w')
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
 driver = webdriver.Chrome(ChromeDriverManager().install(), options = chrome_options)
