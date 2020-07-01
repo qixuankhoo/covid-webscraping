@@ -85,7 +85,7 @@ pdfPath = "../data/" + COUNTY + "-PDF"
 os.mkdir(pdfPath)
 
 
-'''
+
 # scrape 'https://gchd.us/resources/media-releases-2/'
 soup = scraping('https://gchd.us/resources/media-releases-2/')
 section = soup.find('div', id="Text")
@@ -94,8 +94,7 @@ for a_tag in section.find_all('a'):
         getPDFs(a_tag.get('href'), 'genesee')
     else:
         break
-'''
-'''
+
 # scrape from 'https://gchd.us/covid-19-residents/' and 'http://gchd.us/employers-and-workers/'
 for url in ['https://gchd.us/covid-19-residents/', 'http://gchd.us/employers-and-workers/']:
     soup = scraping(url)
@@ -104,8 +103,8 @@ for url in ['https://gchd.us/covid-19-residents/', 'http://gchd.us/employers-and
         link = a_tag.get('href')
         if 'documentcloud' in link:
             downloadDocumentCloud(link)
-'''
 
+# scrape from 'https://gchd.us/covid-19-education/'
 url = 'https://gchd.us/covid-19-education/'
 soup = scraping(url)
 sections = soup.find_all('div', class_='wp-block-column')
