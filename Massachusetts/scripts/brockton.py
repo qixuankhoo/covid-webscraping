@@ -80,10 +80,10 @@ f = open("../data/" + COUNTY + ".txt", "w")
 pdfPath = "../data/" + COUNTY + "-PDF"
 os.mkdir(pdfPath)
 
+# scraping 'https://bphc.org/whatwedo/infectious-diseases/Infectious-Diseases-A-to-Z/Documents/Mask%20Guide.pdf'
 getPDFs('https://bphc.org/whatwedo/infectious-diseases/Infectious-Diseases-A-to-Z/Documents/Mask%20Guide.pdf', 'brockton')
 
 # scraping 'https://brockton.ma.us/covid19/'
-
 soup = advanced_scraping('https://brockton.ma.us/covid19/')
 text_area = soup.select_one('.fl-node-5e726539b7e8b')
 f.write(text_area.text)
