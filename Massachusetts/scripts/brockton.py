@@ -80,8 +80,15 @@ f = open("../data/" + COUNTY + ".txt", "w")
 pdfPath = "../data/" + COUNTY + "-PDF"
 os.mkdir(pdfPath)
 
-# scraping 'https://bphc.org/whatwedo/infectious-diseases/Infectious-Diseases-A-to-Z/Documents/Mask%20Guide.pdf'
-getPDFs('https://bphc.org/whatwedo/infectious-diseases/Infectious-Diseases-A-to-Z/Documents/Mask%20Guide.pdf', 'brockton')
+# scrape https://brockton.ma.us/city-departments/license-commission/#brocktonrestaurantreopening
+soup = advanced_scraping('https://brockton.ma.us/city-departments/license-commission/#brocktonrestaurantreopening')
+text_area = soup.select_one('.fl-node-5b69cd433b0fc')
+f.write(text_area.text)
+for a_tag in text_area.find_all('a'):
+    link = a_tag.get('href')
+    if link and '.pdf' in link:
+        if ('http' not in link or 'brockton' in link) and 'CDC' not in link and 'guidance-sheet' not in link and 'MDPH' not in link: # not from cdc or state
+            getPDFs(link, 'brockton')
 
 # scraping 'https://brockton.ma.us/covid19/'
 soup = advanced_scraping('https://brockton.ma.us/covid19/')
@@ -113,3 +120,4 @@ for page in range(1, 7):
     for read_more in read_mores:
         link = read_more.get('href')
         saveArticle(link)
+
