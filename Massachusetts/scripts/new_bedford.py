@@ -2,6 +2,9 @@ from bs4 import BeautifulSoup
 import requests
 import os 
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
 
 
 # create a folder for PDFs
@@ -20,8 +23,11 @@ def scraping(url):
     print("Scraping from " + url)
     f.write("\n\n\n")
     f.write("Scraping from " + url + "\n\n\n")
-    result = requests.get(url)
-    return BeautifulSoup(result.content, 'html.parser')
+    driver = webdriver.Chrome(executable_path="/Users/qixuan.khoo.19/Downloads/chromedriver")
+    driver.get(url)
+    time.sleep(1)
+    result = driver.execute_script("return document.documentElement.outerHTML")
+    return BeautifulSoup(result, 'html.parser')
 
 def writeData(soup, tag, class_name):
     currdata = soup.find_all(tag, class_= class_name)
@@ -44,12 +50,19 @@ def getPDF(file_url, county):
              pdf.write(chunk)
     return "data/" + title
     
-COUNTY = "fall_river"
+COUNTY = "new_bedford"
 textFilePath = '../data/' + COUNTY + '.txt'
 f = open(getFilePath(textFilePath), 'w')
 links = []
+""" 
 
-#Scrape city guidelines 
-url = 'https://www.newbedford-ma.gov/health-department/coronavirus/'
-webpage = requests.get(url)
-soup = BeautifulSoup(webpage.content, 'html.parser')
+#Scrape New Bedford economic development guidelines
+url = 'http://www.nbedc.org/covid-19-resources-and-information/'
+soup = scraping(url)
+writeData(soup, 'div', 'avia_textblock')
+ """
+
+links = ['https://s3.amazonaws.com/newbedford-ma/wp-content/uploads/20200506082240/Emergency-Order-Reporting-COVID-in-the-Workplace.pdf',
+        'https://s3.amazonaws.com/newbedford-ma/wp-content/uploads/sites/42/20200506124549/Emergency-Order-to-Prevent-the-Spread-of-COVID-in-industrial-facilities.pdf']
+for link in links:
+    data = getPDF(link, COUNTY)
