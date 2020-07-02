@@ -64,16 +64,26 @@ def saveText(url):
     else:
         f.write('\nNo relevant text found\n')
 
+def saveArticle(url):
+    soup = advanced_scraping(url)
+    article = soup.find('article')
+    f.write(article.text)
+    for a_tag in article.find_all('a'):
+        link = a_tag.get('href')
+        if link and '.pdf' in link:
+            if ('http' not in link or 'brockton' in link) and 'CDC' not in link and 'guidance-sheet' not in link and 'MDPH' not in link: # not from cdc or state
+                getPDFs(link, 'brockton')
 
 COUNTY = "brockton"
 f = open("../data/" + COUNTY + ".txt", "w")
 
 pdfPath = "../data/" + COUNTY + "-PDF"
-#os.mkdir(pdfPath)
+os.mkdir(pdfPath)
 
 getPDFs('https://bphc.org/whatwedo/infectious-diseases/Infectious-Diseases-A-to-Z/Documents/Mask%20Guide.pdf', 'brockton')
-#sys.exit(0)
+
 # scraping 'https://brockton.ma.us/covid19/'
+
 soup = advanced_scraping('https://brockton.ma.us/covid19/')
 text_area = soup.select_one('.fl-node-5e726539b7e8b')
 f.write(text_area.text)
@@ -84,3 +94,22 @@ for a_tag in content.find_all('a'):
     if link and '.pdf' in link:
         if ('http' not in link or 'brockton' in link) and 'CDC' not in link and 'guidance-sheet' not in link and 'MDPH' not in link: # not from cdc or state
             getPDFs(link, 'brockton')
+
+# scraping 'https://brockton.ma.us/business/covid-19-response/'
+soup = advanced_scraping('https://brockton.ma.us/business/covid-19-response/')
+text_area = soup.find('div', class_='fl-rich-text')
+f.write(text_area.text)
+for a_tag in text_area.find_all('a'):
+    link = a_tag.get('href')
+    if link and '.pdf' in link:
+        if ('http' not in link or 'brockton' in link) and 'CDC' not in link and 'guidance-sheet' not in link and 'MDPH' not in link: # not from cdc or state
+            getPDFs(link, 'brockton')
+
+# scrape https://brockton.ma.us/news/
+for page in range(1, 7):
+    url = 'https://brockton.ma.us/news/page' + str(page)
+    soup = advanced_scraping(url)
+    read_mores = soup.select('.moretag')
+    for read_more in read_mores:
+        link = read_more.get('href')
+        saveArticle(link)
