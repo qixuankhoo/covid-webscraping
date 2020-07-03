@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[32]:
-
-
 import requests 
 from bs4 import BeautifulSoup 
 from selenium import webdriver
@@ -12,9 +6,9 @@ import time
 import os
 
 
-COUNTY = "polk"
+COUNTY = "springfield"
 fileDir = os.path.dirname(__file__)
-filePath = os.path.join(fileDir, "../data/polk.txt")
+filePath = os.path.join(fileDir, "../data/springfield.txt")
 filePath = os.path.abspath(os.path.realpath(filePath))
 f = open(filePath, 'w')
 chrome_options = webdriver.ChromeOptions()
@@ -30,47 +24,45 @@ def scraping(url):
     result = driver.execute_script("return document.documentElement.outerHTML")
     return BeautifulSoup(result, 'html.parser')
 
-soup = scraping("https://www.polkcountyiowa.gov/news-and-announcements/updated-polk-county-service-modifications-and-closures-04-01-2020/")
-data = soup.find_all(class_="py-3")
+#currentPageContentMenu a
+
+soup = scraping("https://www.springfield-ma.gov/cos/index.php?id=covid")
+data = soup.find(id = "currentPageContentMenu")
+data = data.find_all("a")
+mainlinks = []
 for i in range(len(data)):
-    f.write(data[i].get_text(separator = '\n'))
-    
-soup = scraping("https://www.polkcountyiowa.gov/health-department/2019-novel-coronavirus-covid-19/")
-data = soup.find_all(class_="nav-link")
-links = []
-for i in range(len(data)):
-    if data[i]['href'] not in links:
-        links.append(data[i]['href'])
-scrapelinks = []
-for i in range(len(links)):
-    if "2019-novel-coronavirus-covid-19" in links[i]:
-        scrapelinks.append("https://www.polkcountyiowa.gov" + links[i])
-        
-soup = scraping("https://www.polkcountyiowa.gov/health-department/2019-novel-coronavirus-covid-19/first-responders-covid-19-resources/")
-data = soup.find_all()
-scrapelinks2 = []
-for i in range(len(scrapelinks)):
-    soup = scraping(scrapelinks[i])
-    data = soup.find_all("a")
+    mainlinks.append("https://www.springfield-ma.gov/cos/" + data[i]['href'])
+
+sublinks = set()
+for l in mainlinks:
+    soup = scraping(l)
+    data1 = soup.find(id = "content")
+    data = data1.find_all("p")
     for i in range(len(data)):
-        scrapelinks2.append(data[i]['href'])
-PDFS = []
-done = []
-for i in range(len(scrapelinks2)):
-    if ".pdf" in scrapelinks2[i] and "toolkit" not in scrapelinks2[i]:
-        PDFS.append(scrapelinks2[i])
-    if "health" in scrapelinks2[i] and scrapelinks2[i][0] == "/" and scrapelinks2[i] not in done:
-        done.append(scrapelinks2[i])
-        soup = scraping("https://www.polkcountyiowa.gov" + scrapelinks2[i])
-        data = soup.find_all("p")
+        f.write(data[i].get_text(separator = '\n'))
+    data = data1.find_all("li")
+    for i in range(len(data)):
+        f.write(data[i].get_text(separator = '\n'))
+    data = data1.find_all("a")
+    for i in range(len(data)):
+        sublinks.add(data[i]['href'])
+
+PDFS = set()
+
+for i in sublinks:
+    if i in mainlinks:
+        continue
+    if "pdf" in i:
+        PDFS.add(i)
+    elif "springfirled-ma.gov" in i:
+        soup = scraping(l)
+        data1 = soup.find(id = "content")
+        data = data1.find_all("p")
         for i in range(len(data)):
             f.write(data[i].get_text(separator = '\n'))
-    # if "http" in scrapelinks2[i] and "19" in scrapelinks2[i] and scrapelinks2[i] not in done:
-    #     done.append(scrapelinks2[i])
-    #     soup = scraping(scrapelinks2[i])
-    #     data = soup.find_all("p")
-    #     for i in range(len(data)):
-    #         f.write(data[i].get_text(separator = '\n'))
+        data = data1.find_all("li")
+        for i in range(len(data)):
+            f.write(data[i].get_text(separator = '\n'))
 
 import PyPDF2
 import io
@@ -101,9 +93,9 @@ def getPDFs(file_url, county):
 
 for url in PDFS:
     print("Scraping from" + url)
-    if url[0] == "/":
-        getPDFs("https://www.polkcountyiowa.gov" + url, COUNTY)    
-        r = requests.get("https://www.polkcountyiowa.gov" + url)
+    if "http" not in url and "www" not in url:
+        getPDFs("https://www.springfield-ma.gov/cos/" + url, COUNTY)    
+        r = requests.get("https://www.springfield-ma.gov/cos/" + url)
     else:
         getPDFs(url, COUNTY)
         r = requests.get(url)
@@ -115,20 +107,8 @@ for url in PDFS:
         page = reader.getPage(page_number)
         page_content = page.extractText()
         f.write(page_content)
-        
+
+
 f.close()
 driver.quit()
 print("finished")
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
