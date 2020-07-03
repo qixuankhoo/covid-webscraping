@@ -9,10 +9,8 @@ import time
 import os
 from google_drive_downloader import GoogleDriveDownloader as gdd
 import sys
-from documentcloud import DocumentCloud
 from urllib.request import Request, urlopen
 
-client = DocumentCloud()
 
 def scraping(url):
     print("\n\n\nScraping from " + url + "\n\n\n")
