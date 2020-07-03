@@ -2,6 +2,10 @@ from bs4 import BeautifulSoup
 import requests
 import os 
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
+
 
 
 # create a folder for PDFs
@@ -20,8 +24,11 @@ def scraping(url):
     print("Scraping from " + url)
     f.write("\n\n\n")
     f.write("Scraping from " + url + "\n\n\n")
-    result = requests.get(url)
-    return BeautifulSoup(result.content, 'html.parser')
+    driver = webdriver.Chrome(executable_path="/Users/qixuan.khoo.19/Downloads/chromedriver")
+    driver.get(url)
+    time.sleep(1)
+    result = driver.execute_script("return document.documentElement.outerHTML")
+    return BeautifulSoup(result, 'html.parser')
 
 def writeData(soup, tag, class_name):
     currdata = soup.find_all(tag, class_= class_name)
@@ -49,24 +56,22 @@ textFilePath = '../data/' + COUNTY + '.txt'
 f = open(getFilePath(textFilePath), 'w')
 links = []
 
-#Scrape all PDFs on Linn County Reopening-Guidance website
+#Scrape all PDFs on Fall River County Reopening-Guidance website
 url = 'https://www.fallriverma.org/department/corona-virus-information/'
-webpage = requests.get(url)
-soup = BeautifulSoup(webpage.content, 'html.parser')
-section = soup.find('div', class_='catchall-content')
-data = section.find_all('a')
-print(len(data))
+soup = scraping(url)
+data = soup.find_all('tr')
+print('done')
+findHref(data)
+print(len(links))
 
-""" for item in data:
-    if '(PDF)' in item.get_text():
-        link = item.find('a').get('href')
-        try:
-            getPDF(link, COUNTY)
-        except:
-            getPDF('https://www.fallriverma.org//'+link, COUNTY)
+for link in links:
+    try:
+        data = getPDF(link, COUNTY)
+    except:
+        data = getPDF('https://www.fallriverma.org'+link, COUNTY)
 
 
- """
+
 
 
 

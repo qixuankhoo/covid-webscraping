@@ -53,26 +53,8 @@ textFilePath = '../data/' + COUNTY + '.txt'
 f = open(getFilePath(textFilePath), 'w')
 links = []
 
-""" 
-#Scrape all PDFs on Linn County Reopening-Guidance website
-url = 'https://www.linncounty.org/1413/Reopening-Guidance'
-webpage = requests.get(url)
-soup = BeautifulSoup(webpage.content, 'html.parser')
-section = soup.find('div',class_='fr-view')
-data = section.find_all('p')
-for item in data:
-    if '(PDF)' in item.get_text():
-        link = item.find('a').get('href')
-        try:
-            getPDF(link, COUNTY)
-        except:
-            getPDF('https://www.linncounty.org/'+link, COUNTY)
-
-"""
-
-
 #Scrape all PDFs from all resources on Linn County toolkits website 
-""" 
+
 url = 'https://www.linncounty.org/1400/Toolkits'
 links = []
 currSoup = scraping(url)
@@ -95,25 +77,6 @@ for link in links:
             data = getPDF(pdfLink, COUNTY)
         except:
             data = getPDF('https://www.linncounty.org/'+pdfLink, COUNTY)
-
- """
-url = 'https://www.linncounty.org/1404/Business-Guidance'
-currSoup = scraping(url)
-section = currSoup.find_all('div', class_="pageContent")[2]
-subSection = section.find('div', class_='fr-view')
-items = section.find_all('li')
-pdfLinks = []
-print(len(items))
-for item in items:
-    pdfLinks.append(item.find('a').get('href'))
-print(len(pdfLinks))
-
-for pdfLink in pdfLinks:
-    try:
-        data = getPDF(pdfLink, COUNTY)
-    except:
-        data = getPDF('https://www.linncounty.org/'+pdfLink, COUNTY)
-
 
 
     
