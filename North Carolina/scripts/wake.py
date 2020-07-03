@@ -70,11 +70,11 @@ COUNTY = "wake"
 f = open("../data/" + COUNTY + ".txt", "w")
 
 pdfPath = "../data/" + COUNTY + "-PDF"
-#os.mkdir(pdfPath)
+os.mkdir(pdfPath)
 
 # scrape from 'https://covid19.wakegov.com/'
 soup = scraping('https://covid19.wakegov.com/')
-'''
+
 divs = soup.find_all('div', class_='vc_column-inner')
 for div in divs:
     if 'News Releases' not in div.text and 'Guidance For:' not in div.text:
@@ -99,7 +99,7 @@ links.add('https://covid19.wakegov.com/wakeforward/')
 
 for link in links:
     saveText(link)
-'''
+
 
 # scrape 'https://covid19.wakegov.com/news-releases/'
 for page in range(1,11):
