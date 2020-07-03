@@ -80,6 +80,8 @@ for proclamation in proclamations:
     link = proclamation.get('href')
     getPDFs(link, 'wake', date)
 '''
+
+# scrape all tabs
 links = set()
 tabs = soup.select('.non_mega_menu a')
 for tab in tabs:
@@ -91,3 +93,11 @@ links.add('https://covid19.wakegov.com/wakeforward/')
 
 for link in links:
     saveText(link)
+
+
+# scrape 'https://covid19.wakegov.com/news-releases/'
+for page in range(1,11):
+    url = 'https://covid19.wakegov.com/news-releases/page/' + str(page)
+    soup = scraping(url)
+    news_links = soup.select('.content a')
+    
