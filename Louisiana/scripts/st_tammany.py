@@ -43,14 +43,14 @@ linksinfo
 # In[4]:
 
 
-with open(r"C:\Users\Raghav's Computer\Covid Muser\data\st_tammany.txt",'w', encoding='utf-8') as outfile:
-    outfile.write("CONTENT" + "\n" + "\n")
+with open(r"../data/st_tammany.txt",'w', encoding='utf-8') as outfile:
+    outfile.write("Scraping from " + url + "\n" + "\n")
     for i in content:
         print(i.get_text(separator = '\n'), file=outfile)
-    outfile.write("\n" + "\n"+ "LINKS" + "\n" + "\n")
+#     outfile.write("\n" + "\n"+ "LINKS" + "\n" + "\n")
    
-    for item in linksinfo:
-        print(item, file=outfile)
+#     for item in linksinfo:
+#         print(item, file=outfile)
         
      
     
@@ -65,20 +65,23 @@ import os
 import requests
 from urllib.parse import urljoin
 
-url = "http://www.stpgov.org/covid19"
-
-
-folder_location = r"C:\Users\Raghav's Computer\Covid Muser\data\st_tammany-PDF"
-if not os.path.exists(folder_location):os.mkdir(folder_location)
-response = requests.get(url)
-soup= BeautifulSoup(response.text, "html.parser")     
-for link in soup.select("a[href$='.pdf']"):
-    filename = os.path.join(folder_location,link['href'].split('/')[-1])
-    with open(filename, 'wb') as f:
-        try:
-            f.write(requests.get(urljoin(url,link['href'])).content)
-        except Exception:
-            continue
+county="st_tammany"
+pdfs=[]
+for i in soup.select("a[href$='.pdf']"):
+    pdfs.append(i)
+if len(pdfs)>0: 
+    #Only creates folder if the website has pdfs
+    path = "../data/" + county + "-PDF"
+    os.mkdir(path)
+    response = requests.get(url)
+    soup= BeautifulSoup(response.text, "html.parser")     
+    for link in soup.select("a[href$='.pdf']"):
+        filename = os.path.join(path,link['href'].split('/')[-1])
+        with open(filename, 'wb') as f:
+            try:
+                f.write(requests.get(urljoin(url,link['href'])).content)
+            except Exception:
+                continue
 
 
 # In[ ]:
