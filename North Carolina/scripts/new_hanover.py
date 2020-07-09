@@ -4,14 +4,8 @@ import os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from webdriver_manager.chrome import ChromeDriverManager
 import time
-
-
-# create a folder for PDFs
-""" fileDir = os.path.dirname(__file__)
-filePath2 = os.path.join(fileDir, "../data/" + COUNTY + "-PDF")
-filePath2 = os.path.abspath(os.path.realpath(filePath2))
-os.mkdir(filePath2) """
 
 def getFilePath(path):
     fileDir = os.path.dirname(__file__)
@@ -22,8 +16,7 @@ def getFilePath(path):
 def scraping(url):
     print("Scraping from " + url)
     f.write("\n\n\n")
-    f.write("Scraping from " + url + "\n\n\n")
-    driver = webdriver.Chrome(executable_path="/Users/qixuan.khoo.19/Downloads/chromedriver")
+    f.write("Scraping from " + url + "\n\n\n") 
     driver.get(url)
     time.sleep(1)
     result = driver.execute_script("return document.documentElement.outerHTML")
@@ -40,6 +33,10 @@ def getPDF(file_url, county):
              pdf.write(chunk)
     return "data/" + title
     
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--headless')
+driver = webdriver.Chrome(ChromeDriverManager().install(), options = chrome_options)
+
 COUNTY = "new_hanover"
 
 #create PDF folder for PDF files
@@ -51,8 +48,6 @@ except:
     
 textFilePath = '../data/' + COUNTY + '.txt'
 f = open(getFilePath(textFilePath), 'w')
-textFilePath = '../data/' + COUNTY + '.txt'
-f = open(getFilePath(textFilePath), 'a')
 
 
 #Scrape all news updates from main website
