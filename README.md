@@ -22,9 +22,6 @@ If you want to scrap a single county such as Durham under North Carolina, go to 
 Selenium Webdriver 
 Beautiful Soup 
 
-## Contributing
-Elizabeth Albright, Ph.D. <elizabeth.albright@duke.edu>
-
 ## Authors
 Anni Chen, Dylan Zumar, Rami Sbahi, Raghav Rasal, Qi Xuan Khoo
 
