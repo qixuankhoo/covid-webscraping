@@ -18,15 +18,15 @@ The run_all.py script under scripts would automatically run all the scripts unde
 If you want to scrap a single county such as Durham under North Carolina, go to the durham.py scripty under North Carolina/scripts in terminal. Then, type in "python3 durham.py". The data will be available under data with names "durham.txt" and "durham-PDF" if durham county website has PDFs.
 
 
-Built With
+## Built With
 Selenium Webdriver 
 Beautiful Soup 
 
-Contributing
+## Contributing
 Elizabeth Albright, Ph.D. <elizabeth.albright@duke.edu>
 
-Authors
+## Authors
 Anni Chen, Dylan Zumar, Rami Sbahi, Raghav Rasal, Qi Xuan Khoo
 
-Acknowledgments
+## Acknowledgments
 This project is led by Elizabeth Albright, Ph.D. <elizabeth.albright@duke.edu>.
