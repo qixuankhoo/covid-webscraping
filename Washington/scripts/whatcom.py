@@ -35,7 +35,7 @@ def getPDF(file_url, county):
                 if chunk:
                     pdf.write(chunk)
     except:
-        fileName = 'mediaFile' + random.randint(1,10) + '.pdf'
+        fileName = 'mediaFile' + str(random.randint(1,10)) + '.pdf'
         with open(os.path.join(filePath,fileName), "wb") as pdf:
             for chunk in r.iter_content(chunk_size=1024):
                 if chunk:
@@ -86,7 +86,7 @@ for link in links:
     section = soup.select('#page')[0]
     page = section.select('.fr-view')[0]
     f.write(title)
-    f.write(page.get_text().encode('utf-8'))
+    f.write(page.get_text()) #.encode('utf-8'))
 
 
 f.close()

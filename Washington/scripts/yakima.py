@@ -26,7 +26,7 @@ def scraping(url):
 def writeData(soup, tag, class_name):
     currdata = soup.find_all(tag, class_= class_name)
     for i in range(len(currdata)):
-        f.write(currdata[i].get_text().encode('utf-8'))
+        f.write(currdata[i].get_text()) #.encode('utf-8'))
 
 def findHref(data):
     for i in range(len(data)):
@@ -57,13 +57,14 @@ driver = webdriver.Chrome(ChromeDriverManager().install(), options = chrome_opti
 
 COUNTY = "yakima"
 
+'''
 #create PDF folder for PDF files
 try:
     filePath = getFilePath("../data/" + COUNTY + "-PDF")
     os.mkdir(filePath) 
 except:
     print('PDF folder already exists!')
-    
+'''
 textFilePath = '../data/' + COUNTY + '.txt'
 f = open(getFilePath(textFilePath), 'w')
 links = []
@@ -72,11 +73,11 @@ links = []
 #Scrape Covid-19 main site
 url = 'https://www.yakimacounty.us/2323/COVID-19'
 soup = scraping(url)
-title = soup.select('#versionHeadLine')[0].get_text().encode('utf-8')
+title = soup.select('#versionHeadLine')[0].get_text() #.encode('utf-8')
 section = soup.select('#page')[0]
 page = section.select('.fr-view')[0]
 f.write(title)
-f.write(page.get_text().encode('utf-8'))
+f.write(page.get_text()) #.encode('utf-8'))
 
 
 #Scrape Covid-19 County Guidelines
@@ -89,11 +90,11 @@ links = [
 
 for link in links:
     soup = scraping(link)
-    title = soup.select('#versionHeadLine')[0].get_text().encode('utf-8')
+    title = soup.select('#versionHeadLine')[0].get_text() #.encode('utf-8')
     section = soup.select('#page')[0]
     page = section.select('.fr-view')[0]
     f.write(title)
-    f.write(page.get_text().encode('utf-8'))
+    f.write(page.get_text()) #.encode('utf-8'))
 
 
 f.close()
