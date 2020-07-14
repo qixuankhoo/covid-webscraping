@@ -82,11 +82,15 @@ links = [
 
 for link in links:
     soup = scraping(link)
-    title = soup.select('#versionHeadLine')[0].get_text()
-    section = soup.select('#page')[0]
-    page = section.select('.fr-view')[0]
-    f.write(title)
-    f.write(page.get_text()) #.encode('utf-8'))
+    headline = soup.select('#versionHeadLine')
+    page = soup.select('#page')
+    fr = section.select('.fr-view')
+    if headline and page and fr:
+        title = headline[0].get_text()
+        section = page[0]
+        section2 = fr[0]
+        f.write(title)
+        f.write(section2.get_text()) #.encode('utf-8'))
 
 
 f.close()

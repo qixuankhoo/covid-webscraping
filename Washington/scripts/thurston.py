@@ -23,15 +23,17 @@ def scraping(url):
     return BeautifulSoup(result, 'html.parser')
 
 def getPDF(file_url, county):
-    title = file_url.split('/').pop()
-    fileName = title + '.pdf'
+    print("file url of PDF", file_url)
+    fileName = file_url.split('/').pop()
+    if '.pdf' not in fileName:
+        fileName += '.pdf'
     filePath = getFilePath("/data/" + county + "-PDF")
     r = requests.get(file_url, stream = True)
     with open(os.path.join(filePath,fileName), "wb") as pdf:
         for chunk in r.iter_content(chunk_size=1024):
          if chunk:
              pdf.write(chunk)
-    return "data/" + title
+    return "data/" + fileName
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
@@ -60,7 +62,7 @@ data = div.find('ul').find_all('li')
 print(len(data))
 for item in data:
     link = item.find('a').get('href')
-    data = getPDF('http://thurstoncountywa.gov'+link, COUNTY)
+    data = getPDF('https://www.thurstoncountywa.gov'+link, COUNTY)
 
 #Scrape main page:
 url = 'https://www.thurstoncountywa.gov/phss/Pages/coronavirus.aspx'
