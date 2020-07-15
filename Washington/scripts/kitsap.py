@@ -93,7 +93,7 @@ findHref(data)
 
 # write text
 for i in range(len(data)):
-    f.write(data[i].text)
+    f.write(data[i].get_text(separator='\n'))
     f.write("\n\n\n")
 
 
