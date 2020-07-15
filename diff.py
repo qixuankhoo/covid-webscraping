@@ -4,7 +4,7 @@ import csv
 f_map = {}
 g_map = {}
 
-WRITE = True
+WRITE = False
 
 
 #with open("Louisiana/data/2020-6-20/st_tammany.txt") as f, open("Louisiana/data/2020-07-14/st_tammany.txt") as g:
@@ -12,8 +12,12 @@ WRITE = True
 #with open("test/black_hawk_06_23.txt") as f, open("test/black_hawk_07_14.txt") as g:
 #with open("test/test1.txt") as f, open("test/test2.txt") as g:
 
-COUNTY = 'spokane'
-with open("Washington/data/2020-07-10 (incomplete)/" +COUNTY + ".txt") as f, open("Washington/data/2020-07-14/" + COUNTY + ".txt") as g:
+STATE = 'Washington'
+COUNTY = 'benton'
+start_date = "2020-07-01"
+end_date = "2020-07-14"
+
+with open(STATE + "/data/" + start_date + "/" +COUNTY + ".txt") as f, open(STATE + "/data/" + end_date + "/" + COUNTY + ".txt") as g:
     flines = f.readlines()
     glines = g.readlines()
 
@@ -39,8 +43,6 @@ with open("Washington/data/2020-07-10 (incomplete)/" +COUNTY + ".txt") as f, ope
                 if WRITE:
                     writer.writerow({'diff_line' : line, 'county' : COUNTY})
                     
-
-
     print("\n\n")
         
 '''
