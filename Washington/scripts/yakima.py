@@ -56,13 +56,6 @@ chrome_options.add_argument('--headless')
 driver = webdriver.Chrome(ChromeDriverManager().install(), options = chrome_options)
 
 COUNTY = "yakima"
-
-#create PDF folder for PDF files
-try:
-    filePath = getFilePath("../data/" + COUNTY + "-PDF")
-    os.mkdir(filePath) 
-except:
-    print('PDF folder already exists!')
     
 textFilePath = '../data/' + COUNTY + '.txt'
 f = open(getFilePath(textFilePath), 'w')
@@ -94,7 +87,6 @@ for link in links:
     page = section.select('.fr-view')[0]
     f.write(title)
     f.write(page.get_text().encode('utf-8'))
-
 
 f.close()
 

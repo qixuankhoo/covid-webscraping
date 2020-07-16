@@ -1,10 +1,10 @@
+# coding: utf-8
 from bs4 import BeautifulSoup
 import requests
 import os 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-from webdriver_manager.chrome import ChromeDriverManager
 import time
 import random
 
@@ -19,6 +19,7 @@ def scraping(url):
     print("Scraping from " + url)
     f.write("\n\n\n")
     f.write("Scraping from " + url + "\n\n\n")
+    driver = webdriver.Chrome()
     driver.get(url)
     time.sleep(1)
     result = driver.execute_script("return document.documentElement.outerHTML")
@@ -42,9 +43,6 @@ def getPDF(file_url, county):
                     pdf.write(chunk)
     return "data/" + title
     
-chrome_options = webdriver.ChromeOptions()
-chrome_options.add_argument('--headless')
-driver = webdriver.Chrome(ChromeDriverManager().install(), options = chrome_options)
 
 COUNTY = "whatcom"
 
@@ -87,7 +85,6 @@ for link in links:
     page = section.select('.fr-view')[0]
     f.write(title)
     f.write(page.get_text().encode('utf-8'))
-
 
 f.close()
 
