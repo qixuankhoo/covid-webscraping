@@ -36,7 +36,7 @@ def getPDF(file_url, county):
                 if chunk:
                     pdf.write(chunk)
     except:
-        fileName = 'mediaFile' + random.randint(1,10) + '.pdf'
+        fileName = 'mediaFile' + str(random.randint(1,10)) + '.pdf'
         with open(os.path.join(filePath,fileName), "wb") as pdf:
             for chunk in r.iter_content(chunk_size=1024):
                 if chunk:
@@ -73,18 +73,20 @@ for item in data:
 links = [
     'http://whatcomcounty.us/3404/Masks-and-Face-Coverings',
     'http://whatcomcounty.us/3374/Resources-for-Businesses-Organizations',
-    'http://whatcomcounty.us/3356/Healthcare-Providers',
     'https://www.whatcomcounty.us/3369/Individuals-Families-Households#highrisk',
     'http://whatcomcounty.us/3388/COVID-19-Testing',
 ]
 
 for link in links:
     soup = scraping(link)
-    title = soup.select('#versionHeadLine')[0].get_text()
-    section = soup.select('#page')[0]
-    page = section.select('.fr-view')[0]
-    f.write(title)
-    f.write(page.get_text().encode('utf-8'))
+    headline = soup.select('#versionHeadLine')
+    page = soup.select('#page')
+    fr = page[0].select('.fr-view')
+    if headline and page and fr:
+        title = headline[0].get_text()
+        section = fr[0]
+        f.write(title)
+        f.write(section.get_text().encode('utf-8'))
 
 f.close()
 
