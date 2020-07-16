@@ -24,19 +24,18 @@ def scraping(url):
     return BeautifulSoup(result, 'html.parser')
 
 def getPDF(file_url, county):
-    title = file_url.split('/').pop()
-    if '.pdf' in title:
-        fileName = title 
-    else:
-        fileName = title + '.pdf'
-    filePath = getFilePath("../data/" + county + "-PDF")
-    print(filePath)
+    print("file url of PDF", file_url)
+    fileName = file_url.split('/').pop()
+    if '.pdf' not in fileName:
+        fileName += '.pdf'
+    filePath = getFilePath("/data/" + county + "-PDF")
     r = requests.get(file_url, stream = True)
     with open(os.path.join(filePath,fileName), "wb") as pdf:
         for chunk in r.iter_content(chunk_size=1024):
             if chunk:
                 pdf.write(chunk)
-    return "data/" + title
+    return "data/" + fileName
+
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
