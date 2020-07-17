@@ -1,10 +1,10 @@
+# coding: utf-8
 from bs4 import BeautifulSoup
 import requests
 import os 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-from webdriver_manager.chrome import ChromeDriverManager
 import time
 import random
 
@@ -19,6 +19,7 @@ def scraping(url):
     print("Scraping from " + url)
     f.write("\n\n\n")
     f.write("Scraping from " + url + "\n\n\n")
+    driver = webdriver.Chrome()
     driver.get(url)
     time.sleep(1)
     result = driver.execute_script("return document.documentElement.outerHTML")
@@ -42,9 +43,6 @@ def getPDF(file_url, county):
                     pdf.write(chunk)
     return "data/" + title
     
-chrome_options = webdriver.ChromeOptions()
-chrome_options.add_argument('--headless')
-driver = webdriver.Chrome(ChromeDriverManager().install(), options = chrome_options)
 
 COUNTY = "whatcom"
 
@@ -75,7 +73,6 @@ for item in data:
 links = [
     'http://whatcomcounty.us/3404/Masks-and-Face-Coverings',
     'http://whatcomcounty.us/3374/Resources-for-Businesses-Organizations',
-    'http://whatcomcounty.us/3356/Healthcare-Providers',
     'https://www.whatcomcounty.us/3369/Individuals-Families-Households#highrisk',
     'http://whatcomcounty.us/3388/COVID-19-Testing',
 ]
@@ -84,14 +81,12 @@ for link in links:
     soup = scraping(link)
     headline = soup.select('#versionHeadLine')
     page = soup.select('#page')
-    fr = section.select('.fr-view')
+    fr = page[0].select('.fr-view')
     if headline and page and fr:
         title = headline[0].get_text()
-        section = page[0]
-        section2 = fr[0]
+        section = fr[0]
         f.write(title)
-        f.write(section2.get_text()) #.encode('utf-8'))
-
+        f.write(section.get_text().encode('utf-8'))
 
 f.close()
 
