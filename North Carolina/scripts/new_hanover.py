@@ -39,14 +39,13 @@ driver = webdriver.Chrome(ChromeDriverManager().install(), options = chrome_opti
 
 COUNTY = "new_hanover"
 
-'''
 #create PDF folder for PDF files
 try:
     filePath = getFilePath("../data/" + COUNTY + "-PDF")
     os.mkdir(filePath) 
 except:
     print('PDF folder already exists!')
-'''
+    
 textFilePath = '../data/' + COUNTY + '.txt'
 f = open(getFilePath(textFilePath), 'w')
 
