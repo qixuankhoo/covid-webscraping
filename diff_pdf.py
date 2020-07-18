@@ -40,8 +40,25 @@ for file_name in os.listdir(end_path):
                 print(page.extract_text())
 '''
 
-with pdfplumber.open("Iowa/data/2020-07-14/woodbury-PDF/050820_Memo_to_Day_Cares.pdf") as f:
-    print("hi")
+path = "Iowa/data/2020-07-14/woodbury-PDF/050820_Memo_to_Day_Cares.pdf"
+head, tail = os.path.split(path)
+os.mkdir(head + "/img")
+
+pages = convert_from_path(path, 500)
+
+image_counter = 1
+
+for page in pages:
+    fileName = head + "/img/" + tail[:-4] + "_page_" + str(image_counter) + ".jpg"
+    page.save(fileName, 'JPEG')
+    image_counter += 1
+
+for i in range(1, image_counter):
+    fileName = head + "/img/" + tail[:-4] + "_page_" + str(i) + ".jpg"
+    text = str(pytesseract.image_to_string(Image.open(fileName)))
+    text = text.replace('-\n', '')
+    print(text)
+    
 
 '''
 
