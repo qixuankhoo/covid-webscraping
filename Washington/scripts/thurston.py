@@ -18,7 +18,6 @@ def scraping(url):
     print("Scraping from " + url)
     f.write("\n\n\n")
     f.write("Scraping from " + url + "\n\n\n")
-    driver = webdriver.Chrome()
     driver.get(url)
     time.sleep(5)
     result = driver.execute_script("return document.documentElement.outerHTML")
@@ -59,7 +58,8 @@ links = []
 #Scrape Letters to the Community PDFs
 url = 'https://www.thurstoncountywa.gov/phss/Pages/coronavirus.aspx'
 soup = scraping(url)
-section = soup.find('div', class_='ExternalClass013DDBDFF84449D4A508A19321F2DB08')
+body = soup.select('#WebPartWPQ5')[0]
+section = body.find('div', class_='text').find('div')
 div = section.find_all('div')[1]
 data = div.find('ul').find_all('li')
 print(len(data))
@@ -67,13 +67,13 @@ for item in data:
     tag = item.find('a')
     if 'Spanish' not in tag.get_text() and 'Vietnamese' not in tag.get_text():
         link = tag.get('href')
-        data = getPDF('https://www.thurstoncountywa.gov'+link, COUNTY)
+        data = getPDF('https://www.thurstoncountywa.gov'+link, COUNTY) 
 
 #Scrape main page:
 url = 'https://www.thurstoncountywa.gov/phss/Pages/coronavirus.aspx'
 soup = scraping(url)
-sections = soup.select('.ExternalClass013DDBDFF84449D4A508A19321F2DB08')
-for section in sections:
-    f.write(section.get_text().encode('utf-8'))
+body = soup.select('#WebPartWPQ5')[0]
+section = body.find('div', class_='text')
+f.write(section.get_text().encode('utf-8'))
 
 f.close()
