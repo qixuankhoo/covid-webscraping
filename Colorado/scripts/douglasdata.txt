@@ -1,11 +1,12 @@
 CONTENT
 
 
-June 27, 2020
-CDPHE Approves Additional Douglas County Variance Requests 
-Late Friday, June 26, Douglas County received a letter of approval from the Colorado Department of Public Health and Environment pertaining to the County’s variance request for gatherings, receptions, events and life rites – and the County’s variance request for theaters, team sports and pools.
-Approvals are specific to limited capacities, sustainability of favorable public health data, with social distancing and adherence to public health orders.
-Guidance for businesses can be found in the above variance documents with amendments found in the letter of approval.
+July 17, 2020
+Commissioners respond to Governor Polis Announcement of Statewide Mask Order
+On Thursday, July 16, the Board of Douglas County Commissioners issued the following statement regarding the announcement by the Governor of a statewide mask mandate ( see official state announcement State of Colorado below Board response):
+“While consultation with local governments would have been preferred, now that we’ve heard from our state’s top elected official ordering a statewide mask mandate, we urge our citizens and business communities to comply with the public safety Executive Order. We will continue to encourage personal responsibility as we monitor Douglas County’s data over the next 30 days for a reduction in the spread of COVID-19-related hospitalizations, which as of today are 13.”
+ 
+June 27 Variances
 May 22 Variances
 Guidance for businesses can be found in the variance documents with amendments found in the letter of approval.
 Additional industry guidelines from CDPHE:
@@ -94,7 +95,7 @@ Web Development by Infomedia
 
 LINKS
 
-Stage 2 Fire Restrictions in place for Unincorporated Douglas CountyContinue Reading: https://www.douglas.co.us/stage-2-fire-restrictions-in-place-for-unincorporated-douglas-county/
+Colorado Statewide Mask Order-D 2020 138Continue Reading: https://www.douglas.co.us/colorado-statewide-mask-order/
 : https://www.douglas.co.us
 : https://www.douglas.co.us
 Our Priorities: #
@@ -349,9 +350,10 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
 NextDoor: https://nextdoor.com/agency/douglas-county-government
 : https://www.douglas.co.us/wp-content/uploads/2020/04/Community-Response-logo.jpg
-a letter of approval: https://www.douglas.co.us/documents/june-10-variance-request.pdf
-gatherings, receptions, events and life rites: https://www.douglas.co.us/documents/june-26-variance.pdf
-theaters, team sports and pools: https://www.douglas.co.us/documents/variance-pools-movie-theaters-and-team-sports.pdf
+Governor of a statewide mask mandate: https://www.douglas.co.us/colorado-statewide-mask-order/
+Letter of approval: https://www.douglas.co.us/documents/june-26-variance.pdf
+ Gatherings, receptions, events and life rites: https://www.douglas.co.us/documents/june-10-variance-request.pdf
+Theaters, team sports and pools: https://www.douglas.co.us/documents/variance-pools-movie-theaters-and-team-sports.pdf
 Park Meadows Mall: https://www.douglas.co.us/documents/safer-at-home-application-for-douglas-county-indoor-mall.pdf
 restaurants, places of worship, and gyms: https://www.douglas.co.us/documents/douglas-county-variance-request-for-gyms-restaurants-places-of-worship.pdf
 letter of approval: https://covid19.colorado.gov/sites/covid19/files/2020-05/douglas_variance_decision.52220.pdf
@@ -397,7 +399,7 @@ www.colorado.gov/PEAK: http://www.colorado.gov/PEAK
 here: https://www.douglas.co.us/community/financial-assistance/money-for-emergency-assistance-and-basic-living-needs/
 Food Banks serving Douglas County: https://www.douglas.co.us/community/food-assistance/food-banks/
 www.colorado.gov/PEAK: http://www.colorado.gov/PEAK
-[email protected]: /cdn-cgi/l/email-protection#3e5a564d1057505c51467e5a514b59525f4d105d51104b4d
+[email protected]: /cdn-cgi/l/email-protection#e4808c97ca8d8a868b9ca4808b9183888597ca878bca9197
 click here: https://www.douglas.co.us/documents/child-care-and-covid-19.pdf
 Emergency Child Care Support: https://www.colorado.gov/pacific/cdhs/news/emergency-child-care-extended-all-essential-workers-colorado
 https://childsupport.state.co.us/: https://childsupport.state.co.us/
@@ -405,12 +407,12 @@ www.colorado.gov/pacific/cdle/file-claim: https://www.colorado.gov/pacific/cdle/
 Tri-County Health Department: https://www.tchd.org/
 Colorado Department of Public Health and Environment: https://www.colorado.gov/cdphe
 CDC COVID-19: https://www.cdc.gov/coronavirus/2019-ncov/
-[email protected]: /cdn-cgi/l/email-protection#8dcec2c5c8c1ddcddfc0ddc9cea3e2ffea
+[email protected]: /cdn-cgi/l/email-protection#62212d2a272e3222302f3226214c0d1005
 : None
 clicking here: https://www.douglas.co.us/documents/ppp-forgiveness-form.pdf
-[email protected]: /cdn-cgi/l/email-protection#40302c212e2e292e2700242f35272c21336e232f6e3533
-[email protected]: /cdn-cgi/l/email-protection#41222e372825233432282f2432323324222e3724333801352229256f2e3326
-[email protected]: /cdn-cgi/l/email-protection#d7b4b6bbbbb4b2b9a3b2a597a3b4bfb3f9b8a5b0
+[email protected]: /cdn-cgi/l/email-protection#68180409060601060f280c071d0f04091b460b07461d1b
+[email protected]: /cdn-cgi/l/email-protection#f79498819e939582849e99928484859294988192858eb783949f93d9988590
+[email protected]: /cdn-cgi/l/email-protection#4320222f2f20262d3726310337202b276d2c3124
 https://content.govdelivery.com/accounts/CODORA/bulletins/288ba4e: https://content.govdelivery.com/accounts/CODORA/bulletins/288ba4e
 https://covid19.colorado.gov/safer-at-home?utm_medium=email&utm_source=govdelivery: https://covid19.colorado.gov/safer-at-home?utm_medium=email&utm_source=govdelivery
 Help Colorado Now: https://helpcoloradonow.org/
