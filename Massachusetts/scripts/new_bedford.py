@@ -26,7 +26,7 @@ def scraping(url):
 def writeData(soup, tag, class_name):
     currdata = soup.find_all(tag, class_= class_name)
     for i in range(len(currdata)):
-        f.write(currdata[i].get_text().encode('utf-8'))
+        f.write(currdata[i].get_text())
 
 def findHref(data):
     for i in range(len(data)):
