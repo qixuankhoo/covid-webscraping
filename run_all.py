@@ -7,6 +7,8 @@ import pytesseract
 import sys 
 from pdf2image import convert_from_path 
 
+nltk.download('punkt')
+
 threshold = 0.3 # for english word percentage from pdf, if less then try ocr
 english_words = set(nltk.corpus.words.words())
 initial_date = "2020-07-10"
@@ -89,8 +91,42 @@ def writePDFtext(path):
 
     head, _ = os.path.split(path)
     write_destination = head + "/pdf_diff_" + initial_date + ".txt"
+    print(head)
+    _, full_county = os.path.split(head)
+    COUNTY = full_county[:-4]
+    
+    print("COUNTY", COUNTY)
+
+
+    text = text.replace('\n \n', '^^').replace('\n', '').replace('^^', '\n\n')
+    
     with open(write_destination, "a") as f:
-        f.write(text + "\n\n")
+        f.write(text)
+
+    lines = text.split('\n\n')
+    
+    with open('pdf_diff_data.csv', 'a', newline='') as csvfile:
+        fieldnames = ['category', 'diff_line', 'county']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        #writer.writeheader()
+        #sys.exit(0) #uncomment and change to 'w' for one run if want to restart csv
+        for line in lines:
+            stripped_line = line.lstrip().rstrip()
+            if len(stripped_line) > 4:
+                sentences = nltk.tokenize.sent_tokenize(stripped_line)
+                current_diff_line = ""
+                i = 0
+                for sentence in sentences:
+                    current_diff_line += sentence + " "
+                    if i%3 == 2:
+                        writer.writerow({'diff_line' : current_diff_line, 'county' : COUNTY})
+                        current_diff_line = ""
+                    i += 1
+                if i%3 != 0: # last diff_line
+                    writer.writerow({'diff_line' : current_diff_line, 'county' : COUNTY})
+                #print("\n\n" + stripped_line)
+                
+            
 
 '''
 Writes the PDF text data for all new PDFs for a given county (initial_path and end_path are paths to county-PDF directories)
@@ -99,10 +135,10 @@ def writeNewCountyPDFs(initial_path, end_path):
     initial_files = os.listdir(initial_path)
     with open(end_path + "/pdf_diff_" + initial_date + ".txt", "w") as f: # clear .txt file (in case this is run multiple times, don't want duplicates, since we append otherwise)
         f.write("")
+    f.close()
     for file_name in os.listdir(end_path):
         if file_name not in initial_files and file_name[-4:] == '.pdf': # new (diff) PDF data
             writePDFtext(end_path + "/" + file_name)
-            
 
 states = ['Washington', 'North Carolina', 'Louisiana', 'Massachusetts', 'Iowa', 'Michigan', 'Colorado']
 
