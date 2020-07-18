@@ -76,4 +76,5 @@ body = soup.select('#WebPartWPQ5')[0]
 section = body.find('div', class_='text')
 f.write(section.get_text().encode('utf-8'))
 
+
 f.close()
