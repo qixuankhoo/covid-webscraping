@@ -112,22 +112,16 @@ states = ['Washington', 'North Carolina', 'Louisiana', 'Massachusetts', 'Iowa', 
 for state in states:
     initial_path = state + "/data/" + initial_date + "/" 
     end_path = state + "/data/" + end_date + "/" 
-    if os.path.isdir(initial_path):
-        if os.path.isdir(end_path):
-            for directory in os.listdir(initial_path):
-                if directory[-4:] == '-PDF':
-                    writeNewCountyPDFs(initial_path + directory, end_path + directory)
-        else:
-            print("no path for " + state + " for " + end_date)
-    else:
+
+    if not os.path.isdir(initial_path):
         print("no path for " + state + " for " + initial_date)
+        continue
 
-'''
+    if not os.path.isdir(end_path):
+        print("no path for " + state + " for " + end_date)
+        continue
 
-start_files = os.listdir(start_path)
-for file_name in os.listdir(end_path):
-    if file_name not in start_files:
-        with pdfplumber.open(end_path + file_name) as f:
-            for page in f.pages:
-                print(page.extract_text())
-'''
+    for directory in os.listdir(initial_path):
+        if directory[-4:] == '-PDF':
+            writeNewCountyPDFs(initial_path + directory, end_path + directory)
+

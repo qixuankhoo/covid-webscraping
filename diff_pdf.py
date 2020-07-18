@@ -60,7 +60,6 @@ for i in range(1, image_counter):
     print(text)
     
 
-'''
 
 english_count = 0
 
@@ -77,31 +76,3 @@ with pdfplumber.open("Iowa/data/2020-07-14/woodbury-PDF/050820_Memo_to_Day_Cares
     print("\n\n")
 
 
-with open(STATE + "/data/" + start_date + "/" +COUNTY + ".txt") as f, open(STATE + "/data/" + end_date + "/" + COUNTY + ".txt") as g:
-    flines = f.readlines()
-    glines = g.readlines()
-
-    for i, line in enumerate(flines):
-        stripped_line = line.lstrip().rstrip()
-        if len(stripped_line) > 4:
-            f_map[stripped_line] = 1
-    for i, line in enumerate(glines):
-        stripped_line = line.lstrip().rstrip()
-        if len(stripped_line) > 4:
-            g_map[stripped_line] = 1
-    
-    with open("test/out1.txt", "w") as fout, open("test/out2.txt", "w") as gout:
-        fout.write(str(f_map))
-        gout.write(str(g_map))
-    
-    with open('diff_data.csv', 'a', newline='') as csvfile:
-        fieldnames = ['category', 'diff_line', 'county']
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        for line in g_map.keys():
-            if line not in f_map:
-                print("\n\n" + line)
-                if WRITE:
-                    writer.writerow({'diff_line' : line, 'county' : COUNTY})
-                    
-    print("\n\n")
-'''
