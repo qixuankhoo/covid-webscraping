@@ -7,72 +7,140 @@ import pytesseract
 import sys 
 from pdf2image import convert_from_path 
 
-nltk.download('words')
+
+threshold = 0.3 # for english word percentage from pdf, if less then try ocr
 english_words = set(nltk.corpus.words.words())
+initial_date = "2020-07-10"
+end_date = "2020-07-14"
 
-#threshold = 0.9 # percent of words we want to be actual english
-
-
-f_map = {}
-g_map = {}
-
-WRITE = False
-
-
-#with open("Louisiana/data/2020-6-20/st_tammany.txt") as f, open("Louisiana/data/2020-07-14/st_tammany.txt") as g:
-#with open("test/thing1.txt") as f, open("test/thing2.txt") as g:
-#with open("test/black_hawk_06_23.txt") as f, open("test/black_hawk_07_14.txt") as g:
-#with open("test/test1.txt") as f, open("test/test2.txt") as g:
-
-STATE = 'Michigan'
-COUNTY = 'kalamazoo'
-start_date = "2020-06-28"
-end_date = "2020-07-15"
-
-start_path = STATE + "/data/" + start_date + "/" + COUNTY + "-PDF/"
-end_path = STATE + "/data/" + end_date + "/" + COUNTY + "-PDF/"
 '''
-start_files = os.listdir(start_path)
-for file_name in os.listdir(end_path):
-    if file_name not in start_files:
-        with pdfplumber.open(end_path + file_name) as f:
-            for page in f.pages:
-                print(page.extract_text())
+Read a PDF using OCR.
+Returns text and english success rate.
 '''
+def ocrReadPDF(path):
+    head, tail = os.path.split(path)
+    if not os.path.isdir(head + "/img"):
+        os.mkdir(head + "/img") # make image directory
 
-path = "Iowa/data/2020-07-14/woodbury-PDF/050820_Memo_to_Day_Cares.pdf"
-head, tail = os.path.split(path)
-os.mkdir(head + "/img")
+    pages = convert_from_path(path, 500)
+    image_counter = 1
+    for page in pages: # convert each page to jpg
+        fileName = head + "/img/" + tail[:-4] + "_page_" + str(image_counter) + ".jpg" 
+        page.save(fileName, 'JPEG') 
+        image_counter += 1
 
-pages = convert_from_path(path, 500)
+    ret_text = ""
+    english_count = 0
+    total_words = 0
+    for i in range(1, image_counter):
+        fileName = head + "/img/" + tail[:-4] + "_page_" + str(i) + ".jpg"
+        text = str(pytesseract.image_to_string(Image.open(fileName)))
+        if text:
+            text = text.replace('-\n', '')
+            ret_text += text
+            words = text.split(' ')
+            total_words += len(words)
+            for word in words:
+                if word in english_words:
+                    english_count += 1
+    
+    if total_words == 0:
+        total_words = 1
+    success_rate = english_count / total_words
+    return ret_text, success_rate    
 
-image_counter = 1
+'''
+Read a PDF normally.
+Returns text and english success rate.
+'''
+def readPDF(path):
+    english_count = 0
 
-for page in pages:
-    fileName = head + "/img/" + tail[:-4] + "_page_" + str(image_counter) + ".jpg"
-    page.save(fileName, 'JPEG')
-    image_counter += 1
+    ret_text = ""
+    total_words = 0
 
-for i in range(1, image_counter):
-    fileName = head + "/img/" + tail[:-4] + "_page_" + str(i) + ".jpg"
-    text = str(pytesseract.image_to_string(Image.open(fileName)))
-    text = text.replace('-\n', '')
-    print(text)
+    with pdfplumber.open(path) as f:
+        for page in f.pages:
+            text = page.extract_text()
+            if text:
+                ret_text += text
+                words = page.extract_words()
+                total_words += len(words)
+                for word in words:
+                    if word['text'] in english_words:
+                        english_count += 1
+        
+    if total_words == 0:
+        total_words = 1
+    success_rate = english_count / total_words
+    return ret_text, success_rate
+
+
+def writePDFtext(path, state):
+    print("scraping text from new PDF", path)
+    text, rate = readPDF(path)
+    if rate < threshold:
+        ocrText, ocrRate = ocrReadPDF(path)
+        if ocrRate > rate:
+            text = ocrText
+            rate = ocrRate
+
+    head, _ = os.path.split(path)
+    write_destination = head + "/pdf_diff_" + initial_date + ".txt"
+
+    _, full_county = os.path.split(head)
+    county = full_county[:-4]
     
 
+    text = text.replace('\n \n', '^^').replace('\n', '').replace('^^', '\n\n')
+    
+    with open(write_destination, "a") as f:
+        f.write(text)
 
-english_count = 0
+    lines = text.split('\n\n')
+    
+    with open('pdf_diff_data.csv', 'a', newline='') as csvfile:
+        fieldnames = ['category', 'diff_line', 'county', 'state']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        # writer.writeheader()
+        # sys.exit(0) #uncomment and change to 'w' for one run if want to restart csv
+        for line in lines:
+            stripped_line = line.lstrip().rstrip()
+            if len(stripped_line) > 4:
+                sentences = nltk.tokenize.sent_tokenize(stripped_line)
+                for sentence in sentences:
+                    writer.writerow({'diff_line' : sentence, 'county' : county, 'state' : state})
+            
+'''
+Writes the PDF text data for all new PDFs for a given county (initial_path and end_path are paths to county-PDF directories)
+'''
+def writeNewCountyPDFs(initial_path, end_path, state):
+    initial_files = os.listdir(initial_path)
+    with open(end_path + "/pdf_diff_" + initial_date + ".txt", "w") as f: # clear .txt file (in case this is run multiple times, don't want duplicates, since we append otherwise)
+        f.write("")
+    f.close()
+    for file_name in os.listdir(end_path):
+        if file_name not in initial_files and file_name[-4:] == '.pdf': # new (diff) PDF data
+            writePDFtext(end_path + "/" + file_name, state)
 
-with pdfplumber.open("Iowa/data/2020-07-14/woodbury-PDF/050820_Memo_to_Day_Cares.pdf") as f:
-    for page in f.pages:
-        text = page.extract_text()
-        words = page.extract_words()
-        for word in words:
-            if word['text'] in english_words:
-                print(word['text'])
-                english_count += 1
-    print(english_count / len(words))
+states = ['Washington', 'North Carolina', 'Louisiana', 'Massachusetts', 'Iowa', 'Michigan', 'Colorado']
 
-    print("\n\n")
 
+# assumes that PDF directories are same within each date
+
+for state in states:
+    initial_path = state + "/data/" + initial_date + "/" 
+    end_path = state + "/data/" + end_date + "/" 
+
+    if not os.path.isdir(initial_path):
+        print("no path for " + state + " for " + initial_date)
+        continue
+
+    if not os.path.isdir(end_path):
+        print("no path for " + state + " for " + end_date)
+        continue
+
+    for directory in os.listdir(initial_path):
+        if directory[-4:] == '-PDF':
+            writeNewCountyPDFs(initial_path + directory, end_path + directory, state)
 

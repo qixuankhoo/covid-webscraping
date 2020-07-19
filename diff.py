@@ -1,73 +1,48 @@
 import csv
+import os
+import sys
+import nltk
 
-f_map = {}
-g_map = {}
+initial_date = "2020-07-14"
+end_date = "2020-07-17"
 
-WRITE = False
+def writeCountyDiffText(initial_path, end_path, state):
+    _, full_county = os.path.split(end_path)
+    county = full_county[:-4]
+    f_sentences = set()
+    f_text = ""
+    g_text = ""
+    with open(initial_path) as f, open(end_path) as g:
+        f_text = f.read().replace('\n', ' ')
+        g_text = g.read().replace('\n', ' ')
 
+    for sentence in nltk.tokenize.sent_tokenize(f_text):
+        f_sentences.add(sentence)
 
-#with open("Louisiana/data/2020-6-20/st_tammany.txt") as f, open("Louisiana/data/2020-07-14/st_tammany.txt") as g:
-#with open("test/thing1.txt") as f, open("test/thing2.txt") as g:
-#with open("test/black_hawk_06_23.txt") as f, open("test/black_hawk_07_14.txt") as g:
-#with open("test/test1.txt") as f, open("test/test2.txt") as g:
-
-STATE = 'Washington'
-COUNTY = 'benton'
-start_date = "2020-07-01"
-end_date = "2020-07-14"
-
-with open(STATE + "/data/" + start_date + "/" +COUNTY + ".txt") as f, open(STATE + "/data/" + end_date + "/" + COUNTY + ".txt") as g:
-    flines = f.readlines()
-    glines = g.readlines()
-
-    for i, line in enumerate(flines):
-        stripped_line = line.lstrip().rstrip()
-        if len(stripped_line) > 4:
-            f_map[stripped_line] = 1
-    for i, line in enumerate(glines):
-        stripped_line = line.lstrip().rstrip()
-        if len(stripped_line) > 4:
-            g_map[stripped_line] = 1
-    
-    with open("test/out1.txt", "w") as fout, open("test/out2.txt", "w") as gout:
-        fout.write(str(f_map))
-        gout.write(str(g_map))
-    
     with open('diff_data.csv', 'a', newline='') as csvfile:
-        fieldnames = ['category', 'diff_line', 'county']
+        fieldnames = ['category', 'diff_line', 'county', 'state']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        for line in g_map.keys():
-            if line not in f_map:
-                print("\n\n" + line)
-                if WRITE:
-                    writer.writerow({'diff_line' : line, 'county' : COUNTY})
+        #writer.writeheader()
+        #sys.exit(0) #uncomment and change to 'w' for one run if want to restart csv
+        for sentence in nltk.tokenize.sent_tokenize(g_text):
+            if sentence not in f_sentences:
+                writer.writerow({'diff_line' : sentence, 'county' : county, 'state' : state})
                     
-    print("\n\n")
-        
-'''
 
-#with open("Louisiana/data/2020-6-20/st_tammany.txt") as f, open("Louisiana/data/2020-07-14/st_tammany.txt") as g:
-#with open("test/thing1.txt") as f, open("test/thing2.txt") as g:
-with open("test/black_hawk_06_23.txt") as f, open("test/black_hawk_07_14.txt") as g:
-#with open("test/test1.txt") as f, open("test/test2.txt") as g:
-    flines = f.readlines()
-    glines = g.readlines()
+states = ['Washington', 'North Carolina', 'Louisiana', 'Massachusetts', 'Iowa', 'Michigan', 'Colorado']
 
-    for i, line in enumerate(flines):
-        flines[i] = line.lstrip().rstrip()
-    for i, line in enumerate(glines):
-        glines[i] = line.lstrip().rstrip()
+for state in states:
+    initial_path = state + "/data/" + initial_date + "/" 
+    end_path = state + "/data/" + end_date + "/" 
 
-    flines = [x for x in flines if len(x) > 4]
-    glines = [x for x in glines if len(x) > 4]
-    
-    with open("test/out1.txt", "w") as fout, open("test/out2.txt", "w") as gout:
-        fout.write(str(flines))
-        gout.write(str(glines))
+    if not os.path.isdir(initial_path):
+        print("no path for " + state + " for " + initial_date)
+        continue
 
-    d = difflib.Differ()
-    diffs = d.compare(flines, glines)
-    for diff in diffs:
-        if diff[0] == '+' or diff[0] == '-':
-            print("\n\n" + diff)
-'''
+    if not os.path.isdir(end_path):
+        print("no path for " + state + " for " + end_date)
+        continue
+
+    for curr_file in os.listdir(initial_path):
+        if curr_file[-4:] == '.txt':
+            writeCountyDiffText(initial_path + curr_file, end_path + curr_file, state)

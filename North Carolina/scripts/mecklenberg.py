@@ -55,7 +55,7 @@ f = open(getFilePath(textFilePath), 'w')
 #Scrape business re-opening guidance page
 url = 'https://www.mecknc.gov/news/Pages/Update-on-Novel-Coronavirus.aspx'
 soup = scraping(url)
-f.write(soup.select('.mc-page')[0].get_text().encode('utf-8'))
+f.write(soup.select('.mc-page')[0].get_text())
 
 
 #Scrape resources PDFs
@@ -72,7 +72,7 @@ for section in sections:
         else:
             try:
                 currSoup = scraping('https://www.mecknc.gov/'+link)
-                f.write(currSoup.select('.mc-page-content')[0].get_text().encode('utf-8'))
+                f.write(currSoup.select('.mc-page-content')[0].get_text())
             except:
                 pdf = getPDF('https://www.mecknc.gov/'+link, COUNTY)
 

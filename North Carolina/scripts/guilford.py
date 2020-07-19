@@ -59,7 +59,7 @@ links = []
 #Scrape business re-opening guidance
 url = 'https://www.guilfordcountync.gov/our-county/administration/coronavirus-updates'
 soup = scraping(url)
-f.write(soup.select('#ColumnUserControl3')[0].get_text().encode('utf-8'))
+f.write(soup.select('#ColumnUserControl3')[0].get_text())
 
 
 f.close()
