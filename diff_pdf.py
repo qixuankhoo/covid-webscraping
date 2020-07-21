@@ -10,8 +10,8 @@ from pdf2image import convert_from_path
 
 threshold = 0.3 # for english word percentage from pdf, if less then try ocr
 english_words = set(nltk.corpus.words.words())
-initial_date = "2020-07-10"
-end_date = "2020-07-14"
+initial_date = "2020-07-17"
+end_date = "2020-07-21"
 
 '''
 Read a PDF using OCR.
@@ -78,38 +78,41 @@ def readPDF(path):
 
 def writePDFtext(path, state):
     print("scraping text from new PDF", path)
-    text, rate = readPDF(path)
-    if rate < threshold:
-        ocrText, ocrRate = ocrReadPDF(path)
-        if ocrRate > rate:
-            text = ocrText
-            rate = ocrRate
+    try:
+        text, rate = readPDF(path)
+    except:
+        print("failed to read PDF")
+    else:
+        print("successfully reading PDF")
+        if rate < threshold:
+            try:
+                ocrText, ocrRate = ocrReadPDF(path)
+            except:
+                print("failed to OCR read PDF")
+            else:
+                if ocrRate > rate:
+                    text = ocrText
+                    rate = ocrRate
 
-    head, _ = os.path.split(path)
-    write_destination = head + "/pdf_diff_" + initial_date + ".txt"
+        head, _ = os.path.split(path)
+        write_destination = head + "/pdf_diff_" + initial_date + ".txt"
 
-    _, full_county = os.path.split(head)
-    county = full_county[:-4]
-    
+        _, full_county = os.path.split(head)
+        county = full_county[:-4]
+        
+        text = ' '.join(text.split())
+        #text = text.replace('\n \n', '^^').replace('\n', '').replace('^^', '\n\n')
+        
+        with open(write_destination, "a") as f:
+            f.write(text)
 
-    text = text.replace('\n \n', '^^').replace('\n', '').replace('^^', '\n\n')
-    
-    with open(write_destination, "a") as f:
-        f.write(text)
-
-    lines = text.split('\n\n')
-    
-    with open('pdf_diff_data.csv', 'a', newline='') as csvfile:
-        fieldnames = ['category', 'diff_line', 'county', 'state']
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        # writer.writeheader()
-        # sys.exit(0) #uncomment and change to 'w' for one run if want to restart csv
-        for line in lines:
-            stripped_line = line.lstrip().rstrip()
-            if len(stripped_line) > 4:
-                sentences = nltk.tokenize.sent_tokenize(stripped_line)
-                for sentence in sentences:
-                    writer.writerow({'diff_line' : sentence, 'county' : county, 'state' : state})
+        #lines = text.split('\n\n')
+        
+        with open('pdf_diff_data.csv', 'a', newline='') as csvfile:
+            fieldnames = ['category', 'diff_line', 'county', 'state']
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+            for sentence in nltk.tokenize.sent_tokenize(text):
+                writer.writerow({'diff_line' : sentence, 'county' : county, 'state' : state})
             
 '''
 Writes the PDF text data for all new PDFs for a given county (initial_path and end_path are paths to county-PDF directories)
@@ -122,6 +125,11 @@ def writeNewCountyPDFs(initial_path, end_path, state):
     for file_name in os.listdir(end_path):
         if file_name not in initial_files and file_name[-4:] == '.pdf': # new (diff) PDF data
             writePDFtext(end_path + "/" + file_name, state)
+            
+with open('pdf_diff_data.csv', 'w', newline='') as csvfile: # clear file
+    fieldnames = ['category', 'diff_line', 'county', 'state']
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    writer.writeheader()
 
 states = ['Washington', 'North Carolina', 'Louisiana', 'Massachusetts', 'Iowa', 'Michigan', 'Colorado']
 

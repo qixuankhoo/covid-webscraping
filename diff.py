@@ -3,8 +3,8 @@ import os
 import sys
 import nltk
 
-initial_date = "2020-07-14"
-end_date = "2020-07-17"
+initial_date = "2020-07-17"
+end_date = "2020-07-21"
 
 def writeCountyDiffText(initial_path, end_path, state):
     _, full_county = os.path.split(end_path)
@@ -13,8 +13,8 @@ def writeCountyDiffText(initial_path, end_path, state):
     f_text = ""
     g_text = ""
     with open(initial_path) as f, open(end_path) as g:
-        f_text = f.read().replace('\n', ' ')
-        g_text = g.read().replace('\n', ' ')
+        f_text = ' '.join(f.read().split())
+        g_text = ' '.join(g.read().split()) # replaces all white space with single space
 
     for sentence in nltk.tokenize.sent_tokenize(f_text):
         f_sentences.add(sentence)
@@ -22,13 +22,15 @@ def writeCountyDiffText(initial_path, end_path, state):
     with open('diff_data.csv', 'a', newline='') as csvfile:
         fieldnames = ['category', 'diff_line', 'county', 'state']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        #writer.writeheader()
-        #sys.exit(0) #uncomment and change to 'w' for one run if want to restart csv
         for sentence in nltk.tokenize.sent_tokenize(g_text):
             if sentence not in f_sentences:
                 writer.writerow({'diff_line' : sentence, 'county' : county, 'state' : state})
                     
-
+with open('diff_data.csv', 'w', newline='') as csvfile: # clear file
+    fieldnames = ['category', 'diff_line', 'county', 'state']
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    writer.writeheader()
+    
 states = ['Washington', 'North Carolina', 'Louisiana', 'Massachusetts', 'Iowa', 'Michigan', 'Colorado']
 
 for state in states:
