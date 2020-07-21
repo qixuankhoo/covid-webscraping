@@ -25,15 +25,20 @@ def scraping(url):
     return BeautifulSoup(result, 'html.parser')
 
 def getPDF(file_url, county):
-    title = file_url.split('/').pop()
-    fileName = title 
+    title = ' '.join(file_url.split('/')).split().pop()
+    if '.pdf' not in title:
+        title += '.pdf'
+    print("file_url", file_url)
+    print(file_url.split("/"))
+    fileName = title
+    print("title" ,title)
     filePath = getFilePath("../data/" + county + "-PDF")
     r = requests.get(file_url, stream = True)
     with open(os.path.join(filePath,fileName), "wb") as pdf:
         for chunk in r.iter_content(chunk_size=1024):
          if chunk:
              pdf.write(chunk)
-    return "data/" + title
+    return "../data/" + title
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
@@ -71,7 +76,10 @@ for section in sections:
             continue
         else:
             try:
-                currSoup = scraping('https://www.mecknc.gov/'+link)
+                full_url = link
+                if 'mecknc.gov' not in full_url:
+                    full_url = 'https://www.mecknc.gov/' + full_url
+                currSoup = scraping(full_url)
                 f.write(currSoup.select('.mc-page-content')[0].get_text())
             except:
                 pdf = getPDF('https://www.mecknc.gov/'+link, COUNTY)
