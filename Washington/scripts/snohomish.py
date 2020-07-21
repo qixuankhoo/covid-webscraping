@@ -24,6 +24,18 @@ def scraping(url):
     result = driver.execute_script("return document.documentElement.outerHTML")
     return BeautifulSoup(result, 'html.parser')
 
+soup = scraping("https://www.snohomishcountywa.gov/DocumentCenter/Index/6666")
+data = soup.find_all("a", class_="t-link")
+numbers = set()
+for i in range(len(data)):
+    if len(data[i].get_text()) > 2:
+        continue
+    numbers.add(data[i].get_text())
+max = 0
+for i in numbers:
+    if int(i) > max:
+        max = int(i)
+
 soup = scraping("https://snohomishcountywa.gov/Archive.aspx?AMID=124")
 data = soup.find(id = "modulecontent")
 data = data.find_all("a", href = True)
@@ -72,11 +84,13 @@ download_button = driver.find_element_by_xpath('//*[contains(concat( " ", @class
 content = driver.find_elements_by_class_name("pdf")
 for link in content:
     PDFS.add(link.get_attribute("href"))
-for i in range(3):
+for i in range(max - 1):
     download_button.click()
     time.sleep(2)
     content = driver.find_elements_by_class_name("pdf")
     for link in content:
+        print("LLOOK")
+        print(link.get_attribute("href"))
         PDFS.add(link.get_attribute("href"))
 
 import PyPDF2
@@ -94,6 +108,8 @@ os.makedirs(filePath, exist_ok=True)
 def getPDFs(file_url, county):
     count = 1
     title = file_url.split('/').pop()
+    if len(title) == 0:
+        title = "NONAME" + str(count)
     r = requests.get(file_url, stream = True)
     path = "../data/" + COUNTY + "-PDF" + "/" + title
     if os.path.isfile(path):
@@ -110,8 +126,8 @@ def getPDFs(file_url, county):
     return "data/" + title
 
 for url in PDFS:
-    getPDFs(url, COUNTY)
     print("Scraping from" + url)
+    getPDFs(url, COUNTY)
     r = requests.get(url)
     fi = io.BytesIO(r.content)
     try:
@@ -123,7 +139,6 @@ for url in PDFS:
         page = reader.getPage(page_number)
         page_content = page.extractText()
         f.write(page_content)
-
 
 
 f.close()
