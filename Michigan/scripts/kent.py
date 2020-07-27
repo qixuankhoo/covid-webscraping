@@ -7,6 +7,8 @@ from selenium.webdriver.common.keys import Keys
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 
+
+
 def getFilePath(path):
     fileDir = os.path.dirname(__file__)
     filePath = os.path.join(fileDir, path)
