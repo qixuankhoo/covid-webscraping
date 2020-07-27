@@ -31,7 +31,7 @@ def scraping(url):
 
 def writeData(soup, tag, id_name):
     currdata = soup.find(tag, id_= id_name)
-    f.write(currdata.get_text().encode('utf-8'))
+    f.write(currdata.get_text())
 
 def findHref(data):
     for i in range(len(data)):

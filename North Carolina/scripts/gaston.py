@@ -63,7 +63,7 @@ for item in data:
     else:
         try:
             currSoup = scraping('https://www.gastongov.com/'+link)
-            f.write(currSoup.select('.entry')[0].get_text().encode('utf-8'))
+            f.write(currSoup.select('.entry')[0].get_text())
         except:
             print('Unscrapeable - media link')
 
@@ -78,6 +78,6 @@ links = [
 
 for link in links:
     currSoup = scraping(link)
-    f.write(currSoup.select('#PAGES_CONTAINERinlineContent')[0].get_text().encode('utf-8'))
+    f.write(currSoup.select('#PAGES_CONTAINERinlineContent')[0].get_text())
 
 f.close()

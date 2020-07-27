@@ -39,13 +39,14 @@ driver = webdriver.Chrome(ChromeDriverManager().install(), options = chrome_opti
 
 COUNTY = "new_hanover"
 
+'''
 #create PDF folder for PDF files
 try:
     filePath = getFilePath("../data/" + COUNTY + "-PDF")
     os.mkdir(filePath) 
 except:
     print('PDF folder already exists!')
-    
+'''
 textFilePath = '../data/' + COUNTY + '.txt'
 f = open(getFilePath(textFilePath), 'w')
 
@@ -58,9 +59,9 @@ sections = soup.select('.panel-body')
 for section in sections:
     data = section.find_all('li')
     for item in data:
-        f.write(item.find('a').get_text().encode('utf-8') + '\n')
+        f.write(item.find('a').get_text() + '\n')
         currSoup = scraping(item.find('a').get('href'))
-        f.write(currSoup.select('#main')[0].get_text().encode('utf-8'))
+        f.write(currSoup.select('#main')[0].get_text())
 
 
 #Scrape county-level Covid resources
@@ -76,6 +77,6 @@ links = [
 
 for link in links:
     soup = scraping(link)
-    f.write(soup.select('#main')[0].get_text().encode('utf-8'))
+    f.write(soup.select('#main')[0].get_text())
 
 f.close()

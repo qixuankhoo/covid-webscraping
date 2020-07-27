@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[19]:
 
 
 from bs4 import BeautifulSoup
@@ -9,7 +9,7 @@ import urllib.request
 import re
 
 
-# In[2]:
+# In[20]:
 
 
 url="https://dubuquecounty.org/477/Coronavirus-COVID-19"
@@ -18,7 +18,7 @@ soup = BeautifulSoup(page, 'html.parser')
 print(soup)
 
 
-# In[3]:
+# In[21]:
 
 
 linksinfo=[]
@@ -39,20 +39,30 @@ for i in links:
 linksinfo
 
 
-# In[4]:
+# In[22]:
 
 
 with open(r"../data/dubuque.txt",'w', encoding='utf-8') as outfile:
+    link="https://dubuquecounty.org/477/Coronavirus-COVID-19"
+    page = urllib.request.urlopen(link) 
+    soup = BeautifulSoup(page, 'html.parser')
     outfile.write("Scraping from " + url + "\n" + "\n")
     for i in content:
         print(i.get_text(separator = '\n'), file=outfile)
-#     outfile.write("\n" + "\n"+ "LINKS" + "\n" + "\n")
-   
-#     for item in linksinfo:
-#         print(item, file=outfile)
+    for i in soup.find_all('a'):
+        if i.get_text()=="Read on...":
+            outfile.write("Scraping from https://dubuquecounty.org" + i.get('href') + "\n" + "\n")
+            link="https://dubuquecounty.org"+i.get('href')
+            page = urllib.request.urlopen(link) 
+            soup = BeautifulSoup(page, 'html.parser')
+            newcontent=soup.find_all('p')
+            for x in newcontent:
+                print(x.get_text(separator = '\n'), file=outfile)
+                outfile.write("\n" + "\n")
+        
 
 
-# In[5]:
+# In[23]:
 
 
 # Scraping PDFS

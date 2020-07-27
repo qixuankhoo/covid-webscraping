@@ -24,6 +24,17 @@ def scraping(url):
     result = driver.execute_script("return document.documentElement.outerHTML")
     return BeautifulSoup(result, 'html.parser')
 
+newslinks = set()
+soup = scraping("https://www.spokanecounty.org/CivicAlerts.aspx?CID=9")
+data = soup.find_all("a", class_ = "more")
+for i in range(len(data)):
+    newslinks.add("https://www.spokanecounty.org/" + data[i]['href'])
+for i in newslinks:
+    soup = scraping(i)
+    data = soup.find_all(class_ = "fr-view")
+    for y in range(len(data)):
+        f.write(data[y].get_text(separator = '\n'))
+
 PDFS = set()
 soup = scraping("https://www.spokanecounty.org/4589/COVID-19-Information")
 data1 = soup.find(id = "moduleContent")

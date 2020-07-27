@@ -157,7 +157,7 @@ for link in newlinks:
             soup = scraping(link)
             data = soup.find_all("p")
             for i in range(len(data)):
-                f.write(data[i].get_text(separator = '\n'))
+                f.write(data[i].text)
 
 import PyPDF2
 import io
@@ -176,15 +176,18 @@ for i in GDOCS:
 
 for file in glob.glob(filePath + "/*.pdf"):
     if file.endswith('.pdf'):
-        print(file)
-        fileReader = PyPDF2.PdfFileReader(open(file, "rb"))
-        count = 0
-        count = fileReader.numPages
-        while count >= 0:
-            count -= 1
-            pageObj = fileReader.getPage(count)
-            text = pageObj.extractText()
-            f.write(text)
+        try:
+            fileReader = PyPDF2.PdfFileReader(open(file, "rb"))
+        except:
+            print("failed to read pdf", file)
+        else:
+            count = 0
+            count = fileReader.numPages
+            while count >= 0:
+                count -= 1
+                pageObj = fileReader.getPage(count)
+                text = pageObj.extractText()
+                f.write(text)
 
 def getPDFs(file_url, county):
     title = file_url.split('/').pop()

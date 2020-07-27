@@ -41,13 +41,15 @@ driver = webdriver.Chrome(ChromeDriverManager().install(), options = chrome_opti
 
 COUNTY = "guilford"
 
+'''
+
 #create PDF folder for PDF files
 try:
     filePath = getFilePath("../data/" + COUNTY + "-PDF")
     os.mkdir(filePath) 
 except:
     print('PDF folder already exists!')
-    
+'''
 textFilePath = '../data/' + COUNTY + '.txt'
 f = open(getFilePath(textFilePath), 'w')
 
@@ -57,7 +59,7 @@ links = []
 #Scrape business re-opening guidance
 url = 'https://www.guilfordcountync.gov/our-county/administration/coronavirus-updates'
 soup = scraping(url)
-f.write(soup.select('#ColumnUserControl3')[0].get_text().encode('utf-8'))
+f.write(soup.select('#ColumnUserControl3')[0].get_text())
 
 
 f.close()

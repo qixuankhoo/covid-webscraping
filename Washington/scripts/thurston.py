@@ -74,7 +74,7 @@ url = 'https://www.thurstoncountywa.gov/phss/Pages/coronavirus.aspx'
 soup = scraping(url)
 body = soup.select('#WebPartWPQ5')[0]
 section = body.find('div', class_='text')
-f.write(section.get_text().encode('utf-8'))
+f.write(section.get_text())
 
 
 f.close()
