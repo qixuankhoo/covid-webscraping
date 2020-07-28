@@ -7,12 +7,6 @@ from selenium.webdriver.common.keys import Keys
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 
-# create a folder for PDFs
-""" fileDir = os.path.dirname(__file__)
-filePath2 = os.path.join(fileDir, "../data/" + COUNTY + "-PDF")
-filePath2 = os.path.abspath(os.path.realpath(filePath2))
-os.mkdir(filePath2) """
-
 def getFilePath(path):
     fileDir = os.path.dirname(__file__)
     filePath = os.path.join(fileDir, path)
@@ -23,7 +17,6 @@ def scraping(url):
     print("Scraping from " + url)
     f.write("\n\n\n")
     f.write("Scraping from " + url + "\n\n\n")
-    
     driver.get(url)
     time.sleep(1)
     result = driver.execute_script("return document.documentElement.outerHTML")
@@ -65,33 +58,66 @@ textFilePath = '../data/' + COUNTY + '.txt'
 f = open(getFilePath(textFilePath), 'w')
 links = []
 
-#Scrape all PDFs from all resources on Linn County toolkits website 
+#Scrape all links to resources on Linn County toolkits website --done
+try:
+    url = 'https://www.linncounty.org/1400/Toolkits'
+    links = []
+    currSoup = scraping(url)
+    data = currSoup.find_all('div', class_='widgetBody imageBorder')
 
-url = 'https://www.linncounty.org/1400/Toolkits'
-links = []
-currSoup = scraping(url)
-data = currSoup.find_all('div', class_='widgetBody imageBorder')
-for item in data:
-    link = item.find('a').get('href')
-    links.append('https://www.linncounty.org/'+link)
+    for item in data:
+        link = item.find('a').get('href')
+        links.append('https://www.linncounty.org'+link)
+except:
+    print('Error scraping website!') 
 
-for link in links:
-    currSoup = scraping(link)
-    section = currSoup.find_all('div', class_="fr-view")[1]
-    items = section.find_all('li')
-    pdfLinks = []
-    print(len(items))
-    for item in items:
-        pdfLinks.append(item.find('a').get('href'))
-    print(len(pdfLinks))
-    for pdfLink in pdfLinks:
-        try:
-            data = getPDF(pdfLink, COUNTY)
-        except:
-            data = getPDF('https://www.linncounty.org/'+pdfLink, COUNTY)
+#Scrape business guidance website --done
+try:
+    url = 'https://www.linncounty.org/1404/Business-Guidance'
+    currSoup = scraping(url)
+    section = currSoup.find_all('div', class_="siteWrap2")[1]
+    f.write(section.get_text())
+except:
+    print('Error scraping website!')
+
+#Scrape mental health website --done
+try:
+    url = 'https://www.linncounty.org//1405/Mental-Health'
+    currSoup = scraping(url)
+    data = currSoup.find_all('p')
+
+    for item in data:
+        text = item.get_text()
+        if 'PDF' in text:
+            link = item.find('a')
+            pdf = getPDF(link.get('href'), COUNTY)
+        else:
+            f.write(text)
+except:
+    print('Error scraping website!')
+ 
+#Scrape senior guidance 
+try:
+    url = 'https://www.scottcountyiowa.gov/health/covid19/assisted-living-senior-centers'
+    currSoup = scraping(url)
+    section = currSoup.find('div', class_='field field-name-body field-type-text-with-summary field-label-hidden')
+    f.write(section.get_text())
+except: 
+    print('Error scraping website!')
 
 
-    
+#Scrape individuals-families-home website
+try:
+    url = 'https://www.scottcountyiowa.gov/health/covid19/individuals-families-home'
+    currSoup = scraping(url)
+    section = currSoup.find('div', class_='field field-name-body field-type-text-with-summary field-label-hidden')
+    f.write(section.get_text())
+except: 
+    print('Error scraping website!')
+
+f.close()
+
+
 
 
 
