@@ -21,8 +21,6 @@ def scraping(url):
 # Make a directory
 path = "../data/kalamazoo-PDF"
 os.mkdir(path)
-path = "../data/kalamazoo-image"
-os.mkdir(path)
 
 # Scraping from https://www.kalcounty.com/hcs/covid19news.php
 url = "https://www.kalcounty.com/hcs/covid19news.php"
@@ -47,16 +45,6 @@ def downloadImagePDFs(link):
         if "spanish" in title.lower():
             return
         with open("../data/" + "kalamazoo-PDF" + "/" + title,"wb") as pdf:
-            for chunk in r.iter_content(chunk_size=1024):
-                 if chunk:
-                     pdf.write(chunk)
-    if r.headers['Content-type'] == "application/pdf":
-        f.write("Scraping from " + link + "\n\n\n")
-        f.write("An image here.\n")
-        title = link.split('/').pop()
-        if "spanish" in title.lower():
-            return
-        with open("../data/" + "kalamazoo-image" + "/" + title,"wb") as pdf:
             for chunk in r.iter_content(chunk_size=1024):
                  if chunk:
                      pdf.write(chunk)
