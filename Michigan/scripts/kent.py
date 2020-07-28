@@ -28,7 +28,7 @@ def writeEmail(url):
     soup = scraping(url)
     data = soup.find_all('td', class_="editor-text")
     for item in data:
-        f.write(item.get_text().encode('utf-8'))
+        f.write(item.get_text())
 
 def getPDF(file_url, county):
     fileName = file_url.split('/').pop()

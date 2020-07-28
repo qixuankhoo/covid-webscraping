@@ -45,27 +45,20 @@ def getPDFs(file_url, county):
         for chunk in r.iter_content(chunk_size=1024*1024):
             pdf.write(chunk)
     return "data/" + title
+        
 
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument("--start-maximized")
 
-def saveText(url):
-    soup = scraping(url)
-    main = soup.find('div', class_='col col-xs-11')
-    if main:
-        f.write(main.get_text(separator = '\n'))
-    else:
-        f.write('\nNo relevant text found\n')
+directory = os.getcwd()[:-7] + "data/" + COUNTY + "-PDF"
+prefs = {"download.default_directory":
+                        directory}
+chrome_options.add_experimental_option("prefs", prefs)
+chrome_options.add_argument('--headless')
+chrome_options.add_argument("--enable-javascript")
+driver = webdriver.Chrome(ChromeDriverManager().install(), options = chrome_options)
 
 def downloadDocumentCloud(url):
-    chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument("--start-maximized")
-
-    directory = os.getcwd()[:-7] + "data/" + COUNTY + "-PDF"
-    prefs = {"download.default_directory": 
-                            directory} 
-    chrome_options.add_experimental_option("prefs", prefs)
-    chrome_options.add_argument('--headless')
-    chrome_options.add_argument("--enable-javascript")
-    driver = webdriver.Chrome(ChromeDriverManager().install(), options = chrome_options)
 
     print("pdf url", url)
     driver.get(url)
@@ -73,7 +66,6 @@ def downloadDocumentCloud(url):
     download_button = driver.find_element_by_xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "SendTrackDownloadView__downloadContainer___1nbjO", " " ))]//*[contains(concat( " ", @class, " " ), concat( " ", "spectrum-ActionButton--quiet", " " ))]')
     download_button.click()
     time.sleep(2)
-    driver.close()
     
     
 

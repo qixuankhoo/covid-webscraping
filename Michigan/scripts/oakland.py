@@ -25,28 +25,14 @@ def advanced_scraping(url):
     result = driver.execute_script("return document.documentElement.outerHTML")
     return BeautifulSoup(result, 'html.parser')
 
-def gdownload(url, destination):
-    print(url)
-    splits = url.split("/")
-    d_location = -1
-    google_id = ""
-
-    for i, split in enumerate(splits):
-        if split == 'd':
-            d_location = i
-        elif 'id=' in split:
-            google_id = split[split.find('id=')+3:]
-    if d_location != -1 and google_id == "":
-        google_id = splits[d_location + 1]
-    gdd.download_file_from_google_drive(file_id=google_id,
-                                    dest_path=destination)
-
-def getPDFs(file_url, county):
+def getPDFs(file_url):
     print("A PDF HERE\n")
     f.write("A PDF HERE\n")
     title = file_url.split('/').pop()
     r = requests.get(file_url, stream = True)
-    with open("../data/" + county + "-PDF" + "/" + title + ".pdf","wb") as pdf:
+    writePath = "../data/oakland-PDF/" + title + ".pdf"
+    print("writing to ", writePath)
+    with open(writePath,"wb") as pdf:
         for chunk in r.iter_content(chunk_size=1024*1024):
             pdf.write(chunk)
     return "data/" + title
@@ -71,16 +57,14 @@ chrome_options.add_argument("--enable-javascript")
 driver = webdriver.Chrome(ChromeDriverManager().install(), options = chrome_options)
 
 
-
-
 # scrape from 'https://www.oakgov.com/covid/best-practices/Pages/default.aspx'
 soup = advanced_scraping('https://www.oakgov.com/covid/best-practices/Pages/default.aspx')
 section = soup.find('section', class_="col-xs-12")
 for a in section.find_all('a'):
     link = a.get('href')
-    print(link)
+    #print(link)
     if '.pdf' in link:
-        getPDFs("https://www.oakgov.com" + link, "oakland")
+        getPDFs("https://www.oakgov.com" + link)
     elif 'best-practices' in link:
         saveText("https://www.oakgov.com" + link)
 
@@ -91,10 +75,9 @@ soup = advanced_scraping('https://www.oakgov.com/covid/Pages/Health-Orders.aspx'
 section = soup.find('section', class_="col-xs-12")
 for a in section.find_all('a'):
     link = a.get('href')
-    print(link)
+    #print(link)
     if '.pdf' in link:
-        getPDFs("https://www.oakgov.com" + link, "oakland")
-
+        getPDFs("https://www.oakgov.com" + link)
 
 
 # scrape from 'https://www.oakgov.com/pages/news.aspx'
@@ -107,7 +90,8 @@ i = 0
 
 newsLinks = driver.find_elements_by_xpath('//*[(@id = "main-content")]//a')
 
-while i < 120:
+while i < 120 and i < len(newsLinks):
+    print("i", i)
     print("\n\n\nSCRAPING NEWS ARTICLE: " + newsLinks[i].text + "\n\n\n")
     f.write("\n\n\nSCRAPING NEWS ARTICLE: " + newsLinks[i].text + "\n\n\n")
     newsLinks[i].click()
@@ -119,13 +103,15 @@ while i < 120:
     driver.get(url)
     time.sleep(1)
     loadMoreButton = driver.find_element_by_xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "btn-block", " " ))]')
+    if not loadMoreButton:
+        break
     i += 1
     for j in range(0, int(i / 10)): # click on it enough to see news article
         loadMoreButton.click()
         time.sleep(0.5)
     newsLinks = driver.find_elements_by_xpath('//*[(@id = "main-content")]//a')
     
-
+print("oakland finished")
 
 
 driver.quit()
