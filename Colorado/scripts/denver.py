@@ -46,7 +46,7 @@ for link in links:
     sections = soup.find_all('div', class_='text section')
     f.write(title + "\n\n")
     for div in sections:
-        f.write(div.get_text().encode('utf-8'))
+        f.write(div.get_text())
         f.write('\n\n')
 
 f.close()
