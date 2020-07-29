@@ -35,8 +35,6 @@ for i in links:
         linksinfo.append(str(i.get('href')))
     print(i.get_text(separator = '\n'))
     print(i.get('href'))
-    
-linksinfo
 
 
 # In[11]:
