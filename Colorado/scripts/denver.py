@@ -2,7 +2,6 @@ from bs4 import BeautifulSoup
 import requests
 import os 
 
-
 def getFilePath(path):
     fileDir = os.path.dirname(__file__)
     filePath = os.path.join(fileDir,path)
