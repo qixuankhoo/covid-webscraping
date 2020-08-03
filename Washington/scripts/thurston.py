@@ -24,7 +24,6 @@ def scraping(url):
     return BeautifulSoup(result, 'html.parser')
 
 def getPDF(file_url, county):
-    print("file url of PDF", file_url)
     fileName = file_url.split('/').pop()
     if '.pdf' not in fileName:
         fileName += '.pdf'
@@ -39,7 +38,7 @@ def getPDF(file_url, county):
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
-driver = webdriver.Chrome(ChromeDriverManager().install(), options = chrome_options) 
+driver = webdriver.Chrome(ChromeDriverManager().install(), options = chrome_options)
 
 COUNTY = "thurston"
 
@@ -58,16 +57,17 @@ links = []
 #Scrape Letters to the Community PDFs
 url = 'https://www.thurstoncountywa.gov/phss/Pages/coronavirus.aspx'
 soup = scraping(url)
-body = soup.select('#WebPartWPQ5')[0]
-section = body.find('div', class_='text').find('div')
-div = section.find_all('div')[1]
-data = div.find('ul').find_all('li')
-print(len(data))
+data = soup.select("div~ ul p")
+
 for item in data:
-    tag = item.find('a')
-    if 'Spanish' not in tag.get_text() and 'Vietnamese' not in tag.get_text():
-        link = tag.get('href')
-        data = getPDF('https://www.thurstoncountywa.gov'+link, COUNTY) 
+    try: 
+        link = item.find('a').get("href")
+        try:
+            pdf = getPDF('https://www.thurstoncountywa.gov'+link, COUNTY)
+        except:
+            pdf = getPDF(link, COUNTY)
+    except:
+        print('Not a pdf!')
 
 #Scrape main page:
 url = 'https://www.thurstoncountywa.gov/phss/Pages/coronavirus.aspx'
@@ -75,6 +75,5 @@ soup = scraping(url)
 body = soup.select('#WebPartWPQ5')[0]
 section = body.find('div', class_='text')
 f.write(section.get_text())
-
 
 f.close()

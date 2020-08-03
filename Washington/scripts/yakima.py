@@ -25,22 +25,16 @@ def scraping(url):
 
 
 def getPDF(file_url, county):
-    title = file_url.split('/').pop()
-    fileName = title + '.pdf'
+    fileName = file_url.split('/').pop()
+    if '.pdf' not in fileName:
+        fileName += '.pdf'
     filePath = getFilePath("../data/" + county + "-PDF")
     r = requests.get(file_url, stream = True)
-    try: 
-        with open(os.path.join(filePath,fileName), "wb") as pdf:
-            for chunk in r.iter_content(chunk_size=1024):
-                if chunk:
-                    pdf.write(chunk)
-    except:
-        fileName = 'mediaFile' + str(random.randint(1,10)) + '.pdf'
-        with open(os.path.join(filePath,fileName), "wb") as pdf:
-            for chunk in r.iter_content(chunk_size=1024):
-                if chunk:
-                    pdf.write(chunk)
-    return "data/" + title
+    with open(os.path.join(filePath,fileName), "wb") as pdf:
+        for chunk in r.iter_content(chunk_size=1024):
+         if chunk:
+             pdf.write(chunk)
+    return "data/" + fileName
     
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
@@ -52,6 +46,13 @@ textFilePath = '../data/' + COUNTY + '.txt'
 f = open(getFilePath(textFilePath), 'w')
 links = []
 
+#create PDF folder for PDF files
+try:
+    filePath = getFilePath("../data/" + COUNTY + "-PDF")
+    os.mkdir(filePath) 
+except:
+    print('PDF folder already exists!')
+    
 
 #Scrape Covid-19 main site
 url = 'https://www.yakimacounty.us/2323/COVID-19'
@@ -78,6 +79,23 @@ for link in links:
     page = section.select('.fr-view')[0]
     f.write(title)
     f.write(page.get_text())
+
+
+#Scrape Media Releases
+url = 'https://www.yakimacounty.us/2386/COVID-19-Media-Releases'
+soup = scraping(url)
+data = soup.select('#page li')
+
+for item in data:
+    try:
+        link = item.find('a').get('href')
+        print(link)
+        try:
+            pdf = getPDF('https://www.yakimacounty.us'+link, COUNTY)
+        except:
+            pdf = getPDF(link, COUNTY)
+    except:
+        print('Not a pdf!')
 
 f.close()
 
