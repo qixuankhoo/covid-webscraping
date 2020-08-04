@@ -78,7 +78,6 @@ f.write(title.get_text())
 f.write(body.get_text())
 
 
-
 #Scrape Charlotte-Mcklenburg school info
 url = 'https://www.cms.k12.nc.us/cmsdepartments/csh/covid-19/Pages/default.aspx'
 soup = scraping(url)
