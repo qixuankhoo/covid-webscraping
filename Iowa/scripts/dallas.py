@@ -74,7 +74,7 @@ url = 'https://dallascohealth.wordpress.com/'
 soup = scraping(url)
 divs = soup.find_all('div', class_='entry-content')
 for div in divs:
-    print(div.get_text(separator = '\n'))
+    #print(div.get_text(separator = '\n'))
     f.write(div.get_text(separator = '\n'))
 
 driver.quit()

@@ -24,7 +24,7 @@ for county in county_list:
         print(county + " is not available")
         pass
 # move all the pdfs
-pdf_list = ["lowell-PDF", "lynn-PDF"]
+pdf_list = ["boston-PDF", "brockton-PDF", "cambridge-PDF", "fall_river-PDF", "lowell-PDF", "lynn-PDF", "worcester-PDF", "new_bedford-PDF", "springfield-PDF"]
 for folder in pdf_list:
     try:
         shutil.move("../data/" + folder, "../data/" + today + "/" + folder)

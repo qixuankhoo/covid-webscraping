@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup 
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
-import time/Users/annichen/Desktop/2020summer/covid-webscraping/Colorado/scripts/run_all.py
+import time
 import os
 
 chrome_options = webdriver.ChromeOptions()
@@ -138,8 +138,8 @@ for link in links:
 # scrap from "https://www.bouldercounty.org/families/disease/covid-19/public-health-orders/"
 url = "https://www.bouldercounty.org/families/disease/covid-19/public-health-orders/"
 soup = scraping(url)
-data = soup.select("#content > div:nth-child(2) > div > div.vc_col-sm-8.wpb_column.column_container.col.no-padding.color-dark > div > div > div > ul:nth-child(5)")
-data1 = soup.select("#content > div:nth-child(2) > div > div.vc_col-sm-8.wpb_column.column_container.col.no-padding.color-dark > div > div > div > ul:nth-child(7)")
+data = soup.select("#content > div:nth-child(3) > div > div.vc_col-sm-8.wpb_column.column_container.col.no-padding.color-dark > div > div > div > ul:nth-child(5)")
+data1 = soup.select("#content > div:nth-child(3) > div > div.vc_col-sm-8.wpb_column.column_container.col.no-padding.color-dark > div > div > div > ul:nth-child(7)")
 
 links = []
 findHref(data)

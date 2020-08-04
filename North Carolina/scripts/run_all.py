@@ -16,7 +16,7 @@ os.mkdir(path)
 
 # move all the files under the directory
 time.sleep(20)
-county_list = ["buncombe", "cumberland", "durham", "forsyth", "gaston", "guildford", "mecklenberg", "new_hanover", "union", "wake"]
+county_list = ["buncombe", "cumberland", "durham", "forsyth", "gaston", "guilford", "mecklenberg", "new_hanover", "union", "wake"]
 for county in county_list:
     try:
         shutil.move("../data/" + county + ".txt", "../data/" + today + "/" + county + ".txt")
@@ -24,7 +24,7 @@ for county in county_list:
         print(county + " is not available")
         pass
 # move all the pdfs
-pdf_list = ["durham-PDF", "durham-image", "forsyth-PDF"]
+pdf_list = ["durham-PDF", "durham-image", "forsyth-PDF", "wake-PDF", "mecklenberg-PDF", "guilford-PDF", "new_hanover-PDF", "gaston-PDF", "buncombe-PDF"]
 for folder in pdf_list:
     try:
         shutil.move("../data/" + folder, "../data/" + today + "/" + folder)
