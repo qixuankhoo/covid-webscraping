@@ -18,7 +18,6 @@ def scraping(url):
     print("Scraping from " + url)
     f.write("\n\n\n")
     f.write("Scraping from " + url + "\n\n\n")
-    
     driver.get(url)
     time.sleep(1)
     result = driver.execute_script("return document.documentElement.outerHTML")
@@ -29,9 +28,8 @@ def getPDF(file_url, county):
     if '.pdf' not in title:
         title += '.pdf'
     fileName = title
-    filePath = "../data/" + county + "-PDF"
+    filePath = getFilePath("../data/" + county + "-PDF")
     r = requests.get(file_url, stream = True)
-    print("the path", filePath + "/" + fileName)
     with open(filePath + "/" + fileName, "wb") as pdf:
         for chunk in r.iter_content(chunk_size=1024):
          if chunk:
@@ -55,31 +53,36 @@ textFilePath = '../data/' + COUNTY + '.txt'
 f = open(getFilePath(textFilePath), 'w')
 
 
-#Scrape business re-opening guidance page
-url = 'https://www.mecknc.gov/news/Pages/Update-on-Novel-Coronavirus.aspx'
+#Scrape business guidance 
+url = 'https://www.mecknc.gov/news/Pages/COVID-19-Business-Toolkit.aspx'
 soup = scraping(url)
-f.write(soup.select('.mc-page')[0].get_text())
+data = soup.select('h4+ a')
+print(len(data))
+for item in data:
+    link = item.get('href')
+    try:
+        try:
+            pdf = getPDF(link, COUNTY)
+        except:
+            pdf = getPDF('https://www.mecknc.gov' + link, COUNTY)
+    except:
+        print('Not a PDF')
 
 
-#Scrape resources PDFs
-url = 'https://www.mecknc.gov/news/Pages/Update-on-Novel-Coronavirus.aspx'
+#Scrape healthy-eating blog
+url = 'http://blog.mecknc.gov/healthy-food/'
 soup = scraping(url)
-sections = soup.select('#gradient-resources')
-for section in sections:
-    data = section.find_all('li')
-    for item in data:
-        text = item.find('a').get_text()
-        link = item.find('a').get('href')
-        if 'NC' in text or 'N.C.' in text or 'CDC' in text:
-            continue
-        else:
-            try:
-                full_url = link
-                if 'mecknc.gov' not in full_url:
-                    full_url = 'https://www.mecknc.gov' + full_url
-                currSoup = scraping(full_url)
-                f.write(currSoup.select('.mc-page-content')[0].get_text())
-            except:
-                getPDF('https://www.mecknc.gov/'+link, COUNTY)
+title = soup.select('.post-title')[0]
+body = soup.select('.post-content')[0]
+f.write(title.get_text())
+f.write(body.get_text())
+
+
+
+#Scrape Charlotte-Mcklenburg school info
+url = 'https://www.cms.k12.nc.us/cmsdepartments/csh/covid-19/Pages/default.aspx'
+soup = scraping(url)
+content = soup.select('#site_content')[0]
+f.write(content.get_text())
 
 f.close()
