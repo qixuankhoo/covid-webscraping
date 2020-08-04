@@ -54,7 +54,7 @@ links = []
 url = 'https://www.gastongov.com/coronavirus/'
 soup = scraping(url)
 section = soup.find('div', class_='post clearfix')
-lst = section.find_all('p')[1]
+lst = section.select_one('p + p')
 data = lst.find_all('a')
 for item in data:
     link = item.get('href')
@@ -63,7 +63,8 @@ for item in data:
     else:
         try:
             currSoup = scraping('https://www.gastongov.com/'+link)
-            f.write(currSoup.select('.entry')[0].get_text())
+            f.write(currSoup.find('h1', class_='page-title').text)
+            f.write(currSoup.find('div', class_='post clearfix').text)
         except:
             print('Unscrapeable - media link')
 
