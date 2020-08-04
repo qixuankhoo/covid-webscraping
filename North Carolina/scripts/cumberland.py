@@ -68,17 +68,29 @@ if len(pdfs)>0:
                 continue
 
 
-# In[5]:
+# In[11]:
 
 
+words=["COVID-19", "COVID", "Coronavirus", "cases", "Cases", "testing", "Testing"]
 with open(r"../data/cumberland.txt",'w', encoding='utf-8') as outfile:
-    outfile.write("Scraping from " + url + "\n" + "\n")
+    outfile.write("Scraping from " + url + "\n" +"\n")
     for i in content:
-        print(i.get_text(separator = '\n'), file=outfile)
-#     outfile.write("\n" + "\n"+ "LINKS" + "\n" + "\n")
-   
-#     for item in linksinfo:
-#         print(item, file=outfile)
+        print(i.get_text(separator = '\n'), file=outfile)  
+    url="http://www.co.cumberland.nc.us/departments/public-information-group/public-information-office/new-releases"
+    page = urllib.request.urlopen(url) 
+    soup = BeautifulSoup(page, 'html.parser')
+    for div in soup.findAll("div", { "class" : "sf_colsOut sf_1col_1_100" }):
+        for a in div.find_all('a'):
+            for i in words:
+                if i in a.text:
+                    url="http://www.co.cumberland.nc.us/"+str(a.get('href'))
+                    print(url)
+                    page = urllib.request.urlopen(url) 
+                    soup = BeautifulSoup(page, 'html.parser')
+                    newcontent= soup.find_all('p')
+                    outfile.write("Scraping from " + url + "\n" +"\n")
+                    for cont in newcontent:
+                        print(cont.get_text(separator = '\n'), file=outfile)  
 
 
 # In[ ]:

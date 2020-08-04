@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[8]:
+# In[1]:
 
 
 from bs4 import BeautifulSoup
@@ -9,7 +9,7 @@ import urllib.request
 import re
 
 
-# In[9]:
+# In[2]:
 
 
 url="https://www.co.benton.wa.us/newsview.aspx?nid=6139"
@@ -18,7 +18,7 @@ soup = BeautifulSoup(page, 'html.parser')
 print(soup)
 
 
-# In[10]:
+# In[8]:
 
 
 linksinfo=[]
@@ -35,19 +35,16 @@ for i in links:
         linksinfo.append(str(i.get('href')))
     print(i.get_text(separator = '\n'))
     print(i.get('href'))
+    
 
 
-# In[11]:
+# In[10]:
 
 
 with open(r"../data/benton.txt",'w', encoding='utf-8') as outfile:
     outfile.write("Scraping from " + url + "\n" + "\n")
-    for i in content:
-        print(i.get_text(separator = '\n'), file=outfile)
-#     outfile.write("\n" + "\n"+ "LINKS" + "\n" + "\n")
-   
-#     for item in linksinfo:
-#         print(item, file=outfile)
+    for div in soup.findAll("div", { "class" : "itemDescription" }):
+        print(div.text, file=outfile)
 
 
 # In[12]:
