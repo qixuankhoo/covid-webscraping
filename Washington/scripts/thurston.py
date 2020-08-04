@@ -54,12 +54,27 @@ f = open(getFilePath(textFilePath), 'w')
 links = []
 
 
+
+
 #Scrape Letters to the Community PDFs
 url = 'https://www.thurstoncountywa.gov/phss/Pages/coronavirus.aspx'
 soup = scraping(url)
-data = soup.select("div~ ul p")
+top_section = soup.select_one("#WebPartWPQ5 .ms-rteTable-default")
+for a_tag in top_section.find_all('a'):
+    try:
+        link = a_tag.get("href")
+        try:
+            pdf = getPDF('https://www.thurstoncountywa.gov'+link, COUNTY)
+        except:
+            pdf = getPDF(link, COUNTY)
+    except:
+        print('Not a pdf!')
+
+
+data = soup.select("div ~ ul p")
 
 for item in data:
+    print("item", item.text)
     try: 
         link = item.find('a').get("href")
         try:
@@ -74,6 +89,6 @@ url = 'https://www.thurstoncountywa.gov/phss/Pages/coronavirus.aspx'
 soup = scraping(url)
 body = soup.select('#WebPartWPQ5')[0]
 section = body.find('div', class_='text')
-f.write(section.get_text())
+f.write(section.get_text(separator='\n'))
 
 f.close()

@@ -15,13 +15,10 @@ def getFilePath(path):
     return filePath
 
 def scraping(url):
-    print("Scraping from " + url)
-    f.write("\n\n\n")
-    f.write("Scraping from " + url + "\n\n\n")
-    driver.get(url)
-    time.sleep(1)
-    result = driver.execute_script("return document.documentElement.outerHTML")
-    return BeautifulSoup(result, 'html.parser')
+    print("\n\n\nScraping from " + url + "\n\n\n")
+    f.write("\n\n\nScraping from " + url + "\n\n\n")
+    r = requests.get(url)
+    return BeautifulSoup(r.content, 'html.parser')
 
 
 def getPDF(file_url, county):

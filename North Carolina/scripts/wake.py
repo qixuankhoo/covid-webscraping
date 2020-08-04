@@ -62,15 +62,18 @@ def saveNewsText(url):
     soup = scraping(url)
     date = soup.select_one('.info li')
     f.write(date.text + '\n\n')
-    sections = soup.select('.text li , p , .info li , h1 a')
-    for section in sections:
-        f.write(section.text)
-    
+    articles = soup.find_all('div', class_='text')
+    for article in articles:
+        f.write(article.text)
+
+
 COUNTY = "wake"
 f = open("../data/" + COUNTY + ".txt", "w")
 
 pdfPath = "../data/" + COUNTY + "-PDF"
 os.mkdir(pdfPath)
+
+
 
 # scrape from 'https://covid19.wakegov.com/'
 soup = scraping('https://covid19.wakegov.com/')
@@ -102,7 +105,7 @@ for link in links:
 
 
 # scrape 'https://covid19.wakegov.com/news-releases/'
-for page in range(1,11):
+for page in range(1,3):
     news_pages = set()
     url = 'https://covid19.wakegov.com/news-releases/page/' + str(page)
     soup = scraping(url)
@@ -111,6 +114,7 @@ for page in range(1,11):
         link = news_link.get('href')
         if 'twitter.com' not in link and 'tumblr.com' not in link and 'facebook.com' not in link and 'plus.google.com' not in link:
             if link not in news_pages:
+                print("news link", link)
                 saveNewsText(link)
                 news_pages.add(link)
         
