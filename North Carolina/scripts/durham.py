@@ -1,5 +1,5 @@
-import requests 
-from bs4 import BeautifulSoup 
+import requests
+from bs4 import BeautifulSoup
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 import time
@@ -29,7 +29,7 @@ soup = BeautifulSoup(r.content, 'html.parser')
 data = soup.select("#contentWrapTS")
 f.write("Scraping from " + url + "\n\n\n")
 for i in range(len(data)):
-    f.write(data[i].text)
+    f.write(data[i].get_text(separator='\n'))
 f.write("\n\n\n")
 
 
@@ -42,7 +42,7 @@ links = []
 findHref(data)
 f.write("Scraping from " + url + "\n\n\n")
 for i in range(len(data)):
-    f.write(data[i].text)
+    f.write(data[i].get_text(separator='\n'))
 f.write("\n\n\n")
 
 for link in links:
@@ -69,7 +69,7 @@ soup = BeautifulSoup(r.content, 'html.parser')
 data = soup.select("#contentWrapTS")
 f.write("Scraping from " + url + "\n\n\n")
 for i in range(len(data)):
-    f.write(data[i].text)
+    f.write(data[i].get_text(separator='\n'))
 f.write("\n\n\n")
 
 
@@ -80,7 +80,7 @@ soup = BeautifulSoup(r.content, 'html.parser')
 data = soup.select("#contentWrapTS")
 f.write("Scraping from " + url + "\n\n\n")
 for i in range(len(data)):
-    f.write(data[i].text)
+    f.write(data[i].get_text(separator='\n'))
 f.write("\n\n\n")
 
 # Scraping from a list  txt
@@ -96,7 +96,7 @@ for url in links:
     data = soup.select("#ColumnUserControl3")
     f.write("Scraping from " + url + "\n\n\n")
     for i in range(len(data)):
-        f.write(data[i].text)
+        f.write(data[i].get_text(separator='\n'))
     f.write("\n\n\n")
 
 
