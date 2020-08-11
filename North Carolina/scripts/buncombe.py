@@ -24,6 +24,17 @@ def scraping(url):
     result = driver.execute_script("return document.documentElement.outerHTML")
     return BeautifulSoup(result, 'html.parser')
 
+PDFS = set()
+soup = scraping("https://www.buncombecounty.org/countycenter/news-detail.aspx?id=18601")
+data = soup.find_all("article")
+print(data)
+for i in range(len(data)):
+    f.write(data[i].get_text(separator = '\n'))
+data = soup.find_all(class_="active")
+for i in range(1):
+    print("https://www.buncombecounty.org" + data[i]['href'])
+    PDFS.add("https://www.buncombecounty.org" + data[i]['href'])
+
 soup = scraping("https://www.buncombecounty.org/covid-19/default.aspx")
 articles = set()
 for i in range(100):
@@ -44,7 +55,6 @@ for i in articles:
         f.write(data[y].get_text(separator = '\n'))    
 
 soup = scraping("https://www.buncombecounty.org/covid-19/default.aspx")
-PDFS = set()
 data1 = soup.find(class_ = "list-col-4")
 data = data1.find_all("a")
 for i in range(len(data)):
@@ -95,9 +105,10 @@ for i in range(len(data)):
 
 soup = scraping("https://www.buncombecounty.org/covid-19/health-provider-information.aspx")
 data1 = soup.find(id = "sec-providers-guidance")
-data = data1.find_all("a")
-for i in range(len(data)):
-    PDFS.add(data[i]['href'])
+if (data1 is None == False):
+    data = data1.find_all("a")
+    for i in range(len(data)):
+        PDFS.add(data[i]['href'])
 
 data1 = soup.find(class_ = "col-sm-6")
 data = data1.find_all("p")
