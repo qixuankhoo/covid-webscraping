@@ -20,7 +20,9 @@ def scraping(url):
     driver.get(url)
     time.sleep(1)
     result = driver.execute_script("return document.documentElement.outerHTML")
-    return BeautifulSoup(result, 'html.parser')
+    soup = BeautifulSoup(result, "lxml")
+    [x.extract() for x in soup.findAll(['script', 'style'])] # gets rid of javascript and css
+    return soup
 
 def getPDF(file_url, county):
     title = file_url.split('/').pop()
