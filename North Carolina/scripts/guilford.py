@@ -6,6 +6,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from webdriver_manager.chrome import ChromeDriverManager
 import time
+import lxml
 
 
 def getFilePath(path):
@@ -18,7 +19,9 @@ def scraping(url):
     print("\n\n\nScraping from " + url + "\n\n\n")
     f.write("\n\n\nScraping from " + url + "\n\n\n")
     r = requests.get(url)
-    return BeautifulSoup(r.content, 'html.parser')
+    soup = BeautifulSoup(r.content, "lxml")
+    [x.extract() for x in soup.findAll(['script', 'style'])] # gets rid of javascript and css
+    return soup
 
 
 def getPDF(file_url, county):
@@ -56,7 +59,8 @@ links = []
 #Scrape business re-opening guidance
 url = 'https://www.guilfordcountync.gov/our-county/administration/coronavirus-updates'
 soup = scraping(url)
-f.write(soup.select('#ColumnUserControl3')[0].get_text())
+
+f.write(soup.find('div', id='ColumnUserControl3').get_text())
 
 
 f.close()
