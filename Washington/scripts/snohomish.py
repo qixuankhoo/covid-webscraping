@@ -111,7 +111,7 @@ def getPDFs(file_url, county):
     if len(title) == 0:
         title = "NONAME" + str(count)
     r = requests.get(file_url, stream = True)
-    path = "../data/" + COUNTY + "-PDF" + "/" + title
+    path = "../data/" + COUNTY + "-PDF" + "/" + title + ".pdf"
     if os.path.isfile(path):
         path = "../data/" + COUNTY + "-PDF" + "/" + title + 1
         count = count + 1
