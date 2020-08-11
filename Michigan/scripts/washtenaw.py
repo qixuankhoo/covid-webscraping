@@ -32,6 +32,8 @@ for i in range(len(data)):
 
 sublinks = set()
 for i in mainlinks:
+    if "michigan.gov" in i:
+        continue
     soup = scraping(i)
     data1 = soup.find(id = "page")
     data = data1.find_all("p")
@@ -54,6 +56,8 @@ for i in mainlinks:
                 sublinks.add(data[i]['href'])
 PDFS = set()
 for i in sublinks:
+    if "michigan.gov" in i:
+        continue
     if ".pdf" in i:
         PDFS.add(i)
     elif "washtenaw.org" in i:
