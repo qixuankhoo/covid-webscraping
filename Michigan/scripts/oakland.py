@@ -90,7 +90,7 @@ i = 0
 
 newsLinks = driver.find_elements_by_xpath('//*[(@id = "main-content")]//a')
 
-while i < 120 and i < len(newsLinks):
+while i < 15 and i < len(newsLinks):
     print("i", i)
     print("\n\n\nSCRAPING NEWS ARTICLE: " + newsLinks[i].text + "\n\n\n")
     f.write("\n\n\nSCRAPING NEWS ARTICLE: " + newsLinks[i].text + "\n\n\n")

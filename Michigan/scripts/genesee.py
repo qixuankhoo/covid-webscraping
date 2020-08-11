@@ -13,6 +13,9 @@ from documentcloud import DocumentCloud
 
 client = DocumentCloud()
 
+
+COUNTY = "genesee"
+
 def scraping(url):
     print("\n\n\nScraping from " + url + "\n\n\n")
     f.write("\n\n\nScraping from " + url + "\n\n\n")
@@ -69,7 +72,6 @@ def downloadDocumentCloud(url):
     
     
 
-COUNTY = "genesee"
 f = open("../data/" + COUNTY + ".txt", "w")
 
 
