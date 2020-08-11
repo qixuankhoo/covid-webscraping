@@ -51,9 +51,13 @@ data = soup.find_all()
 scrapelinks2 = []
 for i in range(len(scrapelinks)):
     soup = scraping(scrapelinks[i])
+    if ("/health-department/2019-novel-coronavi" in scrapelinks[i]):
+        data = soup.find_all(class_ = "content-grid-item")
+        for j in range(len(data)):
+            f.write(data[j].get_text(separator = '\n'))
     data = soup.find_all("a")
-    for i in range(len(data)):
-        scrapelinks2.append(data[i]['href'])
+    for q in range(len(data)):
+        scrapelinks2.append(data[q]['href'])
 PDFS = []
 done = []
 for i in range(len(scrapelinks2)):
