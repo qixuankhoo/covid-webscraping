@@ -7,6 +7,8 @@ from selenium.webdriver.common.keys import Keys
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 
+from urllib.request import Request, urlopen
+
 
 def getFilePath(path):
     fileDir = os.path.dirname(__file__)
@@ -34,15 +36,17 @@ def findHref(data):
             links.append(link.get('href'))
 
 def getPDF(file_url, county):
+    print("pdf url", file_url)
+    print("A PDF HERE\n")
+    f.write("A PDF HERE\n")
+    # dynamically download pdf
+    req = Request(file_url, headers={'User-Agent' : 'Mozilla/5.0'})
+    webpage = urlopen(req)
     title = file_url.split('/').pop()
-    fileName = title + '.pdf'
-    filePath = getFilePath("../data/" + county + "-PDF")
-    r = requests.get(file_url, stream = True)
-    with open(os.path.join(filePath,fileName), "wb") as pdf:
-        for chunk in r.iter_content(chunk_size=1024):
-         if chunk:
-             pdf.write(chunk)
-    return "data/" + title
+    if '.pdf' not in title:
+        title += '.pdf'
+    with open("../data/" + county + "-PDF" + "/" + title,"wb") as pdf:
+        pdf.write(webpage.read())
     
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
@@ -70,10 +74,10 @@ findHref(data)
 print(len(links))
 
 for link in links:
-    try:
-        data = getPDF(link, COUNTY)
-    except:
-        data = getPDF('https://www.fallriverma.org'+link, COUNTY)
+    if "fallriverma" in link:
+        getPDF(link, COUNTY)
+    else:
+        getPDF('https://www.fallriverma.org'+link, COUNTY)
 
 
 f.close()
