@@ -54,8 +54,6 @@ for i in sublinks:
 
 PDFS = []
 for i in sublinks:
-    print("idk")
-    print(i)
     if "Word" in i:
         continue
     if ("Center/View" in i and "brla.gov" in i) or ".pdf" in i or "brla.gov/businessguidelines" in i:

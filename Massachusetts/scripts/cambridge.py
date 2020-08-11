@@ -38,13 +38,11 @@ def findHref(data, url):
 
 def getPDF(file_url, county):
     title = file_url.split('/').pop()
-    fileName = title + '.pdf'
     filePath = getFilePath("../data/" + county + "-PDF")
     r = requests.get(file_url, stream = True)
-    with open(os.path.join(filePath,fileName), "wb") as pdf:
+    with open(os.path.join(filePath, title), "wb") as pdf:
         for chunk in r.iter_content(chunk_size=1024):
-         if chunk:
-             pdf.write(chunk)
+            pdf.write(chunk)
     return "data/" + title
 
 
@@ -71,11 +69,16 @@ url = 'https://www.cambridgema.gov/covid19'
 soup = scraping(url)
 data = soup.find_all('a', class_='button')
 for item in data:
-    links.append('https://www.cambridgema.gov/'+item.get('href'))
+    if "http" in item.get('href'):
+        links.append(item.get('href'))
+    else:
+        links.append('https://www.cambridgema.gov'+item.get('href'))
 
 for link in links:
     currSoup = scraping(link)
-    f.write(currSoup.find('h1').get_text())
+    header = currSoup.find('h1')
+    if header:
+        f.write(header.get_text())
     writeData(currSoup, 'article', 'mainContent')
 
 #Scrape 'Updates' website
@@ -85,11 +88,16 @@ section = soup.find('article', class_='mainContent')
 data = section.find_all('a')
 for item in data[6:]:
     link = item.get('href')
-    try:
-        data = getPDF('https://www.cambridgema.gov'+link, COUNTY)
-    except:
-        currSoup = scraping('https://www.cambridgema.gov/'+link)
-        f.write(currSoup.find('h1').get_text())
+    print("link", link)
+    if 'http' not in link:
+        link = 'https://www.cambridgema.gov' + link
+    if '.pdf' in link:
+        getPDF(link, COUNTY)
+    else:
+        currSoup = scraping(link)
+        header = currSoup.find('h1')
+        if header:
+            f.write(header.text)
         writeData(currSoup, 'article', 'mainContent')
     
 f.close()

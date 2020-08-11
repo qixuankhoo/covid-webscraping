@@ -72,11 +72,12 @@ driver = webdriver.Chrome(ChromeDriverManager().install(), options = chrome_opti
 # scrape from "https://www.calcasieuparish.gov/residents/news-and-updates"
 url = 'https://www.calcasieuparish.gov/residents/news-and-updates'
 soup = scraping(url)
-div = soup.find('div', class_="news_widget content_area clearfix")
+div = soup.find('div', class_=" news_widget content_area clearfix")
 li_tags = div.find_all('li')
 for li in li_tags:
     a = li.find('a')
     url = 'https://www.calcasieuparish.gov' + a.get('href')
+    print(url)
     saveText(url)
 
 driver.quit()
