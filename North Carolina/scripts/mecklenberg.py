@@ -56,7 +56,7 @@ f = open(getFilePath(textFilePath), 'w')
 #Scrape business guidance 
 url = 'https://www.mecknc.gov/news/Pages/COVID-19-Business-Toolkit.aspx'
 soup = scraping(url)
-data = soup.select('h4+ a')
+data = soup.select('h4 + a')
 print(len(data))
 for item in data:
     link = item.get('href')
