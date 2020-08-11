@@ -25,7 +25,8 @@ os.mkdir(path)
 # Scraping from "https://durhamnc.gov/4013/City-of-Durham-COVID-19-Updates-Resource" txt
 url = "https://durhamnc.gov/4013/City-of-Durham-COVID-19-Updates-Resource"
 r = requests.get(url)
-soup = BeautifulSoup(r.content, 'html.parser')
+soup = BeautifulSoup(r.content, "lxml")
+[x.extract() for x in soup.findAll(['script', 'style'])] # gets rid of javascript and css
 data = soup.select("#contentWrapTS")
 f.write("Scraping from " + url + "\n\n\n")
 for i in range(len(data)):
@@ -36,7 +37,8 @@ f.write("\n\n\n")
 # Scraping from "https://durhamnc.gov/4019/Stay-at-Home-Order-FAQs" txt and pdfs
 url = "https://durhamnc.gov/4019/Stay-at-Home-Order-FAQs"
 r = requests.get(url)
-soup = BeautifulSoup(r.content, 'html.parser')
+soup = BeautifulSoup(r.content, "lxml")
+[x.extract() for x in soup.findAll(['script', 'style'])] # gets rid of javascript and css
 data = soup.select("#contentWrapTS")
 links = []
 findHref(data)
@@ -65,7 +67,8 @@ for link in links:
 # Scraping from "https://durhamnc.gov/4066/Community-Business-Resources" txt
 url = "https://durhamnc.gov/4066/Community-Business-Resources"
 r = requests.get(url)
-soup = BeautifulSoup(r.content, 'html.parser')
+soup = BeautifulSoup(r.content, "lxml")
+[x.extract() for x in soup.findAll(['script', 'style'])] # gets rid of javascript and css
 data = soup.select("#contentWrapTS")
 f.write("Scraping from " + url + "\n\n\n")
 for i in range(len(data)):
@@ -76,7 +79,8 @@ f.write("\n\n\n")
 # Scraping from "https://durhamnc.gov/4014/COVID-19-Coronavirus-Updates-for-City-Em" txt
 url = "https://durhamnc.gov/4014/COVID-19-Coronavirus-Updates-for-City-Em"
 r = requests.get(url)
-soup = BeautifulSoup(r.content, 'html.parser')
+soup = BeautifulSoup(r.content, "lxml")
+[x.extract() for x in soup.findAll(['script', 'style'])] # gets rid of javascript and css
 data = soup.select("#contentWrapTS")
 f.write("Scraping from " + url + "\n\n\n")
 for i in range(len(data)):
@@ -92,7 +96,8 @@ links = ["https://www.dcopublichealth.org/services/communicable-diseases/communi
 "https://www.dcopublichealth.org/services/communicable-diseases/coronavirus-disease-2019/covid-19-resources-volunteering"]
 for url in links:
     r = requests.get(url)
-    soup = BeautifulSoup(r.content, 'html.parser')
+    soup = BeautifulSoup(r.content, "lxml")
+    [x.extract() for x in soup.findAll(['script', 'style'])] # gets rid of javascript and css
     data = soup.select("#ColumnUserControl3")
     f.write("Scraping from " + url + "\n\n\n")
     for i in range(len(data)):
@@ -105,7 +110,8 @@ for url in links:
 # Scraping from https://www.dcopublichealth.org/services/communicable-diseases/coronavirus-disease-2019/durham-county-covid-19-graphics
 url = "https://www.dcopublichealth.org/services/communicable-diseases/coronavirus-disease-2019/durham-county-covid-19-graphics"
 r = requests.get(url)
-soup = BeautifulSoup(r.content, 'html.parser')
+soup = BeautifulSoup(r.content, "lxml")
+[x.extract() for x in soup.findAll(['script', 'style'])] # gets rid of javascript and css
 data = soup.select("#ColumnUserControl3")
 links = []
 for i in range(len(data)):
