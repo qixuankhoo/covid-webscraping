@@ -3,10 +3,13 @@ import os
 import sys
 import nltk
 
-initial_date = "2020-07-17"
-end_date = "2020-07-21"
+# detects new sentences for all counties' txt files from start to end date and writes to diff_data.csv
+initial_date = "2020-07-21"
+end_date = "2020-08-11"
 
+i=1
 def writeCountyDiffText(initial_path, end_path, state):
+    global i
     _, full_county = os.path.split(end_path)
     county = full_county[:-4]
     f_sentences = set()
@@ -20,14 +23,15 @@ def writeCountyDiffText(initial_path, end_path, state):
         f_sentences.add(sentence)
 
     with open('diff_data.csv', 'a', newline='') as csvfile:
-        fieldnames = ['category', 'diff_line', 'county', 'state']
+        fieldnames = ['sentence_num', 'diff_line', 'county', 'state']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        for sentence in nltk.tokenize.sent_tokenize(g_text):
+        for num, sentence in enumerate(nltk.tokenize.sent_tokenize(g_text)):
             if sentence not in f_sentences:
-                writer.writerow({'diff_line' : sentence, 'county' : county, 'state' : state})
+                writer.writerow({'sentence_num' : i, 'diff_line' : sentence, 'county' : county, 'state' : state})
+                i += 1
                     
 with open('diff_data.csv', 'w', newline='') as csvfile: # clear file
-    fieldnames = ['category', 'diff_line', 'county', 'state']
+    fieldnames = ['sentence_num', 'diff_line', 'county', 'state']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()
     
