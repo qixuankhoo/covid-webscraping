@@ -8,6 +8,8 @@ initial_date = "2020-07-21"
 end_date = "2020-08-11"
 
 i=1
+
+
 def writeCountyDiffText(initial_path, end_path, state):
     global i
     _, full_county = os.path.split(end_path)
