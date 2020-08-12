@@ -56,9 +56,10 @@ for i in mainlinks:
                 sublinks.add(data[i]['href'])
 PDFS = set()
 for i in sublinks:
+    print("we here", i)
     if "michigan.gov" in i:
         continue
-    if ".pdf" in i:
+    if ".pdf" in i or "DocumentCenter" in i:
         PDFS.add(i)
     elif "washtenaw.org" in i:
         soup = scraping(i)
@@ -84,6 +85,10 @@ os.makedirs(filePath, exist_ok=True)
 
 def getPDFs(file_url, county):
     title = file_url.split('/').pop()
+    if 'Khaldun' in title:
+        return
+    if '.pdf' not in title:
+        title += '.pdf'
     r = requests.get(file_url, stream = True)
     path = "../data/" + COUNTY + "-PDF" + "/" + title
     fileDir = os.path.dirname(__file__)
@@ -96,8 +101,10 @@ def getPDFs(file_url, county):
              pdf.write(chunk)
     return "data/" + title
 
+
 for url in PDFS:
     getPDFs(url, COUNTY)
+'''
     print("Scraping from" + url)
     r = requests.get(url)
     fi = io.BytesIO(r.content)
@@ -110,6 +117,7 @@ for url in PDFS:
         page = reader.getPage(page_number)
         page_content = page.extractText()
         f.write(page_content)
+'''
 
 f.close()
 driver.quit()

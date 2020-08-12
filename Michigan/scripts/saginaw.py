@@ -53,7 +53,7 @@ for i in mainlinks:
 
 PDFS = []
 for i in sublinks:
-    if ".jpg" in i or i in mainlinks:
+    if ".jpg" in i or i in mainlinks or ".dot" in i:
         continue
     elif ".pdf" in i:
         PDFS.append(i)
