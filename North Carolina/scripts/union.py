@@ -24,6 +24,26 @@ def scraping(url):
     result = driver.execute_script("return document.documentElement.outerHTML")
     return BeautifulSoup(result, 'html.parser')
 
+soup = scraping("https://www.unioncountync.gov/news/county-facilities-closed-independence-day?ccm_paging_p=1&ccm_order_by=&ccm_order_by_direction=")
+data = soup.find_all(class_="pagination")
+for i in range(len(data)):
+    s = data[i].get_text()
+    s = s.split("…")
+    s = s[1].split("N")
+    pages = int(s[0])
+
+for i in range(pages):
+    if i == 0:
+        continue
+    soup = scraping("https://www.unioncountync.gov/news/county-facilities-closed-independence-day?ccm_paging_p=" + str(i) + "&ccm_order_by=&ccm_order_by_direction=")
+    data = soup.find_all("a", class_="ccm-block-page-list-read-more")
+    print(data)
+    for y in range(len(data)):
+        soup = scraping(data[y]['href'])
+        data1 = soup.find_all(class_="uc-box")
+        for j in range(len(data1)):
+            f.write(data1[j].get_text(separator = '\n'))
+
 PDFS = set()
 
 soup = scraping("https://www.unioncountync.gov/news/coronavirus-what-you-need-know")
