@@ -29,9 +29,9 @@ def scraping(url):
 soup = scraping("https://www.springfield-ma.gov/cos/index.php?id=covid")
 data = soup.find(id = "currentPageContentMenu")
 data = data.find_all("a")
-mainlinks = []
+mainlinks = set()
 for i in range(len(data)):
-    mainlinks.append("https://www.springfield-ma.gov/cos/" + data[i]['href'])
+    mainlinks.add("https://www.springfield-ma.gov/cos/" + data[i]['href'])
 
 sublinks = set()
 for l in mainlinks:
@@ -48,14 +48,14 @@ for l in mainlinks:
         sublinks.add(data[i]['href'])
 
 PDFS = set()
-
+print("GOT HERE")
 for i in sublinks:
     if i in mainlinks:
         continue
     if "pdf" in i:
         PDFS.add(i)
-    elif "springfirled-ma.gov" in i:
-        soup = scraping(l)
+    elif "springfield-ma.gov" in i:
+        soup = scraping(i)
         data1 = soup.find(id = "content")
         data = data1.find_all("p")
         for i in range(len(data)):
@@ -63,7 +63,7 @@ for i in sublinks:
         data = data1.find_all("li")
         for i in range(len(data)):
             f.write(data[i].get_text(separator = '\n'))
-
+print("GOT HERE")
 import PyPDF2
 import io
 
@@ -94,15 +94,31 @@ def getPDFs(file_url, county):
 for url in PDFS:
     print("Scraping from" + url)
     if "http" not in url and "www" not in url:
-        getPDFs("https://www.springfield-ma.gov/cos/" + url, COUNTY)    
+        print(url)
+        try:
+            getPDFs("https://www.springfield-ma.gov/cos/" + url, COUNTY)  
+        except Exception:
+            print("FAIL")
+            continue  
         r = requests.get("https://www.springfield-ma.gov/cos/" + url)
     else:
-        getPDFs(url, COUNTY)
+        try:
+            getPDFs(url, COUNTY)
+        except Exception:
+            continue
         r = requests.get(url)
+    try:
+        fi = io.BytesIO(r.content)
+    except Exception:
         continue
-    fi = io.BytesIO(r.content)
-    reader = PdfFileReader(fi)
-    number_of_pages = reader.getNumPages()
+    try:
+        reader = PdfFileReader(fi)
+    except Exception:
+        continue
+    try:
+        number_of_pages = reader.getNumPages()
+    except Exception:
+        continue
     for page_number in range(number_of_pages):
         page = reader.getPage(page_number)
         page_content = page.extractText()
