@@ -14,20 +14,19 @@ def getFilePath(path):
     filePath = os.path.abspath(os.path.realpath(filePath))
     return filePath
 
-def scraping(url):
-    print("Scraping from " + url)
-    f.write("\n\n\n")
-    f.write("Scraping from " + url + "\n\n\n")
-    driver = webdriver.Chrome()
-    driver.get(url)
-    time.sleep(1)
-    result = driver.execute_script("return document.documentElement.outerHTML")
-    return BeautifulSoup(result, 'html.parser')
-
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
 driver = webdriver.Chrome(ChromeDriverManager().install(), options = chrome_options)
+
+def scraping(url):
+    print("Scraping from " + url)
+    f.write("\n\n\n")
+    f.write("Scraping from " + url + "\n\n\n")
+    driver.get(url)
+    time.sleep(1)
+    result = driver.execute_script("return document.documentElement.outerHTML")
+    return BeautifulSoup(result, 'html.parser')
 
 COUNTY = "scott"
 textFilePath = '../data/' + COUNTY + '.txt'

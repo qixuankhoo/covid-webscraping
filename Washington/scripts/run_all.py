@@ -1,3 +1,4 @@
+#!/Library/Frameworks/Python.framework/Versions/3.8/bin/python3
 import os
 import glob
 import shutil
@@ -24,7 +25,7 @@ for county in county_list:
         print(county + " is not available")
         pass
 # move all the pdfs
-pdf_list = ["benton-PDF", "kitsap-PDF", "kitsap-image", "clark-PDF", "whatcom-PDF", "thurston-PDF", "pierce-PDF", "spokane-PDF", "snohomish-PDF"]
+pdf_list = ["benton-PDF", "kitsap-PDF", "kitsap-image", "clark-PDF", "whatcom-PDF", "thurston-PDF", "pierce-PDF", "spokane-PDF", "snohomish-PDF", "yakima-PDF"]
 for folder in pdf_list:
     try:
         shutil.move("../data/" + folder, "../data/" + today + "/" + folder)
